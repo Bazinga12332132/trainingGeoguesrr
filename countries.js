@@ -33,6 +33,7 @@ ch|Suiza|Europa|R|ch|41|switzerland
 at|Austria|Europa|R|at|43|
 pl|Polonia|Europa|R|pl|48|poland
 cz|Chequia|Europa|R|cz|420|republica checa,czechia
+sk|Eslovaquia|Europa|R|sk|421|slovakia
 se|Suecia|Europa|R|se|46|sweden
 no|Noruega|Europa|R|no|47|norway
 fi|Finlandia|Europa|R|fi|358|finland

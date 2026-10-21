@@ -1,10 +1,10 @@
 /* ============ VISTAS ============ */
 const ansTxt=q=>q.opts?q.ans:byIso[q.iso].n;
 const pickTxt=p=>!p?'sin respuesta':p[0]==='?'?p.slice(1):byIso[p]?byIso[p].n:p;
-const src=q=>q.src?`<br><small class="mut">Fuente: ${esc(q.src)}${q.lic?' · '+esc(q.lic):''}</small>`:'';
+const src=q=>q.guide?`<br><small class="attribution">Referencia: <a href="${esc(q.guide)}" target="_blank" rel="noopener noreferrer">${q.cat==='bolardos'?'Guía de bolardos':'Guía de matrículas'}</a></small>`:q.src?`<br><small class="attribution">Foto: ${q.author?esc(q.author)+' · ':''}<a href="${esc(q.src)}" target="_blank" rel="noopener noreferrer">Fuente en Wikimedia Commons</a>${q.lic?` · <a href="${esc(q.licUrl)}" target="_blank" rel="noopener noreferrer">${esc(q.lic)}</a>`:''}</small>`:'';
 
 function vHome(){const a=agg(),n=pend().length;
-  return `<div class="hero"><h2>Entrená el ojo para GeoGuessr</h2><p>Banderas, dominios, prefijos y lado de conducción. Practicá, corregí y repasá lo que fallás.</p></div>
+  return `<div class="hero"><h2>Entrená el ojo para GeoGuessr</h2><p>Practicá con banderas, bolardos, matrículas, dominios, prefijos y otras pistas. Corregí tus errores y volvé a intentarlo hasta acertar.</p></div>
   <div class="acts"><button class="btn" onclick="go('#/entrenar')">Entrenar</button>
   <button class="ghost" ${n?'':'disabled'} onclick="reviewErrors()">Repasar errores (${n})</button></div>
   <div class="stats"><div class="card"><b>${pct(a.tot[0],a.tot[1])}%</b><small>Precisión</small></div>
@@ -23,7 +23,7 @@ function vSetup(){const c=CFG;
   <label>Región</label>${sel('reg',[['*','Mundo'],...CONTS.map(x=>[x,x])],c.reg)}
   <label>Dificultad</label>${sel('diff',[[1,'Fácil: 4 opciones, países distintos'],[2,'Media: 4 opciones, mismo continente'],[3,'Difícil: elegir entre todos los países'],[4,'Experto: escribir, todas las pistas']],c.diff)}
   <label>Modo de respuesta</label>${sel('mode',[['auto','Según dificultad'],['mc','Opción múltiple'],['all','País entre todos'],['type','Escribir el país']],c.mode)}
-  <label>Tipo de sesión</label>${sel('kind',[['practica','Práctica (corrige al instante)'],['examen','Examen (resultados al final)'],['repaso','Repaso (ver respuesta y autoevaluarse)']],c.kind)}
+  <label>Tipo de sesión</label>${sel('kind',[['practica','Práctica (corrige al instante)'],['examen','Examen (resultados al final)'],['repaso','Repaso (reintenta hasta acertar)']],c.kind)}
   <label>Cantidad</label>${sel('n',[[10,'10'],[20,'20'],[50,'50'],[0,'Práctica infinita']],c.n)}
   <label>Temporizador por pregunta</label>${sel('tm',[[0,'Sin tiempo'],[10,'10 s'],[20,'20 s'],[30,'30 s']],c.tm)}
   <p class="err" id="err"></p><button class="btn" onclick="begin()">Empezar</button></form>`}
@@ -32,13 +32,12 @@ function begin(){const f=$('#f'),cats=[...f.querySelectorAll('[name=cat]:checked
   CFG={cats,reg:f.reg.value,diff:+f.diff.value,mode:f.mode.value,kind:f.kind.value,n:+f.n.value,tm:+f.tm.value};start(CFG)}
 
 function vPlay(){const s=S;if(!s)return vHome();const q=s.qs[s.i],m=q.opts?'o':modeOf(s),rep=s.cfg.kind==='repaso';
-  let h=`<div class="top"><span>${s.i+1}/${s.cfg.n?s.qs.length:'∞'} · ${CATS[q.cat]} · ${DIFF[q.d]}</span><span id="tm" class="tm">${s.cfg.tm&&!s.fb&&!rep?s.tl+'s':''}</span><button class="ln" onclick="end()">Terminar</button></div>
-  <div class="bar"><i style="width:${s.cfg.n?s.i/s.qs.length*100:0}%"></i></div>
-  ${q.img?`<img class="pic" src="${esc(q.img)}" alt="${esc(q.alt)}">`:''}<h2>${esc(q.txt)}</h2>`;
-  if(rep)return h+`<div class="fb"><b>${esc(ansTxt(q))}</b><br>${esc(q.ex)}${src(q)}</div>
-    <div class="acts"><button class="btn" onclick="rate(2)">La sabía</button><button class="ghost" onclick="rate(1)">Dudé</button><button class="ghost" onclick="rate(0)">No la sabía</button></div>`;
-  if(s.fb){const r=s.res[s.res.length-1];
-    return h+`<div class="fb ${r.ok?'ok':'ko'}"><b>${r.ok?'Correcto':'Incorrecto'}</b>${r.ok?'':` · respondiste: ${esc(pickTxt(r.pick))}`}<br>Respuesta: <b>${esc(ansTxt(q))}</b>. ${esc(q.ex)}${src(q)}</div><button class="btn" id="nx" onclick="next()">Siguiente</button>`}
+  const progress=rep?`${s.reviewSolved}/${s.reviewTotal} dominadas · ${s.i+1}ª en cola`:`${s.i+1}/${s.cfg.n?s.qs.length:'∞'} · ${CATS[q.cat]} · ${DIFF[q.d]}`;
+  let h=`<div class="top"><span>${progress}${rep?' · '+CATS[q.cat]:''}</span><span id="tm" class="tm">${s.cfg.tm&&!s.fb&&!rep?s.tl+'s':''}</span><button class="ln" onclick="end()">Terminar</button></div>
+  <div class="bar"><i style="width:${rep?(s.reviewSolved/Math.max(1,s.reviewTotal)*100):(s.cfg.n?s.i/s.qs.length*100:0)}%"></i></div>
+  ${q.img?`<img class="pic" src="${esc(q.img)}" alt="${esc(q.alt)}">`:''}${q.clue?`<div class="clue">${esc(q.clue)}</div>`:''}<h2>${esc(q.txt)}</h2>`;
+  if(s.fb){const r=s.currentResult;
+    return h+`<div class="fb ${r.ok?'ok':'ko'}"><b>${r.ok?'Correcto':'Incorrecto'}</b>${r.ok?'':` · respondiste: ${esc(pickTxt(r.pick))}`}<br>Respuesta: <b>${esc(ansTxt(q))}</b>. ${esc(q.ex)}${src(q)}</div><button class="btn" id="nx" onclick="next()">${rep?(r.ok?'Siguiente pista':'Seguir practicando'):'Siguiente'}</button>`}
   if(m==='o')return h+`<div class="opts">${q.opts.map(o=>`<button data-v="${esc(o)}" onclick="answer(this.dataset.v,1)">${o}</button>`).join('')}</div>`;
   if(m==='mc'){s.ch=s.ch||choices(q);return h+`<div class="opts">${s.ch.map(c=>`<button data-v="${c.i}" onclick="answer(this.dataset.v,1)">${esc(c.n)}</button>`).join('')}</div>`}
   const L=CO.filter(c=>s.cfg.reg==='*'||c.c===s.cfg.reg);
@@ -50,7 +49,7 @@ function vFin(){const s=S;if(!s||!s.res.length)return vHome();const r=s.res,ok=r
   return `<h2>Resultados</h2><div class="stats"><div class="card"><b>${pct(ok,r.length)}%</b><small>Precisión</small></div>
   <div class="card"><b>${ok}/${r.length}</b><small>Aciertos</small></div><div class="card"><b>${avg} s</b><small>Tiempo promedio</small></div></div>
   <h3>Por categoría</h3>${rows(grp(r,x=>CATS[x.q.cat]))}<h3>Por continente</h3>${rows(grp(r,x=>byIso[x.q.iso].c))}
-  <h3>Errores (${bad.length})</h3>${bad.length?bad.map(x=>`<div class="card" style="margin:6px 0">${x.q.img?`<img class="mini" src="${esc(x.q.img)}" alt="">`:''}${esc(x.q.txt)}<br>Correcta: <b>${esc(ansTxt(x.q))}</b>${s.cfg.kind==='repaso'?'':` · tu respuesta: ${esc(pickTxt(x.pick))}`}</div>`).join(''):'<p class="mut">Sin errores.</p>'}
+  <h3>Errores (${bad.length})</h3>${bad.length?bad.map(x=>`<div class="card" style="margin:6px 0">${x.q.img?`<img class="mini" src="${esc(x.q.img)}" alt="">`:''}${esc(x.q.txt)}${x.q.clue?`<br><small>${esc(x.q.clue)}</small>`:''}<br>Correcta: <b>${esc(ansTxt(x.q))}</b>${s.cfg.kind==='repaso'?'':` · tu respuesta: ${esc(pickTxt(x.pick))}`}</div>`).join(''):'<p class="mut">Sin errores.</p>'}
   <div class="acts"><button class="btn" onclick="start(S.cfg)">Repetir sesión</button>
   <button class="ghost" ${bad.length?'':'disabled'} onclick="start({cats:Object.keys(CATS),reg:'*',diff:4,mode:'auto',n:0,tm:0,kind:'repaso',ids:S.res.filter(x=>!x.ok).map(x=>x.q.id)})">Repasar estos errores</button>
   <button class="ghost" onclick="go('#/')">Volver al inicio</button></div>`}

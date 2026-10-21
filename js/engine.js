@@ -1,9 +1,5 @@
 /* ============ MOTOR DE PREGUNTAS ============ */
-const pool=c=>Q.filter(q=>{
-  const special=['bolardos','matriculas'].includes(q.cat);
-  const hasClueOrPhoto=!special||(c.diff===3?!!q.clue:c.diff===4?!!(q.img||q.clue):!!q.img);
-  return c.cats.includes(q.cat)&&q.d<=c.diff&&hasClueOrPhoto&&(c.reg==='*'||byIso[q.iso].c===c.reg)&&(!c.ids||c.ids.includes(q.id));
-});
+const pool=c=>Q.filter(q=>c.cats.includes(q.cat)&&eligibleAtDifficulty(q,c.diff)&&(c.reg==='*'||byIso[q.iso].c===c.reg)&&(!c.ids||c.ids.includes(q.id)));
 const wt=q=>{const s=ST.q[q.id];return s?Math.max(.4,1+(s.p?3:0)+s.ko*.5-s.ok*.3):1.5};
 function draw(p,k){const out=[];const r=p.map(q=>({q,w:wt(q)}));while(out.length<k&&r.length){let x=Math.random()*r.reduce((a,y)=>a+y.w,0),i=0;for(;i<r.length-1&&(x-=r[i].w)>0;i++);out.push(r[i].q);r.splice(i,1)}return out}
 const modeOf=s=>s.cfg.mode!=='auto'?s.cfg.mode:s.cfg.diff<3?'mc':s.cfg.diff===3?'all':'type';
@@ -38,6 +34,6 @@ function answer(v,d){const s=S,q=s.qs[s.i];if(s.fb)return;if(v!=null&&!d&&!Strin
     else s.qs.push(q);
   }
   s.fb=1;render()}
-function tick(){const s=S;clearInterval(s.tm);if(!s.cfg.tm||s.fb||s.cfg.kind==='repaso')return;
+function tick(){const s=S;if(!s){go('#/');return}clearInterval(s.tm);if(!s.cfg.tm||s.fb||s.cfg.kind==='repaso')return;
   s.tm=setInterval(()=>{if(--s.tl<=0){clearInterval(s.tm);answer(null)}else{const e=$('#tm');if(e)e.textContent=s.tl+'s'}},1000)}
 const end=()=>{if(S)clearInterval(S.tm);go(S&&S.res.length?'#/resultados':'#/')};

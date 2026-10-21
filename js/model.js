@@ -1,6 +1,6 @@
 /* ============ MODELO ============ */
-const CATS={banderas:'Banderas',conduccion:'Conducción',dominios:'Dominios y prefijos',bolardos:'Bolardos',matriculas:'Matrículas'};
-const PR={bolardos:'¿De qué país es este bolardo?',matriculas:'¿De qué país es esta matrícula?'};
+const CATS={banderas:'Banderas',conduccion:'Conducción',dominios:'Dominios y prefijos',bolardos:'Bolardos',matriculas:'Matrículas',escenas:'No Move: lugares'};
+const PR={bolardos:'¿De qué país es este bolardo?',matriculas:'¿De qué país es esta matrícula?',escenas:'¿En qué país está esta escena?'};
 const DIFF=['','Fácil','Media','Difícil','Experto'];
 const EASY=new Set('ar br cl co mx us ca es pt fr de it gb ie nl ru jp cn in au nz kr za eg se no uy pe'.split(' '));
 const HARD=new Set('ro id sg bw gh sn mn ae'.split(' '));
@@ -22,4 +22,12 @@ for(const c of CO){
   const side=c.s==='L'?'Izquierda':'Derecha';
   Q.push({id:'s:'+c.i,cat:'conduccion',iso:c.i,d:dOf(c.i),txt:`¿De qué lado se conduce en ${c.n}?`,opts:['Izquierda','Derecha'],ans:side,ex:`En ${c.n} se conduce por la ${side.toLowerCase()}.`});
 }
-EXTRA.filter(e=>byIso[e.iso]&&(e.img||e.clue)).forEach((e,k)=>Q.push({id:'x:'+e.cat+':'+(e.key??k)+':'+e.iso,cat:e.cat,iso:e.iso,d:e.d||2,txt:e.txt||PR[e.cat]||'¿De qué país es?',img:e.img,clue:e.clue,alt:e.alt||'Pista a identificar',art:e.art,ex:e.expl||`Corresponde a ${byIso[e.iso].n}.`,src:e.src,author:e.author,lic:e.lic,licUrl:e.licUrl,guide:e.guide}));
+EXTRA.filter(e=>byIso[e.iso]&&(e.img||e.clue)).forEach((e,k)=>Q.push({id:'x:'+e.cat+':'+(e.key??k)+':'+e.iso,cat:e.cat,iso:e.iso,d:e.d||2,txt:e.txt||PR[e.cat]||'¿De qué país es?',img:e.img,clue:e.clue,alt:e.alt||'Pista a identificar',art:e.art,ex:e.expl||`Corresponde a ${byIso[e.iso].n}.`,src:e.src,sourceName:e.sourceName,author:e.author,lic:e.lic,licUrl:e.licUrl,guide:e.guide}));
+
+const eligibleAtDifficulty=(q,diff)=>{
+  if(q.d>diff)return false;
+  if(!['bolardos','matriculas'].includes(q.cat))return true;
+  if(diff===3)return !!q.clue;
+  if(diff===4)return !!(q.img||q.clue);
+  return !!q.img;
+};

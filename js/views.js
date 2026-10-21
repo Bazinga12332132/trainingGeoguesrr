@@ -2,41 +2,47 @@
 const ansTxt=q=>q.opts?q.ans:byIso[q.iso].n;
 const pickTxt=p=>!p?'sin respuesta':p[0]==='?'?p.slice(1):byIso[p]?byIso[p].n:p;
 const src=(q,includePhoto=true)=>{
-  const photo=includePhoto&&q.src?`Foto: ${q.author?esc(q.author)+' · ':''}<a href="${esc(q.src)}" target="_blank" rel="noopener noreferrer">Fuente</a>${q.lic?` · <a href="${esc(q.licUrl)}" target="_blank" rel="noopener noreferrer">${esc(q.lic)}</a>`:''}`:'';
-  const guide=q.guide?`${photo?' · ':''}<a href="${esc(q.guide)}" target="_blank" rel="noopener noreferrer">Referencia: ${q.cat==='bolardos'?'guía de bolardos':'guía de matrículas'}</a>`:'';
+  const photo=includePhoto&&q.src?`Foto: ${q.author?esc(q.author)+' · ':''}<a href="${esc(q.src)}" target="_blank" rel="noopener noreferrer">Fuente${q.sourceName?` (${esc(q.sourceName)})`:''}</a>${q.lic?` · <a href="${esc(q.licUrl)}" target="_blank" rel="noopener noreferrer">${esc(q.lic)}</a>`:''}`:'';
+  const guide=q.guide&&q.guide!==q.src?`${photo?' · ':''}<a href="${esc(q.guide)}" target="_blank" rel="noopener noreferrer">Referencia: ${q.cat==='bolardos'?'guía de bolardos':'guía de matrículas'}</a>`:'';
   return photo||guide?`<br><small class="attribution">${photo}${guide}</small>`:'';
 };
 
+const categoryCount=(category,diff,reg)=>Q.filter(q=>q.cat===category&&eligibleAtDifficulty(q,diff)&&(reg==='*'||byIso[q.iso].c===reg)).length;
 function vHome(){const a=agg(),n=pend().length;
-  return `<div class="hero"><h2>Entrená el ojo para GeoGuessr</h2><p>Practicá con banderas, bolardos, matrículas, dominios, prefijos y otras pistas. Corregí tus errores y volvé a intentarlo hasta acertar.</p></div>
+  return `<div class="hero"><h2>Entrená el ojo para GeoGuessr</h2><p>Practicá con banderas, bolardos, matrículas, dominios, prefijos y escenas de carretera. En No Move, adiviná el país mirando una sola foto.</p></div>
   <div class="acts"><button class="btn" onclick="go('#/entrenar')">Entrenar</button>
+  <button class="ghost" onclick="startNoMove()">Jugar No Move · ${categoryCount('escenas',4,'*')} fotos</button>
   <button class="ghost" ${n?'':'disabled'} onclick="reviewErrors()">Repasar errores (${n})</button></div>
   <div class="stats"><div class="card"><b>${pct(a.tot[0],a.tot[1])}%</b><small>Precisión</small></div>
   <div class="card"><b>${a.tot[1]}</b><small>Respondidas</small></div>
   <div class="card"><b>${ST.streak}</b><small>Racha (mejor: ${ST.best})</small></div></div>
-  <h3>Categorías</h3><div class="grid">${Object.entries(CATS).map(([k,v])=>{const c=Q.filter(q=>q.cat===k).length;
-  return `<button class="card" ${c?'':'disabled'} onclick="CFG.cats=['${k}'];go('#/entrenar')"><b>${v}</b><br><small>${c?c+' preguntas':'Sin preguntas todavía: agregalas en EXTRA'}</small></button>`}).join('')}</div>`}
+  <h3>Categorías</h3><div class="grid">${Object.entries(CATS).map(([k,v])=>{const c=categoryCount(k,CFG.diff,CFG.reg);
+  return `<button class="card" ${c?'':'disabled'} onclick="CFG.cats=['${k}'];go('#/entrenar')"><b>${v}</b><br><small>${c?`${c} disponibles · ${DIFF[CFG.diff]}`:'Sin preguntas para estos filtros'}</small></button>`}).join('')}</div>`}
 
 function reviewErrors(){start({cats:Object.keys(CATS),reg:'*',diff:4,mode:'auto',n:0,tm:0,kind:'repaso',ids:pend().map(q=>q.id)})}
+function startNoMove(){const n=categoryCount('escenas',4,'*');start({cats:['escenas'],reg:'*',diff:4,mode:'type',kind:'practica',n,tm:0})}
 
-const sel=(name,opts,cur)=>`<select name="${name}">${opts.map(([v,l])=>`<option value="${v}" ${String(v)===String(cur)?'selected':''}>${l}</option>`).join('')}</select>`;
+const sel=(name,opts,cur,onchange='')=>`<select name="${name}" ${onchange?`onchange="${onchange}"`:''}>${opts.map(([v,l])=>`<option value="${v}" ${String(v)===String(cur)?'selected':''}>${l}</option>`).join('')}</select>`;
 function vSetup(){const c=CFG;
   return `<h2>Configurar sesión</h2><form id="f" onsubmit="return false">
-  <label>Categorías</label>${Object.entries(CATS).map(([k,v])=>{const n=Q.filter(q=>q.cat===k).length;
-  return `<label class="chk"><input type="checkbox" name="cat" value="${k}" ${c.cats.includes(k)&&n?'checked':''} ${n?'':'disabled'}> ${v} <small class="mut">(${n})</small></label>`}).join('')}
-  <label>Región</label>${sel('reg',[['*','Mundo'],...CONTS.map(x=>[x,x])],c.reg)}
-  <label>Dificultad</label>${sel('diff',[[1,'Fácil: 4 opciones, países distintos'],[2,'Media: 4 opciones, mismo continente'],[3,'Difícil: elegir entre todos los países'],[4,'Experto: escribir, todas las pistas']],c.diff)}
+  <label>Categorías</label>${Object.entries(CATS).map(([k,v])=>{const n=categoryCount(k,c.diff,c.reg);
+  return `<label class="chk"><input id="cat-${k}" type="checkbox" name="cat" value="${k}" ${c.cats.includes(k)&&n?'checked':''} ${n?'':'disabled'}> ${v} <small class="mut">(<span id="count-${k}">${n}</span> disponibles)</small></label>`}).join('')}
+  <label>Región</label>${sel('reg',[['*','Mundo'],...CONTS.map(x=>[x,x])],c.reg,'updateCategoryCounts()')}
+  <label>Dificultad</label>${sel('diff',[[1,'Fácil: 4 opciones, países distintos'],[2,'Media: 4 opciones, mismo continente'],[3,'Difícil: elegir entre todos los países'],[4,'Experto: escribir, todas las pistas']],c.diff,'updateCategoryCounts()')}
   <label>Modo de respuesta</label>${sel('mode',[['auto','Según dificultad'],['mc','Opción múltiple'],['all','País entre todos'],['type','Escribir el país']],c.mode)}
   <label>Tipo de sesión</label>${sel('kind',[['practica','Práctica (corrige al instante)'],['examen','Examen (resultados al final)'],['repaso','Repaso (reintenta hasta acertar)']],c.kind)}
   <label>Cantidad</label>${sel('n',[[10,'10'],[20,'20'],[50,'50'],[0,'Práctica infinita']],c.n)}
   <label>Temporizador por pregunta</label>${sel('tm',[[0,'Sin tiempo'],[10,'10 s'],[20,'20 s'],[30,'30 s']],c.tm)}
   <p class="err" id="err"></p><button class="btn" onclick="begin()">Empezar</button></form>`}
+function updateCategoryCounts(){const f=$('#f');if(!f)return;
+  for(const k of Object.keys(CATS)){const n=categoryCount(k,+f.diff.value,f.reg.value),count=document.getElementById(`count-${k}`),check=document.getElementById(`cat-${k}`);
+    count.textContent=n;check.disabled=!n;if(!n)check.checked=false}}
 function begin(){const f=$('#f'),cats=[...f.querySelectorAll('[name=cat]:checked')].map(x=>x.value);
   if(!cats.length){$('#err').textContent='Elegí al menos una categoría.';return}
   CFG={cats,reg:f.reg.value,diff:+f.diff.value,mode:f.mode.value,kind:f.kind.value,n:+f.n.value,tm:+f.tm.value};start(CFG)}
 
 function vPlay(){const s=S;if(!s)return vHome();const q=s.qs[s.i],m=q.opts?'o':modeOf(s),rep=s.cfg.kind==='repaso';
-  const showPhoto=!!q.img&&s.cfg.diff!==3;
+  const showPhoto=!!q.img&&(s.cfg.diff!==3||q.cat==='escenas');
   const showClue=!!q.clue&&(s.cfg.diff===3||s.cfg.diff===4);
   const progress=rep?`${s.reviewSolved}/${s.reviewTotal} dominadas · ${s.i+1}ª en cola`:`${s.i+1}/${s.cfg.n?s.qs.length:'∞'} · ${CATS[q.cat]} · ${DIFF[s.cfg.diff]}`;
   let h=`<div class="top"><span>${progress}${rep?' · '+CATS[q.cat]:''}</span><span id="tm" class="tm">${s.cfg.tm&&!s.fb&&!rep?s.tl+'s':''}</span><button class="ln" onclick="end()">Terminar</button></div>

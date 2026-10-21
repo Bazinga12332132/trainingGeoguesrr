@@ -1,73 +1,6 @@
 const BOLLARD_GUIDE='https://geoghost.gg/blog/geoguessr-bollard-and-road-line-guide/';
 const PLATE_GUIDE='https://geomastr.com/license-plates/';
 
-const PHOTO_CLUES={
-  'bolardos:11:pt':{
-    img:'https://thumb.wikimedia.org/wikipedia/commons/thumb/d/da/Photomontage_of_traffic_bollards%2C_Avenida_de_Roma%2C_Lisbon%2C_Portugal_julesvernex2.jpg/960px-Photomontage_of_traffic_bollards%2C_Avenida_de_Roma%2C_Lisbon%2C_Portugal_julesvernex2.jpg',
-    src:'https://commons.wikimedia.org/wiki/File:Photomontage_of_traffic_bollards,_Avenida_de_Roma,_Lisbon,_Portugal_julesvernex2.jpg',
-    author:'Jules Verne Times Two',
-    lic:'CC BY-SA 4.0',
-    licUrl:'https://creativecommons.org/licenses/by-sa/4.0/',
-    alt:'Serie de bolardos oscuros alineados junto a una vereda'
-  },
-  'bolardos:13:se':{
-    img:'https://thumb.wikimedia.org/wikipedia/commons/thumb/d/dd/Black_traffic_bollard_in_Tuntorp.jpg/960px-Black_traffic_bollard_in_Tuntorp.jpg',
-    src:'https://commons.wikimedia.org/wiki/File:Black_traffic_bollard_in_Tuntorp.jpg',
-    author:'W.carter',
-    lic:'CC BY-SA 4.0',
-    licUrl:'https://creativecommons.org/licenses/by-sa/4.0/',
-    alt:'Bolardo negro de goma junto a la calzada y una rejilla'
-  },
-  'matriculas:20:it':{
-    img:'https://upload.wikimedia.org/wikipedia/commons/f/f0/Italian_license_plate_current_series.jpg',
-    src:'https://commons.wikimedia.org/w/index.php?curid=116995803',
-    author:'Walser.FL',
-    lic:'CC BY-SA 4.0',
-    licUrl:'https://creativecommons.org/licenses/by-sa/4.0/',
-    alt:'Matrícula blanca con banda europea azul y caracteres negros'
-  },
-  'matriculas:21:fr':{
-    img:'https://upload.wikimedia.org/wikipedia/commons/8/8e/FRANCE_EEC_STYLE_passenger_pair_with_advertising_-_Flickr_-_woody1778a.jpg',
-    src:'https://commons.wikimedia.org/w/index.php?curid=17635009',
-    author:"Jerry 'Woody' from Edmonton, Canada",
-    lic:'CC BY-SA 2.0',
-    licUrl:'https://creativecommons.org/licenses/by-sa/2.0/',
-    alt:'Dos matrículas europeas, una blanca y otra amarilla, con banda azul'
-  },
-  'matriculas:23:nl':{
-    img:'https://upload.wikimedia.org/wikipedia/commons/5/5c/Current_series_dutch_license_plate.jpg',
-    src:'https://commons.wikimedia.org/w/index.php?curid=92327544',
-    author:'Walser.FL',
-    lic:'CC BY-SA 4.0',
-    licUrl:'https://creativecommons.org/licenses/by-sa/4.0/',
-    alt:'Matrícula amarilla con caracteres negros y banda azul europea'
-  },
-  'matriculas:24:jp':{
-    img:'https://live.staticflickr.com/1212/1248404292_b791db9cbb_b.jpg',
-    src:'https://www.flickr.com/photos/9816248@N03/1248404292',
-    author:'woody1778a',
-    lic:'CC BY-SA 2.0',
-    licUrl:'https://creativecommons.org/licenses/by-sa/2.0/',
-    alt:'Matrícula con caracteres locales y varios dígitos'
-  },
-  'matriculas:25:de':{
-    img:'https://upload.wikimedia.org/wikipedia/commons/0/0f/German_license_plate_0-180-6.jpg',
-    src:'https://commons.wikimedia.org/w/index.php?curid=151796000',
-    author:'Jetam2',
-    lic:'CC BY-SA 4.0',
-    licUrl:'https://creativecommons.org/licenses/by-sa/4.0/',
-    alt:'Matrícula blanca con banda azul y distintivo de país'
-  },
-  'matriculas:30:ch':{
-    img:'https://upload.wikimedia.org/wikipedia/commons/5/55/Switzerland_Z%C3%BCrich_registration_plate_new.jpg',
-    src:'https://commons.wikimedia.org/w/index.php?curid=71868895',
-    author:'Dickelbers y Dmartn969',
-    lic:'CC BY-SA 3.0',
-    licUrl:'https://creativecommons.org/licenses/by-sa/3.0/',
-    alt:'Matrícula blanca con un escudo y código regional'
-  }
-};
-
 const CLUES={
   'bolardos:0:fr':'Poste vial blanco, alto y fino, con tapa negra y un reflector rectangular rojo.',
   'bolardos:1:de':'Poste blanco con banda negra y dos reflectores pequeños cerca de la parte superior.',
@@ -99,8 +32,16 @@ const CLUES={
   'matriculas:28:pl':'Matrícula blanca con caracteres negros y banda azul europea.',
   'matriculas:29:pt':'Matrícula blanca con caracteres negros y banda azul europea.',
   'matriculas:30:ch':'Matrícula blanca suiza con escudo cantonal y código regional.',
-  'matriculas:31:at':'Matrícula austriaca con código local y escudo regional entre los caracteres.'
+  'matriculas:31:at':'Matrícula austriaca con código local y escudo regional entre los caracteres.',
+  'bolardos:20:dk':'Se ven variantes: un poste gris con banda roja y blanca y otro claro con un panel reflectante amarillo.',
+  'bolardos:21:is':'Poste blanco fino con extremo inclinado y un reflector pequeño cerca de la punta.',
+  'bolardos:22:ie':'Bolardo cilíndrico verde con una banda blanca ancha en el centro.',
+  'matriculas:32:dk':'Placa blanca con caracteres negros y una banda azul europea que lleva el identificador DK.',
+  'matriculas:33:is':'Placa clara con caracteres azules, la bandera islandesa y el identificador IS.',
+  'matriculas:34:ie':'La banda azul con IRL identifica Irlanda; el formato también muestra el año y el condado.'
 };
+
+const PHOTO_CLUES={...BOLLARD_PHOTOS,...PLATE_PHOTOS,...SCENE_PHOTOS};
 
 const EXTRA=[
   {cat:'bolardos',iso:'fr',key:0,d:1,guide:BOLLARD_GUIDE,expl:'El poste fino con tapa negra y reflector rojo es un patrón frecuente en Francia. El reflector puede verse blanco desde atrás.'},
@@ -122,6 +63,9 @@ const EXTRA=[
   {cat:'bolardos',iso:'ru',key:17,d:3,guide:BOLLARD_GUIDE,expl:'Los modelos robustos con franjas alternadas pueden verse en Rusia, aunque no son comunes y no son una regla universal.'},
   {cat:'bolardos',iso:'ua',key:18,d:3,guide:BOLLARD_GUIDE,expl:'Los bolardos robustos pueden recordar a los rusos; el cirílico y el entorno aportan pistas adicionales para Ucrania.'},
   {cat:'bolardos',iso:'ro',key:19,d:3,guide:BOLLARD_GUIDE,expl:'El extremo negro inclinado puede parecerse al eslovaco, pero su perfil suele ser más redondeado en Rumania.'},
+  {cat:'bolardos',iso:'dk',key:20,d:1,guide:BOLLARD_GUIDE,expl:'La imagen compara un poste gris con banda roja y blanca y otro modelo claro con reflector amarillo.'},
+  {cat:'bolardos',iso:'is',key:21,d:1,guide:BOLLARD_GUIDE,expl:'El poste claro es fino y tiene la parte superior inclinada, con un pequeño reflector.'},
+  {cat:'bolardos',iso:'ie',key:22,d:1,guide:BOLLARD_GUIDE,expl:'El cilindro verde con una banda blanca ancha es una pista visual destacada de Irlanda.'},
   {cat:'matriculas',iso:'it',key:20,d:1,guide:'https://geomastr.com/country/italy/',expl:'El formato italiano habitual combina dos letras, tres números y dos letras, con bandas azules a los lados.'},
   {cat:'matriculas',iso:'fr',key:21,d:1,guide:'https://geomastr.com/country/france/',expl:'Las placas francesas tienen bandas azules laterales; el identificador departamental aparece a la derecha.'},
   {cat:'matriculas',iso:'gb',key:22,d:1,guide:PLATE_GUIDE,expl:'En el Reino Unido la placa delantera suele ser blanca y la trasera amarilla.'},
@@ -133,7 +77,17 @@ const EXTRA=[
   {cat:'matriculas',iso:'pl',key:28,d:2,guide:'https://geomastr.com/country/poland/',expl:'Las matrículas polacas usan caracteres negros sobre fondo blanco y la banda azul europea.'},
   {cat:'matriculas',iso:'pt',key:29,d:2,guide:'https://geomastr.com/country/portugal/',expl:'Las placas portuguesas actuales usan fondo blanco y caracteres negros, con banda azul europea.'},
   {cat:'matriculas',iso:'ch',key:30,d:2,guide:'https://geomastr.com/country/switzerland/',expl:'Suiza no pertenece a la UE: sus placas blancas llevan el identificador CH y un escudo cantonal.'},
-  {cat:'matriculas',iso:'at',key:31,d:2,guide:'https://geomastr.com/country/austria/',expl:'Las placas austriacas muestran un escudo regional entre el código local y la combinación alfanumérica.'}
+  {cat:'matriculas',iso:'at',key:31,d:2,guide:'https://geomastr.com/country/austria/',expl:'Las placas austriacas muestran un escudo regional entre el código local y la combinación alfanumérica.'},
+  {cat:'matriculas',iso:'dk',key:32,d:1,guide:'https://geomastr.com/country/denmark/',expl:'La banda azul europea incluye DK, y la placa danesa habitual tiene caracteres negros sobre fondo blanco.'},
+  {cat:'matriculas',iso:'is',key:33,d:1,guide:'https://geomastr.com/country/iceland/',expl:'La bandera y el identificador IS aparecen junto a caracteres azules sobre fondo claro.'},
+  {cat:'matriculas',iso:'ie',key:34,d:1,guide:'https://geomastr.com/country/ireland/',expl:'El formato irlandés muestra IRL en la banda azul y comienza con el año de matriculación.'},
+  {cat:'escenas',iso:'no',key:32,d:1,expl:'La ruta Peer Gynt atraviesa una meseta de montaña en Oppland, Noruega.'},
+  {cat:'escenas',iso:'au',key:33,d:1,expl:'El camino de tierra y su superficie corrugada son característicos del outback australiano.'},
+  {cat:'escenas',iso:'co',key:34,d:1,expl:'La carretera pasa por un área protegida cerca de Usiacurí, Colombia.'},
+  {cat:'escenas',iso:'za',key:35,d:1,expl:'Sir Lowry’s Pass es un paso de montaña de la ruta N2, en Sudáfrica.'},
+  {cat:'escenas',iso:'pe',key:36,d:1,expl:'La carretera desciende entre Tarma y La Merced, en los Andes peruanos.'},
+  {cat:'escenas',iso:'ar',key:37,d:1,expl:'La imagen muestra la Ruta 60 en el paso San Francisco, del lado argentino de los Andes.'},
+  {cat:'escenas',iso:'jp',key:38,d:1,expl:'La escena está en Yokohama, Japón, junto a la ruta prefectural 218.'}
 ].map(item=>{
   const key=`${item.cat}:${item.key}:${item.iso}`;
   const photo=PHOTO_CLUES[key];

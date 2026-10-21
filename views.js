@@ -1,7 +1,11 @@
 /* ============ VISTAS ============ */
 const ansTxt=q=>q.opts?q.ans:byIso[q.iso].n;
 const pickTxt=p=>!p?'sin respuesta':p[0]==='?'?p.slice(1):byIso[p]?byIso[p].n:p;
-const src=q=>q.guide?`<br><small class="attribution">${q.art?'Ilustración original · referencia:':'Referencia:'} <a href="${esc(q.guide)}" target="_blank" rel="noopener noreferrer">${q.cat==='bolardos'?'Guía de bolardos':'Guía de matrículas'}</a></small>`:q.src?`<br><small class="attribution">Foto: ${q.author?esc(q.author)+' · ':''}<a href="${esc(q.src)}" target="_blank" rel="noopener noreferrer">Fuente en Wikimedia Commons</a>${q.lic?` · <a href="${esc(q.licUrl)}" target="_blank" rel="noopener noreferrer">${esc(q.lic)}</a>`:''}</small>`:'';
+const src=q=>{
+  const photo=q.src?`Foto: ${q.author?esc(q.author)+' · ':''}<a href="${esc(q.src)}" target="_blank" rel="noopener noreferrer">Fuente</a>${q.lic?` · <a href="${esc(q.licUrl)}" target="_blank" rel="noopener noreferrer">${esc(q.lic)}</a>`:''}`:'';
+  const guide=q.guide?`${q.src?' · ':''}${q.art&&!q.src?'Ilustración original · ':''}<a href="${esc(q.guide)}" target="_blank" rel="noopener noreferrer">Referencia: ${q.cat==='bolardos'?'guía de bolardos':'guía de matrículas'}</a>`:'';
+  return photo||guide?`<br><small class="attribution">${photo}${guide}</small>`:'';
+};
 
 function vHome(){const a=agg(),n=pend().length;
   return `<div class="hero"><h2>Entrená el ojo para GeoGuessr</h2><p>Practicá con banderas, bolardos, matrículas, dominios, prefijos y otras pistas. Corregí tus errores y volvé a intentarlo hasta acertar.</p></div>

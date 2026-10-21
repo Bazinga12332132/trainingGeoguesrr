@@ -1,7 +1,7 @@
 /* ============ VISTAS ============ */
 const ansTxt=q=>q.opts?q.ans:byIso[q.iso].n;
 const pickTxt=p=>!p?'sin respuesta':p[0]==='?'?p.slice(1):byIso[p]?byIso[p].n:p;
-const src=q=>q.guide?`<br><small class="attribution">Referencia: <a href="${esc(q.guide)}" target="_blank" rel="noopener noreferrer">${q.cat==='bolardos'?'Guía de bolardos':'Guía de matrículas'}</a></small>`:q.src?`<br><small class="attribution">Foto: ${q.author?esc(q.author)+' · ':''}<a href="${esc(q.src)}" target="_blank" rel="noopener noreferrer">Fuente en Wikimedia Commons</a>${q.lic?` · <a href="${esc(q.licUrl)}" target="_blank" rel="noopener noreferrer">${esc(q.lic)}</a>`:''}</small>`:'';
+const src=q=>q.guide?`<br><small class="attribution">${q.art?'Ilustración original · referencia:':'Referencia:'} <a href="${esc(q.guide)}" target="_blank" rel="noopener noreferrer">${q.cat==='bolardos'?'Guía de bolardos':'Guía de matrículas'}</a></small>`:q.src?`<br><small class="attribution">Foto: ${q.author?esc(q.author)+' · ':''}<a href="${esc(q.src)}" target="_blank" rel="noopener noreferrer">Fuente en Wikimedia Commons</a>${q.lic?` · <a href="${esc(q.licUrl)}" target="_blank" rel="noopener noreferrer">${esc(q.lic)}</a>`:''}</small>`:'';
 
 function vHome(){const a=agg(),n=pend().length;
   return `<div class="hero"><h2>Entrená el ojo para GeoGuessr</h2><p>Practicá con banderas, bolardos, matrículas, dominios, prefijos y otras pistas. Corregí tus errores y volvé a intentarlo hasta acertar.</p></div>
@@ -35,9 +35,9 @@ function vPlay(){const s=S;if(!s)return vHome();const q=s.qs[s.i],m=q.opts?'o':m
   const progress=rep?`${s.reviewSolved}/${s.reviewTotal} dominadas · ${s.i+1}ª en cola`:`${s.i+1}/${s.cfg.n?s.qs.length:'∞'} · ${CATS[q.cat]} · ${DIFF[q.d]}`;
   let h=`<div class="top"><span>${progress}${rep?' · '+CATS[q.cat]:''}</span><span id="tm" class="tm">${s.cfg.tm&&!s.fb&&!rep?s.tl+'s':''}</span><button class="ln" onclick="end()">Terminar</button></div>
   <div class="bar"><i style="width:${rep?(s.reviewSolved/Math.max(1,s.reviewTotal)*100):(s.cfg.n?s.i/s.qs.length*100:0)}%"></i></div>
-  ${q.img?`<img class="pic" src="${esc(q.img)}" alt="${esc(q.alt)}">`:''}${q.clue?`<div class="clue">${esc(q.clue)}</div>`:''}<h2>${esc(q.txt)}</h2>`;
+  <h2>${esc(q.txt)}</h2>${q.img?`<img class="pic" src="${esc(q.img)}" alt="${esc(q.alt)}">${src(q)}`:''}`;
   if(s.fb){const r=s.currentResult;
-    return h+`<div class="fb ${r.ok?'ok':'ko'}"><b>${r.ok?'Correcto':'Incorrecto'}</b>${r.ok?'':` · respondiste: ${esc(pickTxt(r.pick))}`}<br>Respuesta: <b>${esc(ansTxt(q))}</b>. ${esc(q.ex)}${src(q)}</div><button class="btn" id="nx" onclick="next()">${rep?(r.ok?'Siguiente pista':'Seguir practicando'):'Siguiente'}</button>`}
+    return h+`<div class="fb ${r.ok?'ok':'ko'}"><b>${r.ok?'Correcto':'Incorrecto'}</b>${r.ok?'':` · respondiste: ${esc(pickTxt(r.pick))}`}<br>Respuesta: <b>${esc(ansTxt(q))}</b>. ${esc(q.ex)}</div><button class="btn" id="nx" onclick="next()">${rep?(r.ok?'Siguiente pista':'Seguir practicando'):'Siguiente'}</button>`}
   if(m==='o')return h+`<div class="opts">${q.opts.map(o=>`<button data-v="${esc(o)}" onclick="answer(this.dataset.v,1)">${o}</button>`).join('')}</div>`;
   if(m==='mc'){s.ch=s.ch||choices(q);return h+`<div class="opts">${s.ch.map(c=>`<button data-v="${c.i}" onclick="answer(this.dataset.v,1)">${esc(c.n)}</button>`).join('')}</div>`}
   const L=CO.filter(c=>s.cfg.reg==='*'||c.c===s.cfg.reg);

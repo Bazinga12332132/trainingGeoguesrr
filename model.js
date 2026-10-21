@@ -22,4 +22,4 @@ for(const c of CO){
   const side=c.s==='L'?'Izquierda':'Derecha';
   Q.push({id:'s:'+c.i,cat:'conduccion',iso:c.i,d:dOf(c.i),txt:`¿De qué lado se conduce en ${c.n}?`,opts:['Izquierda','Derecha'],ans:side,ex:`En ${c.n} se conduce por la ${side.toLowerCase()}.`});
 }
-EXTRA.filter(e=>byIso[e.iso]&&e.img).forEach((e,k)=>Q.push({id:'x:'+e.cat+':'+(e.key??k)+':'+e.iso,cat:e.cat,iso:e.iso,d:e.d||2,txt:e.txt||PR[e.cat]||'¿De qué país es?',img:e.img,alt:e.alt||'Pista a identificar',art:e.art,ex:e.expl||`Corresponde a ${byIso[e.iso].n}.`,src:e.src,author:e.author,lic:e.lic,licUrl:e.licUrl,guide:e.guide}));
+EXTRA.filter(e=>byIso[e.iso]&&(e.img||e.clue)).forEach((e,k)=>Q.push({id:'x:'+e.cat+':'+(e.key??k)+':'+e.iso,cat:e.cat,iso:e.iso,d:e.d||2,txt:e.txt||PR[e.cat]||'¿De qué país es?',img:e.img,clue:e.clue,alt:e.alt||'Pista a identificar',art:e.art,ex:e.expl||`Corresponde a ${byIso[e.iso].n}.`,src:e.src,author:e.author,lic:e.lic,licUrl:e.licUrl,guide:e.guide}));

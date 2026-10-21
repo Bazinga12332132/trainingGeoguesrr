@@ -1,9 +1,9 @@
 /* ============ VISTAS ============ */
 const ansTxt=q=>q.opts?q.ans:byIso[q.iso].n;
 const pickTxt=p=>!p?'sin respuesta':p[0]==='?'?p.slice(1):byIso[p]?byIso[p].n:p;
-const src=q=>{
-  const photo=q.src?`Foto: ${q.author?esc(q.author)+' · ':''}<a href="${esc(q.src)}" target="_blank" rel="noopener noreferrer">Fuente</a>${q.lic?` · <a href="${esc(q.licUrl)}" target="_blank" rel="noopener noreferrer">${esc(q.lic)}</a>`:''}`:'';
-  const guide=q.guide?`${q.src?' · ':''}${q.art&&!q.src?'Ilustración original · ':''}<a href="${esc(q.guide)}" target="_blank" rel="noopener noreferrer">Referencia: ${q.cat==='bolardos'?'guía de bolardos':'guía de matrículas'}</a>`:'';
+const src=(q,includePhoto=true)=>{
+  const photo=includePhoto&&q.src?`Foto: ${q.author?esc(q.author)+' · ':''}<a href="${esc(q.src)}" target="_blank" rel="noopener noreferrer">Fuente</a>${q.lic?` · <a href="${esc(q.licUrl)}" target="_blank" rel="noopener noreferrer">${esc(q.lic)}</a>`:''}`:'';
+  const guide=q.guide?`${photo?' · ':''}<a href="${esc(q.guide)}" target="_blank" rel="noopener noreferrer">Referencia: ${q.cat==='bolardos'?'guía de bolardos':'guía de matrículas'}</a>`:'';
   return photo||guide?`<br><small class="attribution">${photo}${guide}</small>`:'';
 };
 
@@ -36,10 +36,12 @@ function begin(){const f=$('#f'),cats=[...f.querySelectorAll('[name=cat]:checked
   CFG={cats,reg:f.reg.value,diff:+f.diff.value,mode:f.mode.value,kind:f.kind.value,n:+f.n.value,tm:+f.tm.value};start(CFG)}
 
 function vPlay(){const s=S;if(!s)return vHome();const q=s.qs[s.i],m=q.opts?'o':modeOf(s),rep=s.cfg.kind==='repaso';
-  const progress=rep?`${s.reviewSolved}/${s.reviewTotal} dominadas · ${s.i+1}ª en cola`:`${s.i+1}/${s.cfg.n?s.qs.length:'∞'} · ${CATS[q.cat]} · ${DIFF[q.d]}`;
+  const showPhoto=!!q.img&&s.cfg.diff!==3;
+  const showClue=!!q.clue&&(s.cfg.diff===3||s.cfg.diff===4);
+  const progress=rep?`${s.reviewSolved}/${s.reviewTotal} dominadas · ${s.i+1}ª en cola`:`${s.i+1}/${s.cfg.n?s.qs.length:'∞'} · ${CATS[q.cat]} · ${DIFF[s.cfg.diff]}`;
   let h=`<div class="top"><span>${progress}${rep?' · '+CATS[q.cat]:''}</span><span id="tm" class="tm">${s.cfg.tm&&!s.fb&&!rep?s.tl+'s':''}</span><button class="ln" onclick="end()">Terminar</button></div>
   <div class="bar"><i style="width:${rep?(s.reviewSolved/Math.max(1,s.reviewTotal)*100):(s.cfg.n?s.i/s.qs.length*100:0)}%"></i></div>
-  <h2>${esc(q.txt)}</h2>${q.img?`<img class="pic" src="${esc(q.img)}" alt="${esc(q.alt)}">${src(q)}`:''}`;
+  <h2>${esc(q.txt)}</h2>${showPhoto?`<img class="pic" src="${esc(q.img)}" alt="${esc(q.alt)}">${src(q)}`:''}${showClue?`<div class="clue">${esc(q.clue)}</div>${showPhoto?'':src(q,false)}`:''}`;
   if(s.fb){const r=s.currentResult;
     return h+`<div class="fb ${r.ok?'ok':'ko'}"><b>${r.ok?'Correcto':'Incorrecto'}</b>${r.ok?'':` · respondiste: ${esc(pickTxt(r.pick))}`}<br>Respuesta: <b>${esc(ansTxt(q))}</b>. ${esc(q.ex)}</div><button class="btn" id="nx" onclick="next()">${rep?(r.ok?'Siguiente pista':'Seguir practicando'):'Siguiente'}</button>`}
   if(m==='o')return h+`<div class="opts">${q.opts.map(o=>`<button data-v="${esc(o)}" onclick="answer(this.dataset.v,1)">${o}</button>`).join('')}</div>`;

@@ -68,6 +68,40 @@ const PHOTO_CLUES={
   }
 };
 
+const CLUES={
+  'bolardos:0:fr':'Poste vial blanco, alto y fino, con tapa negra y un reflector rectangular rojo.',
+  'bolardos:1:de':'Poste blanco con banda negra y dos reflectores pequeños cerca de la parte superior.',
+  'bolardos:2:nl':'En rutas comunes suelen faltar bolardos clásicos; en cruces pueden aparecer postes bajos verdes y blancos.',
+  'bolardos:3:be':'Hay variantes regionales: en Flandes aparecen postes blancos altos; en Valonia, modelos más bajos.',
+  'bolardos:4:cz':'Poste blanco de plástico con parte superior redondeada, banda oscura y reflector claro.',
+  'bolardos:5:sk':'Poste blanco cuyo extremo superior negro está cortado en diagonal, como una cuña.',
+  'bolardos:6:pl':'Poste blanco con dos reflectores pequeños colocados uno encima del otro.',
+  'bolardos:7:hu':'Poste blanco con una tapa negra que se ensancha hacia afuera, como un hongo.',
+  'bolardos:8:it':'Poste vial cuadrado y robusto, de hormigón blanco, con una banda diagonal.',
+  'bolardos:9:gb':'Los bolardos no son tan comunes fuera de autopistas; algunos postes blancos bajos tienen un reflector rojo.',
+  'bolardos:10:es':'Poste blanco de plástico fino con dos reflectores pequeños colocados en horizontal.',
+  'bolardos:11:pt':'Poste blanco estrecho en la parte superior, con forma de pequeño obelisco.',
+  'bolardos:12:gr':'En muchas rutas no hay bolardos; cuando aparecen, suelen ser blancos y bajos.',
+  'bolardos:13:se':'Bolardo bajo, negro y ancho, de goma, con reflector amarillo y azul.',
+  'bolardos:14:no':'Poste blanco fino con un reflector; el paisaje rocoso y los túneles ayudan a reconocer la región.',
+  'bolardos:15:fi':'Poste fino de plástico blanco con parte superior negra y un reflector.',
+  'bolardos:17:ru':'En algunas rutas se ven postes robustos de metal u hormigón con franjas negras y blancas.',
+  'bolardos:18:ua':'Poste bajo y robusto con franjas negras y blancas; puede recordar al modelo ruso.',
+  'bolardos:19:ro':'Poste blanco de plástico con extremo negro inclinado y perfil redondeado.',
+  'matriculas:20:it':'Matrícula blanca con caracteres negros y bandas azules laterales; el formato habitual es dos letras, tres números y dos letras.',
+  'matriculas:21:fr':'Matrícula blanca con caracteres negros y bandas azules laterales; a la derecha puede llevar un identificador departamental.',
+  'matriculas:22:gb':'En un mismo vehículo, la placa delantera suele ser blanca y la trasera amarilla.',
+  'matriculas:23:nl':'Matrícula amarilla con caracteres negros.',
+  'matriculas:24:jp':'Matrícula con caracteres japoneses y una línea superior con información de registro.',
+  'matriculas:25:de':'Matrícula blanca con banda azul europea y un código regional al comienzo.',
+  'matriculas:26:be':'Matrícula blanca con caracteres rojos.',
+  'matriculas:27:es':'Matrícula blanca con cuatro números y tres letras, más la banda azul europea.',
+  'matriculas:28:pl':'Matrícula blanca con caracteres negros y banda azul europea.',
+  'matriculas:29:pt':'Matrícula blanca con caracteres negros y banda azul europea.',
+  'matriculas:30:ch':'Matrícula blanca suiza con escudo cantonal y código regional.',
+  'matriculas:31:at':'Matrícula austriaca con código local y escudo regional entre los caracteres.'
+};
+
 const EXTRA=[
   {cat:'bolardos',iso:'fr',key:0,d:1,guide:BOLLARD_GUIDE,expl:'El poste fino con tapa negra y reflector rojo es un patrón frecuente en Francia. El reflector puede verse blanco desde atrás.'},
   {cat:'bolardos',iso:'de',key:1,d:2,guide:BOLLARD_GUIDE,expl:'La banda negra y los dos reflectores pequeños son un patrón común en Alemania; el color del reflector depende del lado.'},
@@ -101,7 +135,8 @@ const EXTRA=[
   {cat:'matriculas',iso:'ch',key:30,d:2,guide:'https://geomastr.com/country/switzerland/',expl:'Suiza no pertenece a la UE: sus placas blancas llevan el identificador CH y un escudo cantonal.'},
   {cat:'matriculas',iso:'at',key:31,d:2,guide:'https://geomastr.com/country/austria/',expl:'Las placas austriacas muestran un escudo regional entre el código local y la combinación alfanumérica.'}
 ].map(item=>{
-  const art=item.cat==='matriculas'?'plate':'bollard';
-  const photo=PHOTO_CLUES[`${item.cat}:${item.key}:${item.iso}`];
-  return {...item,...photo,art,img:photo?.img||clueImage({...item,art}),alt:photo?.alt|| (item.cat==='matriculas'?'Ilustración original de una matrícula de ejemplo':'Ilustración original de un bolardo característico')};
+  const key=`${item.cat}:${item.key}:${item.iso}`;
+  const photo=PHOTO_CLUES[key];
+  const difficulty=photo?(item.cat==='bolardos'?1:item.d):3;
+  return {...item,...photo,d:difficulty,clue:CLUES[key],art:photo?'photo':null};
 });

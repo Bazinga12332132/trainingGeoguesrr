@@ -68,4 +68,83 @@ sn|Senegal|África|R|sn|221|
 bw|Botsuana|África|L|bw|267|botswana
 gh|Ghana|África|R|gh|233|
 au|Australia|Oceanía|L|au|61|
-nz|Nueva Zelanda|Oceanía|L|nz|64|new zealand`;
+nz|Nueva Zelanda|Oceanía|L|nz|64|new zealand
+al|Albania|Europa|R|al|355|
+ad|Andorra|Europa|R|ad|376|
+ba|Bosnia y Herzegovina|Europa|R|ba|387|bosnia,bosnia herzegovina
+bg|Bulgaria|Europa|R|bg|359|
+hr|Croacia|Europa|R|hr|385|croatia
+cy|Chipre|Europa|R|cy|357|cyprus
+ee|Estonia|Europa|R|ee|372|
+lv|Letonia|Europa|R|lv|371|latvia
+lt|Lituania|Europa|R|lt|370|lithuania
+lu|Luxemburgo|Europa|R|lu|352|luxembourg
+md|Moldavia|Europa|R|md|373|moldova
+mc|Mónaco|Europa|R|mc|377|monaco
+me|Montenegro|Europa|R|me|382|
+mk|Macedonia del Norte|Europa|R|mk|389|north macedonia
+rs|Serbia|Europa|R|rs|381|
+si|Eslovenia|Europa|R|si|386|slovenia
+sm|San Marino|Europa|R|sm|378|san marino
+li|Liechtenstein|Europa|R|li|423|
+va|Ciudad del Vaticano|Europa|R|||vaticano,vatican city
+by|Bielorrusia|Europa|R|by|375|belarus
+dz|Argelia|África|R|dz|213|algeria
+ao|Angola|África|R|ao|244|
+bj|Benín|África|R|bj|229|benin
+bf|Burkina Faso|África|R|bf|226|
+cm|Camerún|África|R|cm|237|cameroon
+cd|República Democrática del Congo|África|R|cd|243|dr congo,congo kinshasa
+cg|República del Congo|África|R|cg|242|congo brazzaville
+ci|Costa de Marfil|África|R|ci|225|ivory coast,cote d ivoire
+et|Etiopía|África|R|et|251|ethiopia
+ls|Lesoto|África|L|ls|266|lesotho
+mg|Madagascar|África|R|mg|261|
+mu|Mauricio|África|L|mu|230|mauritius
+mz|Mozambique|África|L|mz|258|
+na|Namibia|África|L|na|264|
+rw|Ruanda|África|R|rw|250|rwanda
+sz|Esuatini|África|L|sz|268|eswatini,swazilandia,swaziland
+tz|Tanzania|África|L|tz|255|
+ug|Uganda|África|L|ug|256|
+zm|Zambia|África|L|zm|260|
+zw|Zimbabue|África|L|zw|263|zimbabwe
+af|Afganistán|Asia|R|af|93|afghanistan
+am|Armenia|Asia|R|am|374|
+az|Azerbaiyán|Asia|R|az|994|azerbaijan
+bd|Bangladés|Asia|L|bd|880|bangladesh
+bt|Bután|Asia|L|bt|975|bhutan
+bn|Brunéi|Asia|L|bn|673|brunei
+kh|Camboya|Asia|R|kh|855|cambodia
+ge|Georgia|Asia|R|ge|995|
+kz|Kazajistán|Asia|R|kz||kazakhstan
+kg|Kirguistán|Asia|R|kg|996|kyrgyzstan
+la|Laos|Asia|R|la|856|
+lb|Líbano|Asia|R|lb|961|lebanon
+mm|Myanmar|Asia|R|mm|95|birmania,burma
+np|Nepal|Asia|L|np|977|
+pk|Pakistán|Asia|L|pk|92|pakistan
+qa|Catar|Asia|R|qa|974|qatar
+lk|Sri Lanka|Asia|L|lk|94|
+tw|Taiwán|Asia|R|tw|886|taiwan
+uz|Uzbekistán|Asia|R|uz|998|uzbekistan
+jo|Jordania|Asia|R|jo|962|jordan
+kw|Kuwait|Asia|R|kw|965|
+bh|Baréin|Asia|R|bh|973|bahrain
+om|Omán|Asia|R|om|968|oman
+bs|Bahamas|América|L|bs||
+bb|Barbados|América|L|bb||
+bz|Belice|América|L|bz|501|belize
+sv|El Salvador|América|R|sv|503|
+hn|Honduras|América|R|hn|504|
+ht|Haití|América|R|ht|509|haiti
+ni|Nicaragua|América|R|ni|505|
+tt|Trinidad y Tobago|América|L|tt||
+gy|Guyana|América|L|gy|592|
+sr|Surinam|América|L|sr|597|suriname
+fj|Fiyi|Oceanía|L|fj|679|fiji
+pg|Papúa Nueva Guinea|Oceanía|L|pg|675|papua new guinea
+sb|Islas Salomón|Oceanía|L|sb|677|solomon islands
+vu|Vanuatu|Oceanía|R|vu|678|
+ws|Samoa|Oceanía|L|ws|685|
+to|Tonga|Oceanía|L|to|676|`;

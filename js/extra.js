@@ -38,10 +38,27 @@ const CLUES={
   'bolardos:22:ie':'Bolardo cilíndrico verde con una banda blanca ancha en el centro.',
   'matriculas:32:dk':'Placa blanca con caracteres negros y una banda azul europea que lleva el identificador DK.',
   'matriculas:33:is':'Placa clara con caracteres azules, la bandera islandesa y el identificador IS.',
-  'matriculas:34:ie':'La banda azul con IRL identifica Irlanda; el formato también muestra el año y el condado.'
+  'matriculas:34:ie':'La banda azul con IRL identifica Irlanda; el formato también muestra el año y el condado.',
+  'matriculas:35:ar':'La combinación de colores y caracteres de la matrícula ayuda a distinguir Argentina de sus países vecinos.',
+  'matriculas:36:br':'El formato de la matrícula brasileña actual incluye una banda azul con el nombre del país.',
+  'matriculas:37:ca':'Las matrículas canadienses cambian de diseño y color según la provincia.',
+  'matriculas:38:gh':'El prefijo regional y el diseño de la placa pueden aportar pistas sobre Ghana.',
+  'matriculas:39:in':'En India se usan placas con fondo y colores distintos según la categoría del vehículo.',
+  'matriculas:40:mx':'El diseño de las matrículas mexicanas varía por estado.',
+  'matriculas:41:th':'Las matrículas tailandesas muestran caracteres tailandeses y texto regional.',
+  'matriculas:42:tr':'Las placas turcas actuales combinan caracteres oscuros, fondo claro y una banda azul.',
+  'escenas:39:ca':'Una carretera rural cerca de Kelowna, en la provincia canadiense de Columbia Británica.',
+  'escenas:40:nz':'Paisaje rural neozelandés con caminos de grava y vegetación templada.',
+  'escenas:41:la':'El puente y el río Nam Khan ubican la escena en Luang Prabang, Laos.',
+  'escenas:42:id':'La escena muestra un paisaje volcánico en Sulawesi, Indonesia.',
+  'escenas:43:ma':'La ruta fotografiada se dirige a Michlifen, en Marruecos.',
+  'escenas:44:no':'El fiordo y las montañas de Lofoten ubican la escena en el norte de Noruega.',
+  'escenas:45:th':'La ruta atraviesa una zona tropical cerca de Surat Thani, en Tailandia.',
+  'escenas:46:pl':'La carretera provincial 971 pasa por Muszyna, en Polonia.'
 };
 
 const PHOTO_CLUES={...BOLLARD_PHOTOS,...PLATE_PHOTOS,...SCENE_PHOTOS};
+const REGION_ANSWERS=['Isla Reunión','Providencia','Islas Feroe','Hawái','Islas Canarias','Ibiza (Eivissa)','Islas Baleares','Groenlandia','Isla de Man','Azores','Madeira'];
 
 const EXTRA=[
   {cat:'bolardos',iso:'fr',key:0,d:1,guide:BOLLARD_GUIDE,expl:'El poste fino con tapa negra y reflector rojo es un patrón frecuente en Francia. El reflector puede verse blanco desde atrás.'},
@@ -66,6 +83,17 @@ const EXTRA=[
   {cat:'bolardos',iso:'dk',key:20,d:1,guide:BOLLARD_GUIDE,expl:'La imagen compara un poste gris con banda roja y blanca y otro modelo claro con reflector amarillo.'},
   {cat:'bolardos',iso:'is',key:21,d:1,guide:BOLLARD_GUIDE,expl:'El poste claro es fino y tiene la parte superior inclinada, con un pequeño reflector.'},
   {cat:'bolardos',iso:'ie',key:22,d:1,guide:BOLLARD_GUIDE,expl:'El cilindro verde con una banda blanca ancha es una pista visual destacada de Irlanda.'},
+  {cat:'bolardos',iso:'ar',key:23,d:1,guide:BOLLARD_GUIDE,expl:'Un ejemplo de bolardo fotografiado en Argentina; conviene combinarlo con el entorno y otras pistas.'},
+  {cat:'bolardos',iso:'br',key:24,d:1,guide:BOLLARD_GUIDE,expl:'Un ejemplo de bolardo fotografiado en Brasil; usá también el idioma y las marcas viales.'},
+  {cat:'bolardos',iso:'ca',key:25,d:1,guide:BOLLARD_GUIDE,expl:'Un ejemplo de bolardo fotografiado en Canadá; las señales y el paisaje ayudan a confirmar el país.'},
+  {cat:'bolardos',iso:'jp',key:26,d:1,guide:BOLLARD_GUIDE,expl:'Un ejemplo de bolardo fotografiado en Japón; el tránsito por la izquierda es una pista adicional.'},
+  {cat:'bolardos',iso:'gh',key:27,d:1,guide:BOLLARD_GUIDE,expl:'Un ejemplo de bolardo fotografiado en Ghana; buscá otras pistas para distinguirlo de países vecinos.'},
+  {cat:'bolardos',iso:'th',key:28,d:1,guide:BOLLARD_GUIDE,expl:'Un ejemplo de bolardo fotografiado en Tailandia; la escritura local puede ayudar a confirmar.'},
+  {cat:'bolardos',iso:'mx',key:29,d:1,guide:BOLLARD_GUIDE,expl:'Un ejemplo de bolardo fotografiado en México; combiná la pista con señales y marcas viales.'},
+  {cat:'bolardos',iso:'za',key:30,d:1,guide:BOLLARD_GUIDE,expl:'Un ejemplo de bolardo fotografiado en Sudáfrica; el tránsito por la izquierda es otra pista.'},
+  {cat:'bolardos',iso:'tr',key:31,d:1,guide:BOLLARD_GUIDE,expl:'Un ejemplo de bolardo fotografiado en Turquía; combiná la imagen con el alfabeto y las señales.'},
+  {cat:'bolardos',iso:'us',key:32,d:1,guide:BOLLARD_GUIDE,expl:'Un ejemplo de bolardo fotografiado en Estados Unidos; los carteles y las marcas viales pueden ayudar.'},
+  {cat:'bolardos',iso:'in',key:33,d:1,guide:BOLLARD_GUIDE,expl:'Un ejemplo de bolardo fotografiado en India; la escritura y el tránsito por la izquierda son pistas útiles.'},
   {cat:'matriculas',iso:'it',key:20,d:1,guide:'https://geomastr.com/country/italy/',expl:'El formato italiano habitual combina dos letras, tres números y dos letras, con bandas azules a los lados.'},
   {cat:'matriculas',iso:'fr',key:21,d:1,guide:'https://geomastr.com/country/france/',expl:'Las placas francesas tienen bandas azules laterales; el identificador departamental aparece a la derecha.'},
   {cat:'matriculas',iso:'gb',key:22,d:1,guide:PLATE_GUIDE,expl:'En el Reino Unido la placa delantera suele ser blanca y la trasera amarilla.'},
@@ -81,16 +109,43 @@ const EXTRA=[
   {cat:'matriculas',iso:'dk',key:32,d:1,guide:'https://geomastr.com/country/denmark/',expl:'La banda azul europea incluye DK, y la placa danesa habitual tiene caracteres negros sobre fondo blanco.'},
   {cat:'matriculas',iso:'is',key:33,d:1,guide:'https://geomastr.com/country/iceland/',expl:'La bandera y el identificador IS aparecen junto a caracteres azules sobre fondo claro.'},
   {cat:'matriculas',iso:'ie',key:34,d:1,guide:'https://geomastr.com/country/ireland/',expl:'El formato irlandés muestra IRL en la banda azul y comienza con el año de matriculación.'},
+  {cat:'matriculas',iso:'ar',key:35,d:1,guide:PLATE_GUIDE,expl:'La imagen muestra un ejemplo de matrícula argentina; el diseño puede cambiar con la serie y el tipo de vehículo.'},
+  {cat:'matriculas',iso:'br',key:36,d:1,guide:PLATE_GUIDE,expl:'La banda azul y el nombre del país son pistas del formato brasileño actual.'},
+  {cat:'matriculas',iso:'ca',key:37,d:1,guide:PLATE_GUIDE,expl:'Canadá tiene diseños provinciales distintos, por lo que el color de la placa no es uniforme.'},
+  {cat:'matriculas',iso:'gh',key:38,d:1,guide:PLATE_GUIDE,expl:'La matrícula fotografiada corresponde a Ghana; buscá también el texto o el formato regional.'},
+  {cat:'matriculas',iso:'in',key:39,d:1,guide:PLATE_GUIDE,expl:'En India el color de la placa puede indicar la categoría del vehículo.'},
+  {cat:'matriculas',iso:'mx',key:40,d:1,guide:PLATE_GUIDE,expl:'En México el diseño cambia según el estado; no dependas de un solo patrón de color.'},
+  {cat:'matriculas',iso:'th',key:41,d:1,guide:PLATE_GUIDE,expl:'Los caracteres tailandeses y el texto provincial son pistas distintivas.'},
+  {cat:'matriculas',iso:'tr',key:42,d:1,guide:PLATE_GUIDE,expl:'La banda azul con el identificador TR acompaña el formato turco moderno.'},
   {cat:'escenas',iso:'no',key:32,d:1,expl:'La ruta Peer Gynt atraviesa una meseta de montaña en Oppland, Noruega.'},
   {cat:'escenas',iso:'au',key:33,d:1,expl:'El camino de tierra y su superficie corrugada son característicos del outback australiano.'},
   {cat:'escenas',iso:'co',key:34,d:1,expl:'La carretera pasa por un área protegida cerca de Usiacurí, Colombia.'},
   {cat:'escenas',iso:'za',key:35,d:1,expl:'Sir Lowry’s Pass es un paso de montaña de la ruta N2, en Sudáfrica.'},
   {cat:'escenas',iso:'pe',key:36,d:1,expl:'La carretera desciende entre Tarma y La Merced, en los Andes peruanos.'},
   {cat:'escenas',iso:'ar',key:37,d:1,expl:'La imagen muestra la Ruta 60 en el paso San Francisco, del lado argentino de los Andes.'},
-  {cat:'escenas',iso:'jp',key:38,d:1,expl:'La escena está en Yokohama, Japón, junto a la ruta prefectural 218.'}
+  {cat:'escenas',iso:'jp',key:38,d:1,expl:'La escena está en Yokohama, Japón, junto a la ruta prefectural 218.'},
+  {cat:'escenas',iso:'ca',key:39,d:1,expl:'La imagen muestra un camino cerca de Kelowna, en Columbia Británica, Canadá.'},
+  {cat:'escenas',iso:'nz',key:40,d:1,expl:'La escena muestra un paisaje rural de Nueva Zelanda y un camino de grava.'},
+  {cat:'escenas',iso:'la',key:41,d:1,expl:'La imagen muestra el puente sobre el Nam Khan en Luang Prabang, Laos.'},
+  {cat:'escenas',iso:'id',key:42,d:1,expl:'El paisaje volcánico de Sulawesi corresponde a Indonesia.'},
+  {cat:'escenas',iso:'ma',key:43,d:1,expl:'La carretera fotografiada conduce a Michlifen, en Marruecos.'},
+  {cat:'escenas',iso:'no',key:44,d:1,expl:'La vista del fiordo está en Lofoten, al norte de Noruega.'},
+  {cat:'escenas',iso:'th',key:45,d:1,expl:'La carretera atraviesa la vegetación tropical de Surat Thani, Tailandia.'},
+  {cat:'escenas',iso:'pl',key:46,d:1,expl:'La escena corresponde a la carretera provincial 971 cerca de Muszyna, Polonia.'},
+  {cat:'islas',iso:'fr',key:0,d:1,ans:'Isla Reunión',txt:'Carteles en francés, tráfico por la derecha y paisaje tropical volcánico en el océano Índico. ¿Qué territorio es?',expl:'Es Isla Reunión, departamento francés de ultramar. El francés en carteles y nombres, junto con el entorno tropical del Índico, ayuda a distinguirla.'},
+  {cat:'islas',iso:'co',key:1,d:1,ans:'Providencia',txt:'Una isla colombiana del Caribe con influencia cultural isleña y presencia de inglés criollo además del español. ¿Cuál es?',expl:'Es Providencia. Aunque pertenece a Colombia, su paisaje e identidad caribeña pueden hacerla parecer distinta del territorio continental.'},
+  {cat:'islas',iso:'dk',key:2,d:1,ans:'Islas Feroe',txt:'Un archipiélago autónomo del Atlántico Norte, con topografía verde y abrupta, túneles y nombres en feroés o danés. ¿Cuál es?',expl:'Son las Islas Feroe, territorio autónomo dentro del Reino de Dinamarca. El relieve insular, los túneles y los topónimos nórdicos son pistas útiles.'},
+  {cat:'islas',iso:'us',key:3,d:1,ans:'Hawái',txt:'Paisaje de volcanes y vegetación tropical, pero con señalización vial y vehículos de estilo estadounidense. ¿Qué estado es?',expl:'Es Hawái, un estado de Estados Unidos en el Pacífico. Las señales estadounidenses junto al paisaje volcánico tropical son una combinación distintiva.'},
+  {cat:'islas',iso:'es',key:4,d:1,ans:'Islas Canarias',txt:'Archipiélago español atlántico frente al noroeste de África; en algunas islas destacan paisajes volcánicos y secos. ¿Cuál es?',expl:'Son las Islas Canarias. El español y la señalización europea se combinan con paisajes atlánticos subtropicales y, en algunas zonas, volcánicos.'},
+  {cat:'islas',iso:'es',key:5,d:1,ans:'Ibiza (Eivissa)',txt:'En las Baleares, los carteles pueden usar catalán; Eivissa es el nombre local de esta isla turística. ¿Cuál es?',expl:'Es Ibiza, llamada Eivissa en catalán. Los nombres catalanes en carteles y la geografía balear ayudan a ubicarla dentro de España.'},
+  {cat:'islas',iso:'es',key:6,d:1,ans:'Islas Baleares',txt:'Archipiélago mediterráneo español que incluye Mallorca, Menorca, Ibiza/Eivissa y Formentera. ¿Cuál es?',expl:'Son las Islas Baleares. Buscá topónimos catalanes y señales españolas; el entorno mediterráneo las distingue de Canarias.'},
+  {cat:'islas',iso:'dk',key:7,d:1,ans:'Groenlandia',txt:'Territorio ártico autónomo del Reino de Dinamarca: paisaje tundroso, asentamientos aislados y topónimos groenlandeses o daneses. ¿Cuál es?',expl:'Es Groenlandia. La combinación de clima ártico, poca vegetación y nombres groenlandeses/daneses es una pista regional fuerte.'},
+  {cat:'islas',iso:'gb',key:8,d:1,ans:'Isla de Man',txt:'Isla del mar de Irlanda con conducción por la izquierda y referencias manesas; es una dependencia de la Corona, no parte del Reino Unido. ¿Cuál es?',expl:'Es la Isla de Man. La conducción por la izquierda recuerda al Reino Unido, pero los topónimos y referencias locales pueden revelar la isla.'},
+  {cat:'islas',iso:'pt',key:9,d:1,ans:'Azores',txt:'Archipiélago autónomo portugués en el Atlántico, con portugués y paisajes verdes de origen volcánico. ¿Cuál es?',expl:'Son las Azores. El portugués, las islas volcánicas verdes y su ubicación atlántica son las pistas principales.'},
+  {cat:'islas',iso:'pt',key:10,d:1,ans:'Madeira',txt:'Isla portuguesa atlántica, montañosa y subtropical; carteles en portugués y carreteras con túneles son comunes. ¿Cuál es?',expl:'Es Madeira. El portugués, el relieve montañoso y los numerosos túneles ayudan a reconocerla frente a otras islas atlánticas.'}
 ].map(item=>{
   const key=`${item.cat}:${item.key}:${item.iso}`;
   const photo=PHOTO_CLUES[key];
-  const difficulty=photo?(item.cat==='bolardos'?1:item.d):3;
+  const difficulty=photo?1:3;
   return {...item,...photo,d:difficulty,clue:CLUES[key],art:photo?'photo':null};
 });

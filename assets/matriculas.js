@@ -100,5 +100,53 @@ const PLATE_PHOTOS={
     src:'https://geomastr.com/country/ireland/',
     sourceName:'Geomastr',
     alt:'Matrícula irlandesa blanca con banda azul de la UE e identificador IRL'
+  },
+  'matriculas:35:ar':{
+    img:'https://geomastr.com/assets/media/licenseplates/Argentina.jpg',
+    src:'https://geomastr.com/country/argentina/',
+    sourceName:'Geomastr',
+    alt:'Matrícula fotografiada en Argentina'
+  },
+  'matriculas:36:br':{
+    img:'https://geomastr.com/assets/media/licenseplates/Brazil.jpg',
+    src:'https://geomastr.com/country/brazil/',
+    sourceName:'Geomastr',
+    alt:'Matrícula fotografiada en Brasil'
+  },
+  'matriculas:37:ca':{
+    img:'https://geomastr.com/assets/media/licenseplates/Canada.jpg',
+    src:'https://geomastr.com/country/canada/',
+    sourceName:'Geomastr',
+    alt:'Matrícula fotografiada en Canadá'
+  },
+  'matriculas:38:gh':{
+    img:'https://geomastr.com/assets/media/licenseplates/Ghana.jpg',
+    src:'https://geomastr.com/country/ghana/',
+    sourceName:'Geomastr',
+    alt:'Matrícula fotografiada en Ghana'
+  },
+  'matriculas:39:in':{
+    img:'https://geomastr.com/assets/media/licenseplates/India.jpg',
+    src:'https://geomastr.com/country/india/',
+    sourceName:'Geomastr',
+    alt:'Matrícula fotografiada en India'
+  },
+  'matriculas:40:mx':{
+    img:'https://geomastr.com/assets/media/licenseplates/Mexico.jpg',
+    src:'https://geomastr.com/country/mexico/',
+    sourceName:'Geomastr',
+    alt:'Matrícula fotografiada en México'
+  },
+  'matriculas:41:th':{
+    img:'https://geomastr.com/assets/media/licenseplates/Thailand.jpg',
+    src:'https://geomastr.com/country/thailand/',
+    sourceName:'Geomastr',
+    alt:'Matrícula fotografiada en Tailandia'
+  },
+  'matriculas:42:tr':{
+    img:'https://geomastr.com/assets/media/licenseplates/Turkey.jpg',
+    src:'https://geomastr.com/country/turkey/',
+    sourceName:'Geomastr',
+    alt:'Matrícula fotografiada en Turquía'
   }
 };

@@ -128,5 +128,71 @@ const BOLLARD_PHOTOS={
     src:'https://geomastr.com/country/ireland/',
     sourceName:'Geomastr',
     alt:'Bolardo irlandés cilíndrico con bandas verdes y blanca'
+  },
+  'bolardos:23:ar':{
+    img:'https://geomastr.com/assets/media/bollards/argentina.jpg',
+    src:'https://geomastr.com/country/argentina/',
+    sourceName:'Geomastr',
+    alt:'Bolardo fotografiado en Argentina'
+  },
+  'bolardos:24:br':{
+    img:'https://geomastr.com/assets/media/bollards/brazil.jpg',
+    src:'https://geomastr.com/country/brazil/',
+    sourceName:'Geomastr',
+    alt:'Bolardo fotografiado en Brasil'
+  },
+  'bolardos:25:ca':{
+    img:'https://geomastr.com/assets/media/bollards/canada.jpg',
+    src:'https://geomastr.com/country/canada/',
+    sourceName:'Geomastr',
+    alt:'Bolardo fotografiado en Canadá'
+  },
+  'bolardos:26:jp':{
+    img:'https://geomastr.com/assets/media/bollards/japan.jpg',
+    src:'https://geomastr.com/country/japan/',
+    sourceName:'Geomastr',
+    alt:'Bolardo fotografiado en Japón'
+  },
+  'bolardos:27:gh':{
+    img:'https://geomastr.com/assets/media/bollards/ghana.jpg',
+    src:'https://geomastr.com/country/ghana/',
+    sourceName:'Geomastr',
+    alt:'Bolardo fotografiado en Ghana'
+  },
+  'bolardos:28:th':{
+    img:'https://geomastr.com/assets/media/bollards/thailand.jpg',
+    src:'https://geomastr.com/country/thailand/',
+    sourceName:'Geomastr',
+    alt:'Bolardo fotografiado en Tailandia'
+  },
+  'bolardos:29:mx':{
+    img:'https://geomastr.com/assets/media/bollards/mexico.jpg',
+    src:'https://geomastr.com/country/mexico/',
+    sourceName:'Geomastr',
+    alt:'Bolardo fotografiado en México'
+  },
+  'bolardos:30:za':{
+    img:'https://geomastr.com/assets/media/bollards/southafrica.jpg',
+    src:'https://geomastr.com/country/south-africa/',
+    sourceName:'Geomastr',
+    alt:'Bolardo fotografiado en Sudáfrica'
+  },
+  'bolardos:31:tr':{
+    img:'https://geomastr.com/assets/media/bollards/turkey.jpg',
+    src:'https://geomastr.com/country/turkey/',
+    sourceName:'Geomastr',
+    alt:'Bolardo fotografiado en Turquía'
+  },
+  'bolardos:32:us':{
+    img:'https://geomastr.com/assets/media/bollards/unitedstates.jpg',
+    src:'https://geomastr.com/country/united-states/',
+    sourceName:'Geomastr',
+    alt:'Bolardo fotografiado en Estados Unidos'
+  },
+  'bolardos:33:in':{
+    img:'https://geomastr.com/assets/media/bollards/india.jpg',
+    src:'https://geomastr.com/country/india/',
+    sourceName:'Geomastr',
+    alt:'Bolardo fotografiado en India'
   }
 };

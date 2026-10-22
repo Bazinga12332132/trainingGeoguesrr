@@ -1,6 +1,7 @@
 /* ============ DATOS ============
    iso|nombre|continente|lado(L/R)|dominio|prefijo|alias (separados por coma)
-   Prefijo vacío = compartido entre varios países (no se pregunta). */
+   Prefijo vacío = compartido entre varios países (no se pregunta). Lado/dominio vacío = no se pregunta.
+   Los ids que empiezan con x- son regiones sin bandera propia (ver NOFLAG en model.js). */
 const RAW=`ar|Argentina|América|R|ar|54|
 bo|Bolivia|América|R|bo|591|
 br|Brasil|América|R|br|55|brazil
@@ -197,4 +198,28 @@ kn|San Cristóbal y Nieves|América|L|kn||saint kitts and nevis,san cristobal y 
 lc|Santa Lucía|América|L|lc||saint lucia,santa lucia
 vc|San Vicente y las Granadinas|América|L|vc||saint vincent,san vicente
 mt|Malta|Europa|L|mt|356|
-xk|Kosovo|Europa|R|xk|383|`;
+xk|Kosovo|Europa|R|xk|383|
+gu|Guam|Oceanía|R|gu||guam
+pr|Puerto Rico|América|R|pr||
+vi|Islas Vírgenes de EE. UU.|América|L|vi||islas virgenes de ee uu,islas virgenes de estados unidos,islas virgenes americanas,us virgin islands,virgin islands
+as|Samoa Americana|Oceanía|R|as||american samoa
+mp|Islas Marianas del Norte|Oceanía|R|mp||marianas del norte,marianas,saipan,northern mariana islands
+bm|Bermudas|América|L|bm||islas bermudas,bermuda
+cw|Curazao|América|R|cw|599|curacao
+um|Atolón Midway|Oceanía|||||midway,islas midway
+cx|Isla Christmas|Oceanía|L|cx||christmas,islas christmas,isla de navidad,christmas island
+cc|Islas Cocos (Keeling)|Oceanía|L|cc||cocos,islas cocos,cocos keeling,cocos islands
+pn|Islas Pitcairn|Oceanía|||pn||pitcairn
+re|Isla Reunión|África|R|re|262|reunion,la reunion
+pm|San Pedro y Miquelón|América|R|pm|508|san pedro y miquelon,saint pierre et miquelon,miquelon
+im|Isla de Man|Europa|L|im||man,isle of man
+fo|Islas Feroe|Europa|R|fo|298|feroe,faroe islands
+gl|Groenlandia|América|R|gl|299|greenland
+x-md|Madeira|Europa|R|||madeira
+x-ic|Islas Canarias|Europa|R|||canarias,tenerife,gran canaria,lanzarote
+x-az|Azores|Europa|R|||islas azores
+x-ib|Islas Baleares|Europa|R|||baleares,mallorca,menorca,ibiza,eivissa
+x-hi|Hawái|Oceanía|R|||hawai,hawaii
+x-ok|Okinawa|Asia|L|||islas japonesas del sur,islas ryukyu,ryukyu
+x-sa|Providencia y San Andrés|América|R|||providencia,san andres,san andres y providencia
+x-kk|Islas taiwanesas junto a China|Asia|R|||kinmen,matsu,quemoy,islas taiwanesas,islas taiwanesas a lo largo de la costa china`;

@@ -53,7 +53,7 @@ function vPlay(){const s=S;if(!s)return vHome();const q=s.qs[s.i],m=q.opts?'o':m
     return h+`<div class="fb ${r.ok?'ok':'ko'}"><b>${r.ok?'Correcto':'Incorrecto'}</b>${r.ok?'':` · respondiste: ${esc(pickTxt(r.pick))}`}<br>Respuesta: <b>${esc(ansTxt(q))}</b>. ${esc(q.ex)}</div><button class="btn" id="nx" onclick="next()">${rep?(r.ok?'Siguiente pista':'Seguir practicando'):'Siguiente'}</button>`}
   if(m==='o')return h+`<div class="opts">${q.opts.map(o=>`<button data-v="${esc(o)}" onclick="answer(this.dataset.v,1)">${o}</button>`).join('')}</div>`;
   if(m==='mc'||m==='mc8'){s.ch=s.ch||choices(q,m==='mc8'?8:4);return h+`<div class="opts">${s.ch.map(c=>`<button data-v="${c.i}" onclick="answer(this.dataset.v,1)">${esc(c.n)}</button>`).join('')}</div>`}
-  const L=q.isl?ISLANDS:CO.filter(c=>s.cfg.reg==='*'||c.c===s.cfg.reg);
+  const L=CO.filter(c=>s.cfg.reg==='*'||c.c===s.cfg.reg);
   return h+`<div class="in"><input id="a" autocomplete="off" autocapitalize="off" placeholder="${m==='all'?'Buscá y elegí un país':'Escribí el país'}" ${m==='all'?'list="cl"':''} onkeydown="if(event.key==='Enter')answer(this.value)"><button class="btn" onclick="answer($('#a').value)">Confirmar</button></div>${m==='all'?`<datalist id="cl">${L.map(c=>`<option value="${esc(c.n)}">`).join('')}</datalist>`:''}`}
 
 const grp=(r,f)=>r.reduce((m,x)=>{const k=f(x),a=m[k]||(m[k]=[0,0]);a[0]+=x.ok;a[1]++;return m},{});

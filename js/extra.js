@@ -57,8 +57,7 @@ const CLUES={
   'escenas:46:pl':'La carretera provincial 971 pasa por Muszyna, en Polonia.'
 };
 
-const PHOTO_CLUES={...BOLLARD_PHOTOS,...PLATE_PHOTOS,...SCENE_PHOTOS,...POLE_PHOTOS};
-const REGION_ANSWERS=['Isla Reunión','Providencia','Islas Feroe','Hawái','Islas Canarias','Ibiza (Eivissa)','Islas Baleares','Groenlandia','Isla de Man','Azores','Madeira','Córcega','Cerdeña','Sicilia','Creta','Okinawa','Tasmania','San Andrés','Isla de Pascua'];
+const PHOTO_CLUES={...BOLLARD_PHOTOS,...PLATE_PHOTOS,...SCENE_PHOTOS};
 
 const EXTRA=[
   {cat:'bolardos',iso:'fr',key:0,d:1,guide:BOLLARD_GUIDE,expl:'El poste fino con tapa negra y reflector rojo es un patrón frecuente en Francia. El reflector puede verse blanco desde atrás.'},
@@ -132,29 +131,8 @@ const EXTRA=[
   {cat:'escenas',iso:'no',key:44,d:1,expl:'La vista del fiordo está en Lofoten, al norte de Noruega.'},
   {cat:'escenas',iso:'th',key:45,d:1,expl:'La carretera atraviesa la vegetación tropical de Surat Thani, Tailandia.'},
   {cat:'escenas',iso:'pl',key:46,d:1,expl:'La escena corresponde a la carretera provincial 971 cerca de Muszyna, Polonia.'},
-  {cat:'islas',iso:'re',key:0,d:1,ans:'Isla Reunión',txt:'Carteles en francés, tráfico por la derecha y paisaje tropical volcánico en el océano Índico. ¿Qué territorio es?',expl:'Es Isla Reunión, departamento francés de ultramar. El francés en carteles y nombres, junto con el entorno tropical del Índico, ayuda a distinguirla.'},
-  {cat:'islas',iso:'co',key:1,d:1,ans:'Providencia',txt:'Una isla colombiana del Caribe con influencia cultural isleña y presencia de inglés criollo además del español. ¿Cuál es?',expl:'Es Providencia. Aunque pertenece a Colombia, su paisaje e identidad caribeña pueden hacerla parecer distinta del territorio continental.'},
-  {cat:'islas',iso:'fo',key:2,d:1,ans:'Islas Feroe',txt:'Un archipiélago autónomo del Atlántico Norte, con topografía verde y abrupta, túneles y nombres en feroés o danés. ¿Cuál es?',expl:'Son las Islas Feroe, territorio autónomo dentro del Reino de Dinamarca. El relieve insular, los túneles y los topónimos nórdicos son pistas útiles.'},
-  {cat:'islas',iso:'us',key:3,d:1,ans:'Hawái',txt:'Paisaje de volcanes y vegetación tropical, pero con señalización vial y vehículos de estilo estadounidense. ¿Qué estado es?',expl:'Es Hawái, un estado de Estados Unidos en el Pacífico. Las señales estadounidenses junto al paisaje volcánico tropical son una combinación distintiva.'},
-  {cat:'islas',iso:'es',key:4,d:1,ans:'Islas Canarias',txt:'Archipiélago español atlántico frente al noroeste de África; en algunas islas destacan paisajes volcánicos y secos. ¿Cuál es?',expl:'Son las Islas Canarias. El español y la señalización europea se combinan con paisajes atlánticos subtropicales y, en algunas zonas, volcánicos.'},
-  {cat:'islas',iso:'es',key:5,d:1,ans:'Ibiza (Eivissa)',txt:'En las Baleares, los carteles pueden usar catalán; Eivissa es el nombre local de esta isla turística. ¿Cuál es?',expl:'Es Ibiza, llamada Eivissa en catalán. Los nombres catalanes en carteles y la geografía balear ayudan a ubicarla dentro de España.'},
-  {cat:'islas',iso:'es',key:6,d:1,ans:'Islas Baleares',txt:'Archipiélago mediterráneo español que incluye Mallorca, Menorca, Ibiza/Eivissa y Formentera. ¿Cuál es?',expl:'Son las Islas Baleares. Buscá topónimos catalanes y señales españolas; el entorno mediterráneo las distingue de Canarias.'},
-  {cat:'islas',iso:'gl',key:7,d:1,ans:'Groenlandia',txt:'Territorio ártico autónomo del Reino de Dinamarca: paisaje tundroso, asentamientos aislados y topónimos groenlandeses o daneses. ¿Cuál es?',expl:'Es Groenlandia. La combinación de clima ártico, poca vegetación y nombres groenlandeses/daneses es una pista regional fuerte.'},
-  {cat:'islas',iso:'im',key:8,d:1,ans:'Isla de Man',txt:'Isla del mar de Irlanda con conducción por la izquierda y referencias manesas; es una dependencia de la Corona, no parte del Reino Unido. ¿Cuál es?',expl:'Es la Isla de Man. La conducción por la izquierda recuerda al Reino Unido, pero los topónimos y referencias locales pueden revelar la isla.'},
-  {cat:'islas',iso:'pt',key:9,d:1,ans:'Azores',txt:'Archipiélago autónomo portugués en el Atlántico, con portugués y paisajes verdes de origen volcánico. ¿Cuál es?',expl:'Son las Azores. El portugués, las islas volcánicas verdes y su ubicación atlántica son las pistas principales.'},
-  {cat:'islas',iso:'pt',key:10,d:1,ans:'Madeira',txt:'Isla portuguesa atlántica, montañosa y subtropical; carteles en portugués y carreteras con túneles son comunes. ¿Cuál es?',expl:'Es Madeira. El portugués, el relieve montañoso y los numerosos túneles ayudan a reconocerla frente a otras islas atlánticas.'},
-  {cat:'islas',iso:'fr',key:11,d:2,ans:'Córcega',txt:'Isla mediterránea francesa de relieve abrupto; los carteles están en francés y a veces aparecen nombres en córso. ¿Cuál es?',expl:'Es Córcega, isla de Francia en el Mediterráneo. El francés, el relieve montañoso y algunos nombres en córso ayudan a ubicarla.'},
-  {cat:'islas',iso:'it',key:12,d:2,ans:'Cerdeña',txt:'Isla mediterránea italiana con costas, colinas secas y carteles que a veces incluyen nombres en sardo. ¿Cuál es?',expl:'Es Cerdeña. El italiano en la señalización, a veces junto al sardo, y la geografía insular la distinguen de Sicilia.'},
-  {cat:'islas',iso:'it',key:13,d:2,ans:'Sicilia',txt:'La isla más grande del Mediterráneo, italiana, con un volcán activo enorme en el este. ¿Cuál es?',expl:'Es Sicilia. El Etna domina el este de la isla y la señalización es italiana.'},
-  {cat:'islas',iso:'gr',key:14,d:2,ans:'Creta',txt:'La mayor de las islas griegas, con montañas altas, olivares y carteles en alfabeto griego. ¿Cuál es?',expl:'Es Creta. El alfabeto griego, los olivares y las montañas elevadas son las pistas principales.'},
-  {cat:'islas',iso:'jp',key:15,d:2,ans:'Okinawa',txt:'Archipiélago subtropical del sur de Japón, con tránsito por la izquierda y carteles en japonés. ¿Cuál es?',expl:'Es Okinawa. Es japonesa, pero su clima subtropical la distingue del resto del país.'},
-  {cat:'islas',iso:'au',key:16,d:2,ans:'Tasmania',txt:'Isla-estado australiana al sur del continente, con clima templado, bosques densos y tránsito por la izquierda. ¿Cuál es?',expl:'Es Tasmania. Sus bosques y su clima fresco contrastan con el interior árido de Australia continental.'},
-  {cat:'islas',iso:'co',key:17,d:2,ans:'San Andrés',txt:'Isla colombiana del Caribe, cerca de Nicaragua, con población raizal y presencia del inglés criollo. ¿Cuál es?',expl:'Es San Andrés. Aunque es colombiana, su paisaje y su cultura isleña son muy distintos del continente.'},
-  {cat:'islas',iso:'cl',key:18,d:3,ans:'Isla de Pascua',txt:'Isla chilena en medio del Pacífico, muy lejos del continente y famosa por sus estatuas de piedra. ¿Cuál es?',expl:'Es la Isla de Pascua (Rapa Nui), territorio de Chile. Los moáis y su aislamiento en el Pacífico la identifican.'},
-  ...POLE_ITEMS
 ].map(item=>{
   const key=`${item.cat}:${item.key}:${item.iso}`;
   const photo=PHOTO_CLUES[key];
-  const difficulty=(item.cat==='postes'||item.cat==='islas')?item.d:(photo?1:3);
-  return {...item,...photo,d:difficulty,clue:CLUES[key]||item.clue,art:photo?'photo':null};
+  return {...item,...photo,clue:CLUES[key],art:photo?'photo':null};
 });

@@ -2,7 +2,7 @@
 let ST;try{ST=JSON.parse(localStorage.getItem('ggt1'))}catch{}
 ST=ST||{q:{},conf:{},streak:0,best:0};
 const save=()=>{try{localStorage.setItem('ggt1',JSON.stringify(ST))}catch{}};
-let S=null,CFG={cats:['banderas'],reg:'*',diff:1,mode:'auto',n:10,tm:0,kind:'practica'};
+let S=null,CFG={cats:['banderas'],reg:'*',diff:1,cd:0,mode:'auto',n:10,tm:0,kind:'practica'};
 const $=s=>document.querySelector(s),app=$('#app');
 const go=h=>location.hash===h?render():(location.hash=h);
 const pend=()=>Q.filter(q=>ST.q[q.id]?.p);

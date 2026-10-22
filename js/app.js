@@ -9,6 +9,7 @@ function render() {
   const page = pages[route];
 
   app.innerHTML = page ? page() : vHome();
+  hydratePix();
 
   if (route === 'jugar') {
     tick();

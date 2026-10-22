@@ -7,6 +7,16 @@ const src=(q,includePhoto=true)=>{
   return photo||guide?`<br><small class="attribution">${photo}${guide}</small>`:'';
 };
 
+const pixLvl=s=>s.cfg.pix??56;
+const picHtml=(q,s)=>(q.cat==='matriculas'&&pixLvl(s)>0&&!s.fb)
+  ?`<canvas class="pic pix" data-src="${esc(q.img)}" data-w="${pixLvl(s)}" role="img" aria-label="Matrícula pixelada"></canvas>`
+  :`<img class="pic" src="${esc(q.img)}" alt="${esc(q.alt)}">`;
+function hydratePix(){document.querySelectorAll('canvas.pix').forEach(c=>{const im=new Image();
+  im.onload=()=>{const w=+c.dataset.w||56,h=Math.max(1,Math.round(w*im.naturalHeight/im.naturalWidth)),t=document.createElement('canvas');
+    t.width=w;t.height=h;t.getContext('2d').drawImage(im,0,0,w,h);c.width=w;c.height=h;
+    const x=c.getContext('2d');x.imageSmoothingEnabled=false;x.drawImage(t,0,0)};
+  im.onerror=()=>{const p=document.createElement('p');p.className='mut';p.textContent='No se pudo cargar la imagen.';c.replaceWith(p)};
+  im.src=c.dataset.src})}
 const categoryCount=(category,diff,reg)=>Q.filter(q=>q.cat===category&&eligibleAtDifficulty(q,diff)&&(reg==='*'||byIso[q.iso].c===reg)).length;
 function vHome(){const a=agg(),n=pend().length;
   return `<div class="hero"><h2>Entrená el ojo para GeoGuessr</h2><p>Practicá con banderas, bolardos, matrículas, dominios, prefijos y escenas de carretera. En No Move, adiviná el país mirando una sola foto.</p></div>
@@ -29,6 +39,7 @@ function vSetup(){const c=CFG;
   return `<label class="chk"><input id="cat-${k}" type="checkbox" name="cat" value="${k}" ${c.cats.includes(k)&&n?'checked':''} ${n?'':'disabled'}> ${v} <small class="mut">(<span id="count-${k}">${n}</span> disponibles)</small></label>`}).join('')}
   <label>Región</label>${sel('reg',[['*','Mundo'],...CONTS.map(x=>[x,x])],c.reg,'updateCategoryCounts()')}
   <label>Dificultad</label>${sel('diff',[[1,'Fácil: 4 opciones, países distintos'],[2,'Media: 4 opciones, mismo continente'],[3,'Difícil: elegir entre todos los países'],[4,'Experto: escribir, todas las pistas']],c.diff,'updateCategoryCounts()')}
+  <label>Pixelado de matrículas</label>${sel('pix',[[56,'Medio (como en GeoGuessr)'],[36,'Fuerte'],[90,'Suave'],[0,'Sin pixelar']],c.pix??56)}
   <label>Modo de respuesta</label>${sel('mode',[['auto','Según dificultad'],['mc','Opción múltiple'],['all','País entre todos'],['type','Escribir el país']],c.mode)}
   <label>Tipo de sesión</label>${sel('kind',[['practica','Práctica (corrige al instante)'],['examen','Examen (resultados al final)'],['repaso','Repaso (reintenta hasta acertar)']],c.kind)}
   <label>Cantidad</label>${sel('n',[[10,'10'],[20,'20'],[50,'50'],[0,'Práctica infinita']],c.n)}
@@ -39,15 +50,15 @@ function updateCategoryCounts(){const f=$('#f');if(!f)return;
     count.textContent=n;check.disabled=!n;if(!n)check.checked=false}}
 function begin(){const f=$('#f'),cats=[...f.querySelectorAll('[name=cat]:checked')].map(x=>x.value);
   if(!cats.length){$('#err').textContent='Elegí al menos una categoría.';return}
-  CFG={cats,reg:f.reg.value,diff:+f.diff.value,mode:f.mode.value,kind:f.kind.value,n:+f.n.value,tm:+f.tm.value};start(CFG)}
+  CFG={cats,reg:f.reg.value,diff:+f.diff.value,mode:f.mode.value,kind:f.kind.value,pix:+f.pix.value,n:+f.n.value,tm:+f.tm.value};start(CFG)}
 
 function vPlay(){const s=S;if(!s)return vHome();const q=s.qs[s.i],m=q.opts?'o':modeOf(s),rep=s.cfg.kind==='repaso';
   const showPhoto=!!q.img&&(s.cfg.diff!==3||q.cat==='escenas');
-  const showClue=!!q.clue&&(s.cfg.diff===3||s.cfg.diff===4);
+  const showClue=!!q.clue&&q.cat!=='escenas'&&(s.cfg.diff===3||s.cfg.diff===4);
   const progress=rep?`${s.reviewSolved}/${s.reviewTotal} dominadas · ${s.i+1}ª en cola`:`${s.i+1}/${s.cfg.n?s.qs.length:'∞'} · ${CATS[q.cat]} · ${DIFF[s.cfg.diff]}`;
   let h=`<div class="top"><span>${progress}${rep?' · '+CATS[q.cat]:''}</span><span id="tm" class="tm">${s.cfg.tm&&!s.fb&&!rep?s.tl+'s':''}</span><button class="ln" onclick="end()">Terminar</button></div>
   <div class="bar"><i style="width:${rep?(s.reviewSolved/Math.max(1,s.reviewTotal)*100):(s.cfg.n?s.i/s.qs.length*100:0)}%"></i></div>
-  <h2>${esc(q.txt)}</h2>${showPhoto?`<img class="pic" src="${esc(q.img)}" alt="${esc(q.alt)}">${src(q)}`:''}${showClue?`<div class="clue">${esc(q.clue)}</div>${showPhoto?'':src(q,false)}`:''}`;
+  <h2>${esc(q.txt)}</h2>${showPhoto?`${picHtml(q,s)}${s.fb?src(q):''}${q.art==='ilustracion'?'<br><small class="attribution">Ilustración esquemática (no es una foto)</small>':''}`:''}${showClue?`<div class="clue">${esc(q.clue)}</div>${showPhoto||!s.fb?'':src(q,false)}`:''}`;
   if(s.fb){const r=s.currentResult;
     return h+`<div class="fb ${r.ok?'ok':'ko'}"><b>${r.ok?'Correcto':'Incorrecto'}</b>${r.ok?'':` · respondiste: ${esc(pickTxt(r.pick))}`}<br>Respuesta: <b>${esc(ansTxt(q))}</b>. ${esc(q.ex)}</div><button class="btn" id="nx" onclick="next()">${rep?(r.ok?'Siguiente pista':'Seguir practicando'):'Siguiente'}</button>`}
   if(m==='o')return h+`<div class="opts">${q.opts.map(o=>`<button data-v="${esc(o)}" onclick="answer(this.dataset.v,1)">${o}</button>`).join('')}</div>`;

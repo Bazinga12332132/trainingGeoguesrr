@@ -78,6 +78,7 @@ button.card:hover:not(:disabled){transform:translateY(-2px);border-color:var(--a
 .top{display:flex;gap:12px;justify-content:space-between;align-items:center;font-size:.9rem;color:var(--mut);margin-bottom:8px}
 .tm{color:var(--fg);font:800 1.1rem var(--head);min-width:44px;text-align:right}
 .pic{display:block;width:100%;max-height:340px;object-fit:contain;background:var(--card);border:1px solid var(--bd);border-radius:var(--r);padding:20px;margin:20px 0;box-shadow:var(--sh)}
+.pix{image-rendering:pixelated;image-rendering:crisp-edges}
 .clue{background:var(--card);border:1px solid var(--bd);border-left:5px solid var(--ac);border-radius:var(--r);padding:20px 22px;margin:18px 0;font-size:1.12rem;font-weight:600;box-shadow:var(--sh)}
 .opts{display:grid;grid-template-columns:1fr 1fr;gap:12px;margin:16px 0}
 .opts button{background:var(--card);border:2px solid var(--bd);border-radius:14px;padding:18px;font-weight:700;font-size:1.02rem;box-shadow:var(--sh);transition:transform .12s,border-color .15s,background .15s}

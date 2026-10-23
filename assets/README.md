@@ -15,3 +15,7 @@ Para agregar una imagen, usá una clave única `categoría:número:código ISO`,
 incluí texto alternativo y fuente, y conservá autor y licencia cuando la
 fuente los publique. Las escenas de No Move deben enlazar la página de
 referencia de la imagen para que se puedan comprobar el lugar y la atribución.
+
+
+## Ilustraciones adicionales generadas
+Se añadieron 30 ilustraciones locales para práctica: 10 bolardos, 10 matrículas y 10 escenas No Move. Son imágenes sintéticas de entrenamiento, no fotografías reales geolocalizadas; por eso sus explicaciones lo aclaran. Las bandas de matrícula se difuminaron para que el código no revele instantáneamente la respuesta.

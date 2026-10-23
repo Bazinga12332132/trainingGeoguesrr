@@ -1,15 +1,12 @@
 /* ============ VISTAS ============ */
 const ansTxt=q=>q.ans||byIso[q.iso].n;
 const pickTxt=p=>!p?'sin respuesta':p[0]==='?'?p.slice(1):byIso[p]?byIso[p].n:p;
-const src=(q,includePhoto=true)=>{
-  const photo=includePhoto&&q.src?`Foto: ${q.author?esc(q.author)+' · ':''}<a href="${esc(q.src)}" target="_blank" rel="noopener noreferrer">Fuente${q.sourceName?` (${esc(q.sourceName)})`:''}</a>${q.lic?` · <a href="${esc(q.licUrl)}" target="_blank" rel="noopener noreferrer">${esc(q.lic)}</a>`:''}`:'';
-  const guide=q.guide&&q.guide!==q.src?`${photo?' · ':''}<a href="${esc(q.guide)}" target="_blank" rel="noopener noreferrer">Referencia: ${q.cat==='bolardos'?'guía de bolardos':'guía de matrículas'}</a>`:'';
-  return photo||guide?`<br><small class="attribution">${photo}${guide}</small>`:'';
-};
+const src=()=>''; // Las imágenes son solo visuales: no se muestran enlaces ni referencias de origen durante el juego.
+
 
 const categoryCount=(category,cd,reg)=>Q.filter(q=>q.cat===category&&eligibleAtDifficulty(q,cd)&&(reg==='*'||qc(q)===reg)).length;
 function vHome(){const a=agg(),n=pend().length;
-  return `<div class="hero"><h2>Entrená el ojo para GeoGuessr</h2><p>Practicá con banderas, bolardos, matrículas, dominios, prefijos y escenas de carretera. En No Move, adiviná el país mirando una sola foto.</p></div>
+  return `<div class="hero"><h2>Entrená el ojo para GeoGuessr</h2><p>Practicá con banderas, idiomas, bolardos, matrículas, dominios, prefijos y escenas. En No Move, deducí el país a partir de una imagen sin pistas del lugar.</p></div>
   <div class="acts"><button class="btn" onclick="go('#/entrenar')">Entrenar</button>
   <button class="ghost" onclick="startNoMove()">Jugar No Move · ${categoryCount('escenas',0,'*')} fotos</button>
   <button class="ghost" ${n?'':'disabled'} onclick="reviewErrors()">Repasar errores (${n})</button></div>
@@ -29,8 +26,7 @@ function vSetup(){const c=CFG;
   return `<label class="chk"><input id="cat-${k}" type="checkbox" name="cat" value="${k}" ${c.cats.includes(k)&&n?'checked':''} ${n?'':'disabled'}> ${v} <small class="mut">(<span id="count-${k}">${n}</span> disponibles)</small></label>`}).join('')}
   <label>Región</label>${sel('reg',[['*','Mundo'],...CONTS.map(x=>[x,x])],c.reg,'updateCategoryCounts()')}
   <label>Países / territorios</label>${sel('cd',[[0,'Todos'],[1,'Fáciles'],[2,'Medios'],[3,'Difíciles']],c.cd,'updateCategoryCounts()')}
-  <label>Dificultad (solo cambia cómo respondés; las imágenes son las mismas)</label>${sel('diff',[[1,'Fácil: 4 opciones'],[2,'Media: 8 opciones, parecidas'],[3,'Difícil: sin opciones, lista para buscar'],[4,'Experto: escribir sin ayuda']],c.diff)}
-  <label>Modo de respuesta</label>${sel('mode',[['auto','Según dificultad'],['mc','4 opciones'],['mc8','8 opciones'],['all','País entre todos'],['type','Escribir el país']],c.mode)}
+  <label>Dificultad</label>${sel('diff',[[1,'Fácil · 4 opciones'],[2,'Media · 8 opciones similares'],[3,'Difícil · elegir entre todos los países'],[4,'Experto · escribir la respuesta']],c.diff)}<small class="mut">La dificultad controla automáticamente cómo respondés. Las imágenes no cambian.</small>
   <label>Tipo de sesión</label>${sel('kind',[['practica','Práctica (corrige al instante)'],['examen','Examen (resultados al final)'],['repaso','Repaso (reintenta hasta acertar)']],c.kind)}
   <label>Cantidad</label>${sel('n',[[10,'10'],[20,'20'],[50,'50'],[0,'Práctica infinita']],c.n)}
   <label>Temporizador por pregunta</label>${sel('tm',[[0,'Sin tiempo'],[10,'10 s'],[20,'20 s'],[30,'30 s']],c.tm)}
@@ -40,7 +36,7 @@ function updateCategoryCounts(){const f=$('#f');if(!f)return;
     count.textContent=n;check.disabled=!n;if(!n)check.checked=false}}
 function begin(){const f=$('#f'),cats=[...f.querySelectorAll('[name=cat]:checked')].map(x=>x.value);
   if(!cats.length){$('#err').textContent='Elegí al menos una categoría.';return}
-  CFG={cats,reg:f.reg.value,diff:+f.diff.value,cd:+f.cd.value,mode:f.mode.value,kind:f.kind.value,n:+f.n.value,tm:+f.tm.value};start(CFG)}
+  CFG={cats,reg:f.reg.value,diff:+f.diff.value,cd:+f.cd.value,mode:'auto',kind:f.kind.value,n:+f.n.value,tm:+f.tm.value};start(CFG)}
 
 function vPlay(){const s=S;if(!s)return vHome();const q=s.qs[s.i],m=q.opts?'o':modeOf(s),rep=s.cfg.kind==='repaso';
   const showPhoto=!!q.img;
@@ -48,7 +44,7 @@ function vPlay(){const s=S;if(!s)return vHome();const q=s.qs[s.i],m=q.opts?'o':m
   const progress=rep?`${s.reviewSolved}/${s.reviewTotal} dominadas · ${s.i+1}ª en cola`:`${s.i+1}/${s.cfg.n?s.qs.length:'∞'} · ${CATS[q.cat]} · ${DIFF[s.cfg.diff]}`;
   let h=`<div class="top"><span>${progress}${rep?' · '+CATS[q.cat]:''}</span><span id="tm" class="tm">${s.cfg.tm&&!s.fb&&!rep?s.tl+'s':''}</span><button class="ln" onclick="end()">Terminar</button></div>
   <div class="bar"><i style="width:${rep?(s.reviewSolved/Math.max(1,s.reviewTotal)*100):(s.cfg.n?s.i/s.qs.length*100:0)}%"></i></div>
-  <h2>${esc(q.txt)}</h2>${showPhoto?`<img class="pic" src="${esc(q.img)}" alt="${esc(q.alt)}">${src(q)}`:''}${showClue?`<div class="clue">${esc(q.clue)}</div>${showPhoto?'':src(q,false)}`:''}`;
+  <h2>${esc(q.txt)}</h2>${showPhoto?`<img class="pic ${q.cat==='matriculas'?'plate-pic':''}" src="${esc(q.img)}" alt="${esc(q.alt)}">${src(q)}`:''}${showClue?`<div class="clue">${esc(q.clue)}</div>${showPhoto?'':src(q,false)}`:''}`;
   if(s.fb){const r=s.currentResult;
     return h+`<div class="fb ${r.ok?'ok':'ko'}"><b>${r.ok?'Correcto':'Incorrecto'}</b>${r.ok?'':` · respondiste: ${esc(pickTxt(r.pick))}`}<br>Respuesta: <b>${esc(ansTxt(q))}</b>. ${esc(q.ex)}</div><button class="btn" id="nx" onclick="next()">${rep?(r.ok?'Siguiente pista':'Seguir practicando'):'Siguiente'}</button>`}
   if(m==='o')return h+`<div class="opts">${q.opts.map(o=>`<button data-v="${esc(o)}" onclick="answer(this.dataset.v,1)">${o}</button>`).join('')}</div>`;

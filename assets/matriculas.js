@@ -148,5 +148,15 @@ const PLATE_PHOTOS={
     src:'https://geomastr.com/country/turkey/',
     sourceName:'Geomastr',
     alt:'Matrícula fotografiada en Turquía'
-  }
+  },
+  'matriculas:43:fr':{img:'assets/generated/plate-01.jpg',alt:'Ilustración de práctica de matrícula, ejemplo 1; caracteres difuminados',sourceName:'Ilustración generada para práctica'},
+  'matriculas:44:ua':{img:'assets/generated/plate-02.jpg',alt:'Ilustración de práctica de matrícula, ejemplo 2; caracteres difuminados',sourceName:'Ilustración generada para práctica'},
+  'matriculas:45:pl':{img:'assets/generated/plate-03.jpg',alt:'Ilustración de práctica de matrícula, ejemplo 3; caracteres difuminados',sourceName:'Ilustración generada para práctica'},
+  'matriculas:46:ro':{img:'assets/generated/plate-04.jpg',alt:'Ilustración de práctica de matrícula, ejemplo 4; caracteres difuminados',sourceName:'Ilustración generada para práctica'},
+  'matriculas:47:nl':{img:'assets/generated/plate-05.jpg',alt:'Ilustración de práctica de matrícula, ejemplo 5; caracteres difuminados',sourceName:'Ilustración generada para práctica'},
+  'matriculas:48:ch':{img:'assets/generated/plate-06.jpg',alt:'Ilustración de práctica de matrícula, ejemplo 6; caracteres difuminados',sourceName:'Ilustración generada para práctica'},
+  'matriculas:49:gb':{img:'assets/generated/plate-07.jpg',alt:'Ilustración de práctica de matrícula, ejemplo 7; caracteres difuminados',sourceName:'Ilustración generada para práctica'},
+  'matriculas:50:de':{img:'assets/generated/plate-08.jpg',alt:'Ilustración de práctica de matrícula, ejemplo 8; caracteres difuminados',sourceName:'Ilustración generada para práctica'},
+  'matriculas:51:es':{img:'assets/generated/plate-09.jpg',alt:'Ilustración de práctica de matrícula, ejemplo 9; caracteres difuminados',sourceName:'Ilustración generada para práctica'},
+  'matriculas:52:dk':{img:'assets/generated/plate-10.jpg',alt:'Ilustración de práctica de matrícula, ejemplo 10; caracteres difuminados',sourceName:'Ilustración generada para práctica'},
 };

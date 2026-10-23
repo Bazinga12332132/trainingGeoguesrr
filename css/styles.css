@@ -4,7 +4,7 @@
   --ac:#176b4d;--ac2:#10563d;--on:#fff;--y:#f2c94c;
   --ok:#17803d;--okbg:#e6f4ea;--ko:#b3261e;--kobg:#fdeceb;
   --r:18px;--sh:0 2px 5px rgba(23,43,38,.04),0 14px 34px rgba(23,43,38,.08);
-  --head:system-ui,-apple-system,"Segoe UI",sans-serif;
+  --head:"Inter", "Segoe UI", system-ui, -apple-system, sans-serif;
 }
 @media(prefers-color-scheme:dark){:root{
   --bg:#101a17;--bg2:#1a2822;--card:#192720;--fg:#edf4ef;--mut:#9aaca1;--bd:#304239;
@@ -37,7 +37,7 @@ header .logo:hover{background:none}
 .logo-light{font-weight:500;color:#b9d1c5}
 .pin{width:14px;height:14px;border-radius:50% 50% 50% 0;transform:rotate(-45deg);background:var(--y);box-shadow:inset 0 0 0 4px #103b32}
 
-main{max-width:920px;margin:auto;padding:36px 22px 72px}
+main{max-width:1180px;margin:auto;padding:36px 22px 72px}
 
 /* ===== Hero ===== */
 .hero{position:relative;isolation:isolate;overflow:hidden;background:linear-gradient(125deg,#103b32,#176b4d 72%,#287f5c);color:#fff;border:0;border-radius:24px;padding:38px 38px;margin-bottom:22px;box-shadow:0 16px 36px rgba(16,59,50,.2)}
@@ -77,7 +77,8 @@ button.card:hover:not(:disabled){transform:translateY(-2px);border-color:var(--a
 /* ===== Juego ===== */
 .top{display:flex;gap:12px;justify-content:space-between;align-items:center;font-size:.9rem;color:var(--mut);margin-bottom:8px}
 .tm{color:var(--fg);font:800 1.1rem var(--head);min-width:44px;text-align:right}
-.pic{display:block;width:100%;max-height:340px;object-fit:contain;background:var(--card);border:1px solid var(--bd);border-radius:var(--r);padding:20px;margin:20px 0;box-shadow:var(--sh)}
+.pic{display:block;width:100%;max-height:min(68vh,760px);min-height:280px;object-fit:contain;background:var(--card);border:1px solid var(--bd);border-radius:var(--r);padding:20px;margin:20px 0;box-shadow:var(--sh)}
+.plate-pic{filter:blur(4.5px) saturate(.78);transform:translateZ(0)}
 .pix{image-rendering:pixelated;image-rendering:crisp-edges}
 .clue{background:var(--card);border:1px solid var(--bd);border-left:5px solid var(--ac);border-radius:var(--r);padding:20px 22px;margin:18px 0;font-size:1.12rem;font-weight:600;box-shadow:var(--sh)}
 .opts{display:grid;grid-template-columns:1fr 1fr;gap:12px;margin:16px 0}
@@ -115,7 +116,7 @@ form select:focus{border-color:var(--ac);outline:none}
   .opts{grid-template-columns:1fr}
   header div{padding:10px 14px}header a{padding:7px 9px;font-size:.92rem}
   header .logo{font-size:1rem;gap:7px}.logo-light{display:none}
-  main{padding:24px 15px 52px}.hero{padding:28px 24px;border-radius:20px}
+  main{max-width:none;padding:24px 15px 52px}.pic{max-height:62vh;min-height:220px;padding:8px}.hero{padding:28px 24px;border-radius:20px}
   .stats{gap:9px}.stats .card{min-width:calc(50% - 9px);padding:15px}
   .stats b{font-size:1.8rem}
   .top{gap:8px;font-size:.82rem}.top .ln{white-space:nowrap}
@@ -123,3 +124,6 @@ form select:focus{border-color:var(--ac);outline:none}
   form{padding:4px 16px 18px}
 }
 @media(prefers-reduced-motion:reduce){*{transition:none!important;scroll-behavior:auto}}
+
+/* Refinamiento visual y legibilidad */
+body{letter-spacing:.005em}button,select,input{font-family:var(--head)}form>small{display:block;margin-top:8px;line-height:1.5}form select{min-height:46px}form label{line-height:1.4}.hero p{font-size:1.06rem}.pic{background:var(--bg2);padding:12px}.plate-pic{filter:blur(4.5px) saturate(.78)}

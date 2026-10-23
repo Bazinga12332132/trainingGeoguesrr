@@ -10,24 +10,56 @@ const esc=s=>String(s??'').replace(/[&<>"']/g,m=>({'&':'&amp;','<':'&lt;','>':'&
 const shuf=a=>{a=[...a];for(let i=a.length-1;i>0;i--){const j=Math.random()*(i+1)|0;[a[i],a[j]]=[a[j],a[i]]}return a};
 const CO=RAW.trim().split('\n').map(l=>{const[i,nm,c,s,t,p,a]=l.split('|');return{i,n:nm,c,s,t,p,al:[nm,...(a?a.split(','):[])].map(norm)}});
 const byIso=Object.fromEntries(CO.map(c=>[c.i,c]));
-const CONTS=[...new Set(CO.map(c=>c.c))];
+// Países y territorios disponibles en GeoGuessr Explorer (lista oficial consultada en octubre de 2026).
+// Se usa como allowlist para que preguntas y opciones no incluyan países fuera del mapa oficial.
+const PLAYABLE_ISO=new Set(`
+ bw sz gh ke ls mg na ng rw sn za tn ug bd bt kh cy ge in id il jp jo kz kg la lb my mn np om ph qa ru sg kr lk tw th ae vn
+ al ad at ba be bg hr cz dk ee fi fr de gr hu is ie im it xk lv li lt lu mt mc me nl mk no pl pt ro sm rs sk si es se ch tr ua gb fo gl
+ ca cr cw do gt mx pa pr us vi as au gu nz mp cx ar bo br cl co ec py pe uy
+`.trim().split(/\s+/));
+const PLAYABLE_CO=CO.filter(c=>PLAYABLE_ISO.has(c.i));
+const CONTS=[...new Set(PLAYABLE_CO.map(c=>c.c))];
 const qc=q=>q.c||byIso[q.iso].c;
-const find=t=>{t=norm(t);return t?CO.find(c=>c.al.includes(t)):null};
+const find=t=>{t=norm(t);return t?PLAYABLE_CO.find(c=>c.al.includes(t)):null};
 const FLAG=i=>`https://cdn.jsdelivr.net/gh/lipis/flag-icons@7.2.3/flags/4x3/${i}.svg`;
 
 const NOFLAG=new Set(CO.filter(c=>c.i.startsWith('x-')).map(c=>c.i));
 const Q=[];
-for(const c of CO){
+for(const c of PLAYABLE_CO){
   if(!NOFLAG.has(c.i))Q.push({id:'f:'+c.i,cat:'banderas',iso:c.i,d:dOf(c.i),txt:'¿De qué país es esta bandera?',img:FLAG(c.i),alt:'Bandera a identificar',ex:`Es la bandera de ${c.n} (${c.c}).`,src:'flag-icons (MIT)'});
   if(c.t)Q.push({id:'t:'+c.i,cat:'dominios',iso:c.i,d:dOf(c.i),txt:`¿Qué país usa el dominio .${c.t}?`,ex:`.${c.t} es el dominio de ${c.n}.`});
   if(c.p)Q.push({id:'p:'+c.i,cat:'dominios',iso:c.i,d:dOf(c.i),txt:`¿Qué país tiene el prefijo telefónico +${c.p}?`,ex:`+${c.p} es el prefijo de ${c.n}.`});
-  const LANGS={ar:['español','¿Cómo estás?'],br:['portugués','Como você está?'],cl:['español','¿Cómo estás?'],co:['español','¿Cómo estás?'],mx:['español','¿Cómo estás?'],es:['español','¿Cómo estás?'],pt:['portugués','Como estás?'],fr:['francés','Comment ça va ?'],de:['alemán','Wie geht es dir?'],at:['alemán','Wie geht es dir?'],ch:['alemán','Wie geht es dir?'],it:['italiano','Come stai?'],gb:['inglés','How are you?'],ie:['inglés','How are you?'],us:['inglés','How are you?'],ca:['francés','Comment ça va ?'],nl:['neerlandés','Hoe gaat het?'],se:['sueco','Hur mår du?'],no:['noruego','Hvordan går det?'],dk:['danés','Hvordan går det?'],fi:['finés','Mitä kuuluu?'],pl:['polaco','Jak się masz?'],cz:['checo','Jak se máš?'],sk:['eslovaco','Ako sa máš?'],ru:['ruso','Как дела?'],ua:['ucraniano','Як справи?'],jp:['japonés','お元気ですか？'],kr:['coreano','잘 지내세요?'],cn:['chino mandarín','你好吗？'],in:['hindi','आप कैसे हैं?'],gr:['griego','Τι κάνεις;'],il:['hebreo','מה שלומך?'],tr:['turco','Nasılsın?'],id:['indonesio','Apa kabar?'],th:['tailandés','สบายดีไหม?'],vn:['vietnamita','Bạn khỏe không?'],sa:['árabe','كيف حالك؟'],eg:['árabe','كيف حالك؟'],ro:['rumano','Ce mai faci?'],hu:['húngaro','Hogy vagy?'],is:['islandés','Hvernig hefurðu það?'],nz:['inglés','How are you?'],au:['inglés','How are you?'],za:['inglés','How are you?'],uy:['español','¿Cómo estás?'],pe:['español','¿Cómo estás?'],bo:['español','¿Cómo estás?'],ec:['español','¿Cómo estás?'],py:['español','¿Cómo estás?'],ve:['español','¿Cómo estás?'],ma:['árabe','كيف حالك؟'],la:['laosiano','ສະບາຍດີບໍ?']};
-const LANG_OPTIONS=[...new Set(Object.values(LANGS).map(x=>x[0]))];
-for(const c of CO){const l=LANGS[c.i];if(l)Q.push({id:'lang:'+c.i,cat:'idiomas',iso:c.i,d:dOf(c.i),txt:`¿Qué idioma es este ejemplo? “${l[1]}”`,opts:shuf([l[0],...shuf(LANG_OPTIONS.filter(x=>x!==l[0])).slice(0,3)]),ans:l[0],ex:`La frase está en ${l[0]}. En un país puede haber varios idiomas oficiales o regionales; esta es una pista, no una regla absoluta.`});}
   const side=c.s==='L'?'Izquierda':'Derecha';
   if(c.s)Q.push({id:'s:'+c.i,cat:'conduccion',iso:c.i,d:dOf(c.i),txt:`¿De qué lado se conduce en ${c.n}?`,opts:['Izquierda','Derecha'],ans:side,ex:`En ${c.n} se conduce por la ${side.toLowerCase()}.`});
 }
-[...EXTRA,...ISLAND_IMAGES.map((e,k)=>({...e,key:'isl'+k}))].filter(e=>byIso[e.iso]&&(e.img||e.clue)).forEach((e,k)=>Q.push({id:'x:'+e.cat+':'+(e.key??k)+':'+e.iso,cat:e.cat,iso:e.iso,d:dOf(e.iso),txt:e.txt||PR[e.cat]||'¿De qué país es?',opts:e.opts,ans:e.ans,img:e.img,clue:e.clue,alt:e.alt||'Pista a identificar',art:e.art,ex:e.expl||`Corresponde a ${byIso[e.iso].n}.`,src:e.src,sourceName:e.sourceName,author:e.author,lic:e.lic,licUrl:e.licUrl,guide:e.guide}));
+// Ejemplos breves en idiomas reales y reconocibles; cada idioma aparece una sola vez.
+const LANGS={ar:['español','¿Cómo estás?'],br:['portugués','Como você está?'],pt:['portugués','Como estás?'],fr:['francés','Comment ça va ?'],de:['alemán','Wie geht es dir?'],it:['italiano','Come stai?'],gb:['inglés','How are you?'],nl:['neerlandés','Hoe gaat het?'],se:['sueco','Hur mår du?'],no:['noruego','Hvordan går det?'],dk:['danés','Hvordan går det?'],fi:['finés','Mitä kuuluu?'],pl:['polaco','Jak się masz?'],cz:['checo','Jak se máš?'],sk:['eslovaco','Ako sa máš?'],bg:['búlgaro','Здравейте, как сте?'],ru:['ruso','Как дела?'],ua:['ucraniano','Як справи?'],jp:['japonés','お元気ですか？'],kr:['coreano','잘 지내세요?'],cn:['chino mandarín','你好吗？'],lk:['cingalés (sinhala)','ඔබට කොහොමද?'],in:['hindi','आप कैसे हैं?'],gr:['griego','Τι κάνεις;'],il:['hebreo','מה שלומך?'],tr:['turco','Nasılsın?'],id:['indonesio','Apa kabar?'],th:['tailandés','สบายดีไหม?'],vn:['vietnamita','Bạn khỏe không?'],sa:['árabe','كيف حالك؟'],ro:['rumano','Ce mai faci?'],hu:['húngaro','Hogy vagy?'],is:['islandés','Hvernig hefurðu það?'],la:['lao','ສະບາຍດີບໍ?']};
+const LANG_OPTIONS=[...new Set([...PLAYABLE_CO.map(c=>LANGS[c.i]?.[0]).filter(Boolean),'chino mandarín'])];
+const seenLanguages=new Set();
+for(const c of PLAYABLE_CO){
+  const l=LANGS[c.i];
+  if(l&&!seenLanguages.has(l[0])){
+    seenLanguages.add(l[0]);
+    Q.push({id:'lang:'+c.i,cat:'idiomas',iso:c.i,d:dOf(c.i),txt:`¿Qué idioma es este ejemplo? “${l[1]}”`,opts:shuf([l[0],...shuf(LANG_OPTIONS.filter(x=>x!==l[0])).slice(0,3)]),ans:l[0],ex:`La frase está en ${l[0]}. Esta pista identifica el idioma, no un país único: una misma lengua puede usarse en varios países.`});
+  }
+}
+// Más ejemplos en escrituras distintivas solicitadas. Se pregunta por el idioma, no por un país,
+// para no convertir una frase compartida (p. ej. portugués o chino) en una respuesta geográfica falsa.
+const LANG_EXTRA=[
+  ['lk','cingalés (sinhala)','ඔබේ නම මොකක්ද?'],
+  ['jp','japonés','駅はどこですか？'],
+  ['cn','chino mandarín','请问，地铁站在哪里？'],
+  ['kr','coreano','지하철역이 어디예요?'],
+  ['bg','búlgaro','Къде е гарата?'],
+  ['ru','ruso','Где находится вокзал?'],
+  ['ua','ucraniano','Де знаходиться вокзал?'],
+  ['gr','griego','Πού είναι ο σταθμός;']
+];
+for(const [iso,language,phrase] of LANG_EXTRA){
+  if(!byIso[iso]||!LANG_OPTIONS.includes(language))continue;
+  Q.push({id:'lang-extra:'+iso,cat:'idiomas',iso,d:dOf(iso),txt:`¿Qué idioma es este ejemplo? “${phrase}”`,opts:shuf([language,...shuf(LANG_OPTIONS.filter(x=>x!==language)).slice(0,3)]),ans:language,ex:`La frase está en ${language}. El idioma puede dar una pista regional, pero por sí solo no demuestra un país exacto.`});
+}
+[...EXTRA,...ISLAND_IMAGES.map((e,k)=>({...e,key:'isl'+k}))].filter(e=>PLAYABLE_ISO.has(e.iso)&&(e.img||e.clue)).forEach((e,k)=>Q.push({id:'x:'+e.cat+':'+(e.key??k)+':'+e.iso,cat:e.cat,iso:e.iso,d:dOf(e.iso),txt:e.txt||PR[e.cat]||'¿De qué país es?',opts:e.opts,ans:e.ans,img:e.img,clue:e.clue,alt:e.alt||'Pista a identificar',art:e.art,ex:e.expl||`Corresponde a ${byIso[e.iso].n}.`,src:e.src,sourceName:e.sourceName,author:e.author,lic:e.lic,licUrl:e.licUrl,guide:e.guide}));
 
 /* La dificultad solo cambia el formato de respuesta; el filtro 'cd' elige qué países (1 fácil, 2 medio, 3 difícil, 0 todos). */
 const eligibleAtDifficulty=(q,cd)=>{

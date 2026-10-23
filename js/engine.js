@@ -4,7 +4,7 @@ const wt=q=>{const s=ST.q[q.id];return s?Math.max(.4,1+(s.p?3:0)+s.ko*.5-s.ok*.3
 function draw(p,k){const out=[];const r=p.map(q=>({q,w:wt(q)}));while(out.length<k&&r.length){let x=Math.random()*r.reduce((a,y)=>a+y.w,0),i=0;for(;i<r.length-1&&(x-=r[i].w)>0;i++);out.push(r[i].q);r.splice(i,1)}return out}
 const modeOf=s=>s.cfg.mode!=='auto'?s.cfg.mode:s.cfg.diff===1?'mc':s.cfg.diff===2?'mc8':s.cfg.diff===3?'all':'type';
 function choices(q,n){const s=S;
-  const c=byIso[q.iso],reg=CO.filter(x=>s.cfg.reg==='*'||x.c===s.cfg.reg),P=reg.length>=n?reg:CO;
+  const c=byIso[q.iso],reg=PLAYABLE_CO.filter(x=>s.cfg.reg==='*'||x.c===s.cfg.reg),P=reg.length>=n?reg:PLAYABLE_CO;
   const same=shuf(P.filter(x=>x!==c&&x.c===c.c)),oth=shuf(P.filter(x=>x!==c&&x.c!==c.c));
   return shuf([c,...(n>4?[...same,...oth]:[...oth,...same]).slice(0,n-1)])}
 function reset(){S.fb=0;S.ch=null;S.currentResult=null;S.tl=S.cfg.tm;S.t0=Date.now()}

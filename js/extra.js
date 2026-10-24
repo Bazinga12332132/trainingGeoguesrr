@@ -57,9 +57,10 @@ const CLUES={
   'escenas:46:pl':'La carretera provincial 971 pasa por Muszyna, en Polonia.'
 };
 
-const PHOTO_CLUES={...BOLLARD_PHOTOS,...PLATE_PHOTOS,...SCENE_PHOTOS};
+const PHOTO_CLUES={...BOLLARD_PHOTOS,...PLATE_PHOTOS,...SCENE_PHOTOS,...POLE_PHOTOS};
 
 const EXTRA=[
+  ...POLE_ITEMS,
   {cat:'bolardos',iso:'fr',key:0,d:1,guide:BOLLARD_GUIDE,expl:'El poste fino con tapa negra y reflector rojo es un patrón frecuente en Francia. El reflector puede verse blanco desde atrás.'},
   {cat:'bolardos',iso:'de',key:1,d:2,guide:BOLLARD_GUIDE,expl:'La banda negra y los dos reflectores pequeños son un patrón común en Alemania; el color del reflector depende del lado.'},
   {cat:'bolardos',iso:'nl',key:2,d:3,guide:BOLLARD_GUIDE,expl:'En Países Bajos los bolardos clásicos son menos comunes; los postes verdes y blancos pueden aparecer en cruces.'},
@@ -131,26 +132,6 @@ const EXTRA=[
   {cat:'escenas',iso:'no',key:44,d:1,expl:'La vista del fiordo está en Lofoten, al norte de Noruega.'},
   {cat:'escenas',iso:'th',key:45,d:1,expl:'La carretera atraviesa la vegetación tropical de Surat Thani, Tailandia.'},
   {cat:'escenas',iso:'pl',key:46,d:1,expl:'La escena corresponde a la carretera provincial 971 cerca de Muszyna, Polonia.'},
-  {cat:'bolardos',iso:'fr',key:34,d:2,expl:'Ilustración generada para practicar la observación de formas y reflectores; no representa una fotografía geolocalizada real.'},
-  {cat:'bolardos',iso:'de',key:35,d:2,expl:'Ilustración generada para practicar la observación de formas y reflectores; no representa una fotografía geolocalizada real.'},
-  {cat:'bolardos',iso:'nl',key:36,d:2,expl:'Ilustración generada para practicar la observación de formas y reflectores; no representa una fotografía geolocalizada real.'},
-  {cat:'bolardos',iso:'be',key:37,d:2,expl:'Ilustración generada para practicar la observación de formas y reflectores; no representa una fotografía geolocalizada real.'},
-  {cat:'bolardos',iso:'se',key:38,d:2,expl:'Ilustración generada para practicar la observación de formas y reflectores; no representa una fotografía geolocalizada real.'},
-  {cat:'bolardos',iso:'dk',key:39,d:2,expl:'Ilustración generada para practicar la observación de formas y reflectores; no representa una fotografía geolocalizada real.'},
-  {cat:'bolardos',iso:'no',key:40,d:2,expl:'Ilustración generada para practicar la observación de formas y reflectores; no representa una fotografía geolocalizada real.'},
-  {cat:'bolardos',iso:'pl',key:41,d:2,expl:'Ilustración generada para practicar la observación de formas y reflectores; no representa una fotografía geolocalizada real.'},
-  {cat:'bolardos',iso:'es',key:42,d:2,expl:'Ilustración generada para practicar la observación de formas y reflectores; no representa una fotografía geolocalizada real.'},
-  {cat:'bolardos',iso:'gb',key:43,d:2,expl:'Ilustración generada para practicar la observación de formas y reflectores; no representa una fotografía geolocalizada real.'},
-  {cat:'matriculas',iso:'fr',key:43,d:2,expl:'Ejemplo visual generado para practicar colores y distribución de una matrícula; los caracteres están difuminados y el diseño puede no ser exacto.'},
-  {cat:'matriculas',iso:'ua',key:44,d:2,expl:'Ejemplo visual generado para practicar colores y distribución de una matrícula; los caracteres están difuminados y el diseño puede no ser exacto.'},
-  {cat:'matriculas',iso:'pl',key:45,d:2,expl:'Ejemplo visual generado para practicar colores y distribución de una matrícula; los caracteres están difuminados y el diseño puede no ser exacto.'},
-  {cat:'matriculas',iso:'ro',key:46,d:2,expl:'Ejemplo visual generado para practicar colores y distribución de una matrícula; los caracteres están difuminados y el diseño puede no ser exacto.'},
-  {cat:'matriculas',iso:'nl',key:47,d:2,expl:'Ejemplo visual generado para practicar colores y distribución de una matrícula; los caracteres están difuminados y el diseño puede no ser exacto.'},
-  {cat:'matriculas',iso:'ch',key:48,d:2,expl:'Ejemplo visual generado para practicar colores y distribución de una matrícula; los caracteres están difuminados y el diseño puede no ser exacto.'},
-  {cat:'matriculas',iso:'gb',key:49,d:2,expl:'Ejemplo visual generado para practicar colores y distribución de una matrícula; los caracteres están difuminados y el diseño puede no ser exacto.'},
-  {cat:'matriculas',iso:'de',key:50,d:2,expl:'Ejemplo visual generado para practicar colores y distribución de una matrícula; los caracteres están difuminados y el diseño puede no ser exacto.'},
-  {cat:'matriculas',iso:'es',key:51,d:2,expl:'Ejemplo visual generado para practicar colores y distribución de una matrícula; los caracteres están difuminados y el diseño puede no ser exacto.'},
-  {cat:'matriculas',iso:'dk',key:52,d:2,expl:'Ejemplo visual generado para practicar colores y distribución de una matrícula; los caracteres están difuminados y el diseño puede no ser exacto.'},
   {cat:'escenas',iso:'bo',key:57,d:2,expl:'La panorámica de Street View corresponde a una ubicación en Bolivia. La respuesta se basa en la ubicación original, no solo en la apariencia del paisaje.'},
   {cat:'escenas',iso:'br',key:58,d:2,expl:'La panorámica de Street View corresponde a una ubicación en Brasil. La respuesta se basa en la ubicación original, no solo en la apariencia del paisaje.'},
   {cat:'escenas',iso:'es',key:59,d:2,expl:'La panorámica de Street View corresponde a una ubicación en España. La respuesta se basa en la ubicación original, no solo en la apariencia del paisaje.'},
@@ -184,5 +165,5 @@ const EXTRA=[
 ].map(item=>{
   const key=`${item.cat}:${item.key}:${item.iso}`;
   const photo=PHOTO_CLUES[key];
-  return {...item,...photo,clue:CLUES[key],art:photo?'photo':null};
+  return {...item,...photo,clue:CLUES[key]??item.clue,art:photo?'photo':null};
 });

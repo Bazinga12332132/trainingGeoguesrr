@@ -127,3 +127,25 @@ form select:focus{border-color:var(--ac);outline:none}
 
 /* Refinamiento visual y legibilidad */
 body{letter-spacing:.005em}button,select,input{font-family:var(--head)}form>small{display:block;margin-top:8px;line-height:1.5}form select{min-height:46px}form label{line-height:1.4}.hero p{font-size:1.06rem}.pic{background:var(--bg2);padding:12px}.plate-pic{filter:blur(4.5px) saturate(.78)}
+
+/* ===== Feedback con tips y Guía ===== */
+.fb-head{margin-top:8px;font-size:1.08rem}
+.fb-facts{display:flex;gap:8px;align-items:center;color:var(--mut);font-size:.92rem;margin:4px 0 6px}
+.flag{width:28px;height:20px;object-fit:cover;border-radius:3px;border:1px solid var(--bd);flex:none}
+.flag.big{width:72px;height:50px}
+.tips{margin:8px 0 6px;padding-left:20px}.tips li{margin:5px 0}
+.fb-note{margin:6px 0;font-weight:600}
+.fb-link{display:inline-block;margin-top:6px;font-weight:700;color:var(--ac)}
+.cred{margin-top:8px;font-size:.8rem;color:var(--mut)}
+.gsearch{width:100%;padding:13px 14px;border:2px solid var(--bd);border-radius:12px;background:var(--card);margin:12px 0}
+.chips{display:flex;gap:8px;flex-wrap:wrap;margin:6px 0 16px}
+.chip{background:var(--card);border:1px solid var(--bd);border-radius:999px;padding:6px 14px;font-weight:600}
+.chip.on{background:var(--ac);color:var(--on);border-color:var(--ac)}
+a.gcard{text-decoration:none;display:flex;flex-direction:column;gap:4px}
+a.gcard:hover{border-color:var(--ac)}
+.snip{font-style:italic}
+.ghead{display:flex;gap:16px;align-items:center}
+.gsec{margin:12px 0}.gsec h4{margin:0 0 6px;font:700 1rem var(--head)}
+.gen{background:var(--card);border:1px solid var(--bd);border-radius:12px;padding:10px 14px;margin:8px 0}
+.gen summary{cursor:pointer;font-weight:700}
+a.ghost{text-decoration:none;display:inline-block;color:inherit}

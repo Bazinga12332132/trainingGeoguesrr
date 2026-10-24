@@ -206,15 +206,25 @@ as|Samoa Americana|Oceanía|R|as||american samoa
 mp|Islas Marianas del Norte|Oceanía|R|mp||marianas del norte,marianas,saipan,northern mariana islands
 bm|Bermudas|América|L|bm||islas bermudas,bermuda
 cw|Curazao|América|R|cw|599|curacao
-um|Atolón Midway|Oceanía|||||midway,islas midway
+um|Atolón Midway|Oceanía||||midway,islas midway
 cx|Isla Christmas|Oceanía|L|cx||christmas,islas christmas,isla de navidad,christmas island
 cc|Islas Cocos (Keeling)|Oceanía|L|cc||cocos,islas cocos,cocos keeling,cocos islands
-pn|Islas Pitcairn|Oceanía|||pn||pitcairn
+pn|Islas Pitcairn|Oceanía||pn||pitcairn
 re|Isla Reunión|África|R|re|262|reunion,la reunion
 pm|San Pedro y Miquelón|América|R|pm|508|san pedro y miquelon,saint pierre et miquelon,miquelon
 im|Isla de Man|Europa|L|im||man,isle of man
 fo|Islas Feroe|Europa|R|fo|298|feroe,faroe islands
 gl|Groenlandia|América|R|gl|299|greenland
+hk|Hong Kong|Asia|L|hk|852|
+mo|Macao|Asia|L|mo|853|macau
+io|Territorio Británico del Océano Índico|Asia||io|246|biot,diego garcia,british indian ocean territory,chagos
+gi|Gibraltar|Europa|R|gi|350|
+je|Jersey|Europa|L|je||
+sj|Svalbard|Europa|R|||spitsbergen,svalbard y jan mayen
+mq|Martinica|América|R|mq|596|martinique
+fk|Islas Malvinas|América|L|fk|500|malvinas,falkland,islas falkland,falkland islands
+gs|Islas Georgias del Sur y Sandwich del Sur|América||gs||georgias del sur,south georgia,sandwich del sur
+aq|Antártida|Antártida||aq||antartida,antarctica
 x-md|Madeira|Europa|R|||madeira
 x-ic|Islas Canarias|Europa|R|||canarias,tenerife,gran canaria,lanzarote
 x-az|Azores|Europa|R|||islas azores

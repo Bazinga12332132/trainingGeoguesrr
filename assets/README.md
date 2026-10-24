@@ -16,6 +16,7 @@ incluí texto alternativo y fuente, y conservá autor y licencia cuando la
 fuente los publique. Las escenas de No Move deben enlazar la página de
 referencia de la imagen para que se puedan comprobar el lugar y la atribución.
 
+## Guía por país
+`assets/guia/*.js` contiene la guía (formato `@iso` + líneas `clave|texto`). De ahí salen las fichas, los tips al responder, las preguntas de Regiones y las pistas de texto. `assets/postes.js` aporta la categoría Postes.
 
-## Ilustraciones adicionales generadas
-Se añadieron 30 ilustraciones locales para práctica: 10 bolardos, 10 matrículas y 10 escenas No Move. Son imágenes sintéticas de entrenamiento, no fotografías reales geolocalizadas; por eso sus explicaciones lo aclaran. Las bandas de matrícula se difuminaron para que el código no revele instantáneamente la respuesta.
+Se eliminaron las 30 ilustraciones generadas con IA: no eran fotos reales de un país, así que su respuesta no se podía verificar.

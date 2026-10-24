@@ -1,15 +1,17 @@
 function render() {
-  const route = location.hash.replace(/^#\/?/, '');
+  const parts = location.hash.replace(/^#\/?/, '').split('/');
+  const route = parts[0];
   const pages = {
     entrenar: vSetup,
     jugar: vPlay,
     resultados: vFin,
-    progreso: vProg
+    progreso: vProg,
+    guia: () => (parts[1] ? vPais(parts[1]) : vGuia())
   };
   const page = pages[route];
 
   app.innerHTML = page ? page() : vHome();
-  hydratePix();
+  if (route === 'guia' || route === '') window.scrollTo(0, 0);
 
   if (route === 'jugar') {
     tick();

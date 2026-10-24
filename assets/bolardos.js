@@ -195,14 +195,4 @@ const BOLLARD_PHOTOS={
     sourceName:'Geomastr',
     alt:'Bolardo fotografiado en India'
   },
-  'bolardos:34:fr':{img:'assets/generated/bollard-01.jpg',alt:'Ilustración de práctica de un bolardo vial, ejemplo 1',sourceName:'Ilustración generada para práctica'},
-  'bolardos:35:de':{img:'assets/generated/bollard-02.jpg',alt:'Ilustración de práctica de un bolardo vial, ejemplo 2',sourceName:'Ilustración generada para práctica'},
-  'bolardos:36:nl':{img:'assets/generated/bollard-03.jpg',alt:'Ilustración de práctica de un bolardo vial, ejemplo 3',sourceName:'Ilustración generada para práctica'},
-  'bolardos:37:be':{img:'assets/generated/bollard-04.jpg',alt:'Ilustración de práctica de un bolardo vial, ejemplo 4',sourceName:'Ilustración generada para práctica'},
-  'bolardos:38:se':{img:'assets/generated/bollard-05.jpg',alt:'Ilustración de práctica de un bolardo vial, ejemplo 5',sourceName:'Ilustración generada para práctica'},
-  'bolardos:39:dk':{img:'assets/generated/bollard-06.jpg',alt:'Ilustración de práctica de un bolardo vial, ejemplo 6',sourceName:'Ilustración generada para práctica'},
-  'bolardos:40:no':{img:'assets/generated/bollard-07.jpg',alt:'Ilustración de práctica de un bolardo vial, ejemplo 7',sourceName:'Ilustración generada para práctica'},
-  'bolardos:41:pl':{img:'assets/generated/bollard-08.jpg',alt:'Ilustración de práctica de un bolardo vial, ejemplo 8',sourceName:'Ilustración generada para práctica'},
-  'bolardos:42:es':{img:'assets/generated/bollard-09.jpg',alt:'Ilustración de práctica de un bolardo vial, ejemplo 9',sourceName:'Ilustración generada para práctica'},
-  'bolardos:43:gb':{img:'assets/generated/bollard-10.jpg',alt:'Ilustración de práctica de un bolardo vial, ejemplo 10',sourceName:'Ilustración generada para práctica'},
 };

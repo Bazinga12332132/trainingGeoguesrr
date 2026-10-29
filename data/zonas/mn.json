@@ -1,0 +1,20 @@
+{
+  "resumen": "Mongolia: estepa sin árboles, gers (yurtas) blancas, rebaños y caminos de tierra. El cirílico mongol tiene dos letras propias: ө y ү.",
+  "coche": [
+    {"t": "En mucha cobertura se ve parte del coche de Google y su antena en el techo; la comunidad lo considera uno de los coches reconocibles (comparalo en la galería de GeoHints).", "sv": {"lat": 47.8864, "lng": 106.9057, "h": 180, "p": -60}},
+    {"t": "Muchísima cobertura en caminos de tierra o huellas en medio de la estepa, sin nada alrededor."}
+  ],
+  "zonas": [
+    {"id": "ulan-bator", "n": "Ulán Bator", "lat": 47.92, "lng": 106.92, "r": 60, "p": ["Ciudad con bloques soviéticos y barrios enteros de gers rodeados de cercos de madera en las laderas.", "Tráfico denso, muchos Toyota Prius."], "sv": {"lat": 47.9184, "lng": 106.9177, "h": 0, "p": 0}},
+    {"id": "gobi", "n": "Sur: desierto de Gobi", "lat": 43.8, "lng": 104.5, "r": 380, "p": ["Desierto de grava y arena, matas bajas y camellos bactrianos (dos jorobas).", "Casi sin gers ni caminos pavimentados."], "sv": {"lat": 43.5708, "lng": 104.4258, "h": 0, "p": 0}},
+    {"id": "norte", "n": "Norte (Selenge, Darkhan)", "lat": 49.5, "lng": 105.9, "r": 250, "p": ["Más verde: lomas con bosques de alerces y abedules, campos de cultivo.", "Pueblos de casas de madera parecidos a Siberia."], "sv": {"lat": 49.4867, "lng": 105.9228, "h": 0, "p": 0}},
+    {"id": "centro", "n": "Centro (Arkhangai, valle del Orjón)", "lat": 47.3, "lng": 101.5, "r": 280, "p": ["Estepa verde de colinas onduladas, ríos y rebaños de caballos y yaks.", "Monasterios budistas (Karakórum / Kharkhorin)."], "sv": {"lat": 47.1975, "lng": 102.8238, "h": 0, "p": 0}},
+    {"id": "oeste", "n": "Oeste (Altái mongol, Bayan-Ölgii)", "lat": 48.5, "lng": 90.5, "r": 330, "p": ["Montañas altas y secas con nieve, lagos salados.", "Población kazaja: mezquitas y carteles en kazajo."], "sv": {"lat": 48.9683, "lng": 89.9625, "h": 0, "p": 0}}
+  ],
+  "confusiones": [
+    {"iso": "kz", "n": "Kazajistán", "dif": ["El kazajo usa ә, ғ, қ, ң, ұ, һ, і; el mongol solo agrega ө y ү.", "Kazajistán tiene muchas más rutas pavimentadas y ciudades; Mongolia es casi todo estepa vacía con gers."]},
+    {"iso": "ru", "n": "Rusia (Buriatia)", "dif": ["Paisaje parecido cerca del Baikal, pero la matrícula rusa trae el código de región a la derecha y el cirílico ruso no usa ө ni ү."]},
+    {"iso": "kg", "n": "Kirguistán", "dif": ["Kirguistán también usa ө y ү, pero es mucho más montañoso (valles con picos nevados) y tiene más pueblos y árboles."]}
+  ],
+  "fuentes": [["Plonk It: Mongolia", "https://www.plonkit.net/mongolia"], ["GeoHints: coches de Google", "https://geohints.com/meta/googleVehicles/cars"], ["Guía de Mongolia", "https://google-maps-me.lovable.app/en/guides/mongolia"]]
+}

@@ -1,0 +1,20 @@
+{
+  "resumen": "México: carteles en español, topes en la calle, postes de hormigón y casas de bloque con varillas asomando del techo. Cada estado tiene su diseño de matrícula, con el nombre del estado.",
+  "coche": [
+    {"t": "Cobertura Gen 3 y Gen 4 muy extensa. El coche no indica la región: usá vegetación y el nombre del estado en la matrícula.", "sv": {"lat": 19.4326, "lng": -99.1332, "h": 180, "p": -60}}
+  ],
+  "zonas": [
+    {"id": "norte", "n": "Norte (Chihuahua, Sonora, Coahuila, Nuevo León)", "lat": 28.5, "lng": -106.0, "r": 600, "p": ["Desierto con arbustos, yucas y cactus; rutas rectas muy largas.", "Ciudades industriales (maquilas) cerca de EE. UU."], "sv": {"lat": 25.6866, "lng": -100.3161, "h": 0, "p": 0}},
+    {"id": "centro", "n": "Centro (Ciudad de México y altiplano)", "lat": 19.6, "lng": -99.3, "r": 250, "p": ["Altiplano con volcanes, nopales y magueyes.", "Ciudad enorme con muchísimo tránsito, puestos callejeros y colores fuertes."], "sv": {"lat": 19.4326, "lng": -99.1332, "h": 0, "p": 0}},
+    {"id": "bajio", "n": "Bajío y occidente (Guadalajara, Guanajuato)", "lat": 20.8, "lng": -102.5, "r": 280, "p": ["Valles agrícolas, campos de agave azul en Jalisco, pueblos coloniales."], "sv": {"lat": 20.6597, "lng": -103.3496, "h": 0, "p": 0}},
+    {"id": "sur", "n": "Sur (Oaxaca, Chiapas, Guerrero)", "lat": 16.8, "lng": -95.5, "r": 330, "p": ["Montañas muy verdes y rutas de curvas, pueblos indígenas y vegetación tropical."], "sv": {"lat": 17.0732, "lng": -96.7266, "h": 0, "p": 0}},
+    {"id": "yucatan", "n": "Península de Yucatán", "lat": 20.0, "lng": -88.8, "r": 300, "p": ["Totalmente plana, selva baja y seca, sin montañas.", "Casas mayas ovaladas de techo de paja y piedra caliza blanca."], "sv": {"lat": 20.9674, "lng": -89.5926, "h": 0, "p": 0}},
+    {"id": "baja", "n": "Baja California", "lat": 28.0, "lng": -113.5, "r": 450, "p": ["Desierto con cactus cardón gigantes y montañas secas junto al mar."], "sv": {"lat": 32.5149, "lng": -117.0382, "h": 0, "p": 0}}
+  ],
+  "confusiones": [
+    {"iso": "gt", "n": "Guatemala", "dif": ["Guatemala es casi toda montaña verde y su matrícula es blanca con una letra adelante (P para particulares)."]},
+    {"iso": "us", "n": "Estados Unidos", "dif": ["En EE. UU. todo está en inglés y no hay topes ni varillas asomando de los techos."]},
+    {"iso": "co", "n": "Colombia", "dif": ["Colombia tiene matrícula amarilla."]}
+  ],
+  "fuentes": [["Plonk It: México", "https://www.plonkit.net/mexico"], ["Guía de México", "https://google-maps-me.lovable.app/en/guides/mexico"]]
+}

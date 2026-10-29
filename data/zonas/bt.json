@@ -1,0 +1,20 @@
+{
+  "resumen": "Bután es un país chico, todo montaña, que se maneja por la izquierda. Lo delata la arquitectura: por ley, los edificios llevan el estilo tradicional con ventanas de madera pintadas y techos anchos. Escritura dzongkha (alfabeto tibetano).",
+  "coche": [
+    {"t": "Cobertura limitada a las rutas principales y valles poblados, con partes de trekker. Lo que mejor lo identifica es la arquitectura, no el coche.", "sv": {"lat": 27.4728, "lng": 89.639, "h": 180, "p": -60}},
+    {"t": "Matrículas de particulares rojas con letras blancas que empiezan con BP; los taxis llevan matrícula amarilla."}
+  ],
+  "zonas": [
+    {"id": "thimphu", "n": "Timbu (capital)", "lat": 27.47, "lng": 89.64, "r": 22, "p": ["Ciudad en un valle angosto, todos los edificios con el estilo tradicional (marcos de ventana de madera pintados en colores).", "El gran dzong (fortaleza-monasterio) blanco con techos dorados junto al río."], "sv": {"lat": 27.4728, "lng": 89.639, "h": 0, "p": 0}},
+    {"id": "paro", "n": "Paro", "lat": 27.43, "lng": 89.42, "r": 18, "p": ["Valle ancho con el único aeropuerto internacional y arrozales en el fondo.", "Casas de granja grandes de dos o tres pisos con techos de madera y piedras."], "sv": {"lat": 27.4305, "lng": 89.4133, "h": 0, "p": 0}},
+    {"id": "punakha", "n": "Punakha y Wangdue", "lat": 27.59, "lng": 89.86, "r": 22, "p": ["Valle más bajo y cálido, arrozales en terrazas y ríos de agua turquesa.", "El dzong de Punakha en la confluencia de dos ríos."], "sv": {"lat": 27.5916, "lng": 89.8774, "h": 0, "p": 0}},
+    {"id": "centro", "n": "Centro: Bumthang y Trongsa", "lat": 27.55, "lng": 90.6, "r": 35, "p": ["Valles altos y fríos, bosques de pinos, campos de trigo sarraceno y papas.", "Ruta lateral este-oeste con pasos de montaña llenos de banderas de oración."], "sv": {"lat": 27.5492, "lng": 90.7525, "h": 0, "p": 0}},
+    {"id": "sur", "n": "Sur: Phuentsholing (frontera con India)", "lat": 26.86, "lng": 89.39, "r": 25, "p": ["Ciudad fronteriza baja y calurosa, mucho más \"india\": camiones y autos con matrícula india (WB) mezclados.", "Selva subtropical y el portal tradicional que marca la frontera."], "sv": {"lat": 26.8516, "lng": 89.3884, "h": 0, "p": 0}}
+  ],
+  "confusiones": [
+    {"iso": "np", "n": "Nepal", "dif": ["Nepal escribe en devanagari (letras colgadas de una línea); Bután en dzongkha/tibetano (letras con un punto que separa sílabas).", "Las ciudades de Nepal son de ladrillo y concreto sin un estilo uniforme; en Bután todo edificio tiene ventanas de madera pintadas y techos tradicionales.", "Matrícula de particular en Nepal: roja con letras devanagari; en Bután: roja con BP en letras latinas."]},
+    {"iso": "in", "n": "India (Sikkim y norte de Bengala)", "dif": ["Sikkim tiene paisaje y banderas de oración parecidos, pero la matrícula india dice SK (Sikkim) o WB, y los carteles están en inglés e hindi.", "Las ciudades indias son caóticas y de concreto; Bután es muy ordenado y uniforme."]},
+    {"iso": "cn", "n": "Tíbet / China", "dif": ["Escritura tibetana parecida, pero en China aparecen caracteres chinos al lado y se maneja por la DERECHA."]}
+  ],
+  "fuentes": [["Plonk It: Bután", "https://www.plonkit.net/bhutan"], ["GeoHints: escrituras y señales", "https://geohints.com/"]]
+}

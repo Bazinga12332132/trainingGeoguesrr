@@ -1,0 +1,18 @@
+{
+  "resumen": "Canadá se parece a EE. UU. (línea central amarilla) pero usa km/h. Para ubicar la provincia: idioma de los carteles, paisaje y si los autos llevan placa adelante.",
+  "coche": [
+    {"t": "Cobertura Gen 3 y Gen 4 en el sur poblado; el norte casi no tiene. El coche no distingue provincias.", "sv": {"lat": 43.6532, "lng": -79.3832, "h": 180, "p": -60}},
+    {"t": "Placa solo atrás en Alberta, Saskatchewan, Quebec y casi todas las provincias atlánticas; adelante y atrás en Columbia Británica, Manitoba y Ontario. Es una pista de apoyo: el paisaje y el idioma son más confiables."}
+  ],
+  "zonas": [
+    {"id": "bc", "n": "Columbia Británica (oeste)", "lat": 50.5, "lng": -122.5, "r": 450, "p": ["Montañas muy altas, coníferas enormes y lluvia en la costa.", "Placa con el lema \"Beautiful British Columbia\"."], "sv": {"lat": 49.2827, "lng": -123.1207, "h": 0, "p": 0}},
+    {"id": "praderas", "n": "Praderas (Alberta, Saskatchewan, Manitoba)", "lat": 51.5, "lng": -105.0, "r": 650, "p": ["Llanura sin fin con trigo y canola amarilla, elevadores de granos.", "Rutas rectas en cuadrícula, como el Medio Oeste de EE. UU. pero con km/h."], "sv": {"lat": 50.4452, "lng": -104.6189, "h": 0, "p": 0}},
+    {"id": "ontario", "n": "Ontario", "lat": 45.0, "lng": -79.5, "r": 450, "p": ["Sur: granjas, pueblos de ladrillo rojo y autopistas \"400\" (401, 403…).", "Norte: escudo canadiense, rocas de granito rosado, lagos y pinos."], "sv": {"lat": 43.6532, "lng": -79.3832, "h": 0, "p": 0}},
+    {"id": "quebec", "n": "Quebec", "lat": 47.0, "lng": -71.5, "r": 450, "p": ["Carteles SOLO en francés (ARRÊT en lugar de STOP).", "Casas con techos de chapa de colores muy inclinados y escaleras exteriores en Montreal.", "Placa solo atrás con el lema \"Je me souviens\"."], "sv": {"lat": 46.8139, "lng": -71.208, "h": 0, "p": 0}},
+    {"id": "atlantico", "n": "Provincias atlánticas", "lat": 46.0, "lng": -63.5, "r": 400, "p": ["Pueblos pesqueros con casas de madera de colores y costa rocosa.", "Nuevo Brunswick: carteles bilingües inglés-francés."], "sv": {"lat": 44.6488, "lng": -63.5752, "h": 0, "p": 0}}
+  ],
+  "confusiones": [
+    {"iso": "us", "n": "Estados Unidos", "dif": ["Canadá: límites en km/h; EE. UU.: MPH.", "En Canadá los carteles de distancia y algunos de tránsito son bilingües o en francés."]}
+  ],
+  "fuentes": [["Plonk It: Canadá", "https://www.plonkit.net/canada"], ["Guía de Canadá", "https://google-maps-me.lovable.app/en/guides/canada"]]
+}

@@ -1,0 +1,21 @@
+{
+  "resumen": "Bulgaria es cirílico dentro de la Unión Europea: matrícula con banda azul y BG, y carteles que repiten el nombre en alfabeto latino. Las letras de la matrícula indican la provincia.",
+  "coche": [
+    {"t": "Cobertura Gen 3 y Gen 4, con partes de una cámara de peor calidad. El coche no es una pista fuerte: usá matrícula y carteles.", "sv": {"lat": 42.6977, "lng": 23.3219, "h": 180, "p": -60}}
+  ],
+  "zonas": [
+    {"id": "sofia", "n": "Sofía y el oeste", "lat": 42.7, "lng": 23.32, "r": 90, "p": ["Matrícula C, CA o CB (ciudad de Sofía), CO (provincia).", "Montaña Vitosha de fondo, bloques soviéticos y tranvías."], "sv": {"lat": 42.6977, "lng": 23.3219, "h": 0, "p": 0}},
+    {"id": "tracia", "n": "Llanura de Tracia: Plovdiv", "lat": 42.15, "lng": 25.0, "r": 120, "p": ["Matrícula PB (Plovdiv), CT (Stara Zagora), X (Haskovo).", "Llanura agrícola con viñedos, frutales y álamos."], "sv": {"lat": 42.1354, "lng": 24.7453, "h": 0, "p": 0}},
+    {"id": "rodopes", "n": "Ródopes (sur)", "lat": 41.65, "lng": 24.9, "r": 90, "p": ["Montañas con pinos, pueblos de piedra en laderas empinadas.", "Mezquitas y minaretes en pueblos de población turca o pomaca (zona de Kardzhali, matrícula K).", "Matrícula CM (Smolyan)."], "sv": {"lat": 41.5774, "lng": 24.7111, "h": 0, "p": 0}},
+    {"id": "danubio", "n": "Norte: llanura del Danubio", "lat": 43.6, "lng": 25.0, "r": 140, "p": ["Llanura muy abierta con campos de cereal y girasol.", "Matrícula P (Ruse), EH (Pleven), BH (Vidin)."], "sv": {"lat": 43.8356, "lng": 25.9657, "h": 0, "p": 0}},
+    {"id": "balcanes", "n": "Montes Balcanes (centro)", "lat": 42.85, "lng": 25.3, "r": 100, "p": ["Cordillera que cruza el país de este a oeste, con bosques de hayas y pueblos en valles.", "Matrícula BT (Veliko Tarnovo), EB (Gabrovo)."], "sv": {"lat": 43.0757, "lng": 25.6172, "h": 0, "p": 0}},
+    {"id": "mar-negro", "n": "Costa del mar Negro", "lat": 42.9, "lng": 27.7, "r": 110, "p": ["Matrícula B (Varna) o A (Burgas).", "Balnearios, hoteles grandes y costa con playas; al norte, acantilados."], "sv": {"lat": 43.2141, "lng": 27.9147, "h": 0, "p": 0}}
+  ],
+  "confusiones": [
+    {"iso": "mk", "n": "Macedonia del Norte", "dif": ["El macedonio usa ѓ, ќ, ѕ, љ, њ, џ y ј; el búlgaro no tiene ninguna de esas.", "El búlgaro usa ъ, щ y й, que el macedonio no usa."]},
+    {"iso": "rs", "n": "Serbia", "dif": ["El serbio usa ђ, ћ, џ, љ, њ y ј, y mezcla carteles en latino; el búlgaro usa ъ, щ y й.", "Serbia no está en la UE: su matrícula no tiene la banda azul europea."]},
+    {"iso": "ru", "n": "Rusia", "dif": ["Matrícula europea con BG (la rusa no tiene banda azul).", "En búlgaro no existen ы ni э; en cambio aparece mucho ъ dentro de las palabras."]},
+    {"iso": "gr", "n": "Grecia", "dif": ["Paisaje y pueblos parecidos en el sur, pero Grecia usa alfabeto griego (λ, Σ, Ω) y no cirílico."]}
+  ],
+  "fuentes": [["Plonk It: Bulgaria", "https://www.plonkit.net/bulgaria"], ["Guía de Bulgaria", "https://google-maps-me.lovable.app/en/guides/bulgaria"]]
+}

@@ -1,0 +1,22 @@
+{
+  "resumen": "Japón se maneja por la izquierda y tiene la cámara montada baja (Low Cam), así que todo se ve más cerca del suelo. La matrícula tiene el nombre de la ciudad u oficina en kanji arriba a la izquierda.",
+  "coche": [
+    {"t": "Low Cam: cámara a baja altura en gran parte del país (lo mismo pasa en Sri Lanka y Suiza). Si la vista está muy cerca del piso y se maneja por la izquierda, pensá en Japón.", "sv": {"lat": 35.6762, "lng": 139.6503, "h": 180, "p": -60}}
+  ],
+  "zonas": [
+    {"id": "hokkaido", "n": "Hokkaido (norte)", "lat": 43.3, "lng": 142.8, "r": 250, "p": ["Flechas rojas y blancas colgando arriba del borde de la ruta: marcan el borde cuando hay nieve.", "Paisaje abierto con granjas, silos y abedules: parece más Europa del norte que Japón.", "Matrícula 札幌 (Sapporo) u otras ciudades de Hokkaido."], "sv": {"lat": 43.0618, "lng": 141.3545, "h": 0, "p": 0}},
+    {"id": "tohoku", "n": "Tohoku", "lat": 39.3, "lng": 140.7, "r": 230, "p": ["Montañas boscosas, arrozales y pueblos rurales; también hay flechas de nieve en el interior.", "Muros de protección contra tsunamis en la costa este."], "sv": {"lat": 38.2682, "lng": 140.8694, "h": 0, "p": 0}},
+    {"id": "kanto", "n": "Kanto (Tokio)", "lat": 35.9, "lng": 139.7, "r": 140, "p": ["Matrículas 品川, 練馬, 横浜 y otras de la zona de Tokio.", "Ciudad interminable, calles angostas sin veredas y postes de concreto con muchos cables."], "sv": {"lat": 35.6762, "lng": 139.6503, "h": 0, "p": 0}},
+    {"id": "chubu", "n": "Chubu (Alpes japoneses, Nagoya)", "lat": 36.2, "lng": 137.6, "r": 200, "p": ["Montañas muy altas, valles con pueblos y techos de paja muy inclinados (Shirakawa-go).", "Matrícula 名古屋 (Nagoya) en la llanura."], "sv": {"lat": 36.2048, "lng": 137.2529, "h": 0, "p": 0}},
+    {"id": "kansai", "n": "Kansai (Osaka, Kioto)", "lat": 34.8, "lng": 135.6, "r": 120, "p": ["Matrículas 大阪, なにわ (Osaka), 京都 (Kioto).", "Templos de madera, casas tradicionales machiya en Kioto y ciudad densa en Osaka."], "sv": {"lat": 34.6937, "lng": 135.5023, "h": 0, "p": 0}},
+    {"id": "oeste", "n": "Chugoku y Shikoku", "lat": 34.2, "lng": 133.0, "r": 230, "p": ["Montañas suaves, costa del mar interior con islas y huertos de cítricos."], "sv": {"lat": 34.3853, "lng": 132.4553, "h": 0, "p": 0}},
+    {"id": "kyushu", "n": "Kyushu (sur)", "lat": 32.6, "lng": 130.8, "r": 200, "p": ["Volcanes activos (Sakurajima, Aso), más palmeras y vegetación subtropical en el sur."], "sv": {"lat": 33.5904, "lng": 130.4017, "h": 0, "p": 0}},
+    {"id": "okinawa", "n": "Okinawa", "lat": 26.4, "lng": 127.8, "r": 70, "p": ["Casas de concreto bajas con tanques de agua en el techo y estatuas de leones (shisa).", "Palmeras y vegetación tropical; bases militares de EE. UU."], "sv": {"lat": 26.2124, "lng": 127.6809, "h": 0, "p": 0}}
+  ],
+  "fuera": ["Okinawa está muy al sur: en el mapa queda abajo a la izquierda, separada de las islas principales."],
+  "confusiones": [
+    {"iso": "kr", "n": "Corea del Sur", "dif": ["Corea se maneja por la DERECHA y escribe en hangul (círculos y trazos rectos); Japón por la izquierda con kanji y kana."]},
+    {"iso": "tw", "n": "Taiwán", "dif": ["Taiwán se maneja por la DERECHA y usa solo caracteres chinos tradicionales (sin kana)."]}
+  ],
+  "fuentes": [["Plonk It: Japón", "https://www.plonkit.net/japan"], ["GeoHints: generaciones de cámara (Low Cam)", "https://geohints.com/meta/cameraGens"]]
+}

@@ -1,0 +1,19 @@
+{
+  "resumen": "Kazajistán: estepa enorme, carteles bilingües (kazajo y ruso) y letras kazajas propias: ә, ғ, қ, ң, ө, ұ, ү, һ, і. La matrícula lleva la bandera celeste y KZ a la izquierda y el número de región a la derecha.",
+  "coche": [
+    {"t": "Cobertura Gen 3 y Gen 4 en ciudades y rutas principales; mucha estepa vacía entre ciudades. Mirá la matrícula: el número de región es la pista más rápida.", "sv": {"lat": 43.222, "lng": 76.8512, "h": 180, "p": -60}}
+  ],
+  "zonas": [
+    {"id": "almaty", "n": "Almatý y el sureste", "lat": 43.3, "lng": 77.5, "r": 280, "p": ["Montañas nevadas (Tian Shan) detrás de la ciudad; avenidas arboladas con álamos.", "Matrícula con región 02 (ciudad de Almatý) o 05 (región)."], "sv": {"lat": 43.222, "lng": 76.8512, "h": 0, "p": 0}},
+    {"id": "astana", "n": "Astaná (centro-norte)", "lat": 51.15, "lng": 71.45, "r": 220, "p": ["Ciudad moderna con edificios futuristas en medio de una estepa totalmente plana.", "Matrícula con región 01."], "sv": {"lat": 51.1694, "lng": 71.4491, "h": 0, "p": 0}},
+    {"id": "norte", "n": "Norte (Petropavl, Kostanái, Pavlodar)", "lat": 53.0, "lng": 70.0, "r": 450, "p": ["Estepa con bosquecitos de abedules y campos de trigo inmensos: parece Siberia rusa.", "Más carteles y negocios solo en ruso."], "sv": {"lat": 54.8728, "lng": 69.143, "h": 0, "p": 0}},
+    {"id": "sur", "n": "Sur (Shymkent, Turkestán)", "lat": 42.6, "lng": 69.0, "r": 280, "p": ["Más cálido y seco, con mezquitas, mercados y campos de algodón; influencia uzbeka.", "Matrícula con región 13 (región de Turkestán) o 17 (ciudad de Shymkent)."], "sv": {"lat": 42.3417, "lng": 69.5901, "h": 0, "p": 0}},
+    {"id": "oeste", "n": "Oeste (Caspio: Atyrau, Aktau)", "lat": 46.0, "lng": 52.5, "r": 450, "p": ["Desierto llano y salado, petróleo, camellos sueltos.", "Aktau: ciudad de bloques junto al mar Caspio, casi sin vegetación."], "sv": {"lat": 47.0945, "lng": 51.9238, "h": 0, "p": 0}}
+  ],
+  "confusiones": [
+    {"iso": "ru", "n": "Rusia", "dif": ["Si aparecen ә, ғ, қ, ң, ұ o і en los carteles, es Kazajistán.", "La matrícula rusa tiene la región en un recuadro a la derecha y no lleva KZ ni bandera celeste."]},
+    {"iso": "mn", "n": "Mongolia", "dif": ["El mongol solo agrega ө y ү; el kazajo muchas más letras.", "Mongolia tiene gers y caminos de tierra por todos lados; Kazajistán más rutas pavimentadas."]},
+    {"iso": "kg", "n": "Kirguistán", "dif": ["El kirguís usa ң, ө, ү pero NO ә, ғ, қ, ұ, і.", "Kirguistán es casi todo montaña."]}
+  ],
+  "fuentes": [["Plonk It: Kazajistán", "https://www.plonkit.net/kazakhstan"], ["Guía de Kazajistán", "https://google-maps-me.lovable.app/en/guides/kazakhstan"]]
+}

@@ -1,0 +1,19 @@
+{
+  "resumen": "Turquía: matrícula europea con TR y un número de provincia de 2 dígitos al principio (34 Estambul, 06 Ankara, 35 Esmirna, 07 Antalya, 16 Bursa, 61 Trebisonda, 21 Diyarbakır). Es la forma más rápida de ubicar la región.",
+  "coche": [
+    {"t": "Cobertura Gen 3 y Gen 4 en todo el país. El coche no distingue regiones: mirá el número de provincia de la matrícula.", "sv": {"lat": 41.0082, "lng": 28.9784, "h": 180, "p": -60}}
+  ],
+  "zonas": [
+    {"id": "marmara", "n": "Mármara (Estambul, Bursa)", "lat": 40.6, "lng": 28.5, "r": 230, "p": ["Matrículas 34 (Estambul), 16 (Bursa), 41 (Kocaeli).", "Ciudades enormes con edificios de departamentos altos y mezquitas con varios minaretes."], "sv": {"lat": 41.0082, "lng": 28.9784, "h": 0, "p": 0}},
+    {"id": "egeo", "n": "Egeo (Esmirna)", "lat": 38.4, "lng": 27.8, "r": 220, "p": ["Matrícula 35 (Esmirna), 09 (Aydın), 48 (Muğla).", "Olivares, colinas secas, casas blancas y costa con calas."], "sv": {"lat": 38.4237, "lng": 27.1428, "h": 0, "p": 0}},
+    {"id": "mediterraneo", "n": "Mediterráneo (Antalya, Adana)", "lat": 36.9, "lng": 32.5, "r": 330, "p": ["Matrículas 07 (Antalya), 01 (Adana), 33 (Mersin).", "Invernaderos de plástico por todas partes, naranjos y montañas del Tauro detrás."], "sv": {"lat": 36.8969, "lng": 30.7133, "h": 0, "p": 0}},
+    {"id": "anatolia", "n": "Anatolia central (Ankara, Konya)", "lat": 39.0, "lng": 33.5, "r": 400, "p": ["Matrículas 06 (Ankara), 42 (Konya), 38 (Kayseri).", "Meseta seca y pelada, campos de trigo y estepa; casi sin árboles."], "sv": {"lat": 39.9334, "lng": 32.8597, "h": 0, "p": 0}},
+    {"id": "mar-negro", "n": "Mar Negro", "lat": 41.0, "lng": 38.5, "r": 400, "p": ["Matrículas 61 (Trebisonda), 53 (Rize), 55 (Samsun).", "Verdísimo y lluvioso: plantaciones de té y avellanos en laderas empinadas, casas de madera sueltas en la montaña."], "sv": {"lat": 41.0027, "lng": 39.7168, "h": 0, "p": 0}},
+    {"id": "este", "n": "Este y sureste (Erzurum, Diyarbakır, Van)", "lat": 38.5, "lng": 41.5, "r": 420, "p": ["Matrículas 25 (Erzurum), 21 (Diyarbakır), 65 (Van), 63 (Şanlıurfa).", "Montañas altas y secas; en el sureste, llanura calurosa y casas de piedra basáltica negra."], "sv": {"lat": 37.9144, "lng": 40.2306, "h": 0, "p": 0}}
+  ],
+  "confusiones": [
+    {"iso": "gr", "n": "Grecia", "dif": ["Grecia escribe en alfabeto griego; Turquía en latino con letras propias: ş, ç, ğ, ı (i sin punto), ö, ü."]},
+    {"iso": "bg", "n": "Bulgaria", "dif": ["Bulgaria usa cirílico; Turquía, latino. Las dos tienen la banda azul en la matrícula, pero la turca dice TR."]}
+  ],
+  "fuentes": [["Plonk It: Turquía", "https://www.plonkit.net/turkey"], ["GeoHints: matrículas", "https://geohints.com/meta/licensePlates"]]
+}

@@ -1,0 +1,20 @@
+{
+  "resumen": "Ucrania se separa de Rusia por las letras (і, ї, є, ґ) y por la matrícula europea. Adentro del país, el oeste es más boscoso y montañoso y el sur y el este son estepa abierta.",
+  "coche": [
+    {"t": "Hay cobertura Gen 3 (alrededor de 2015) y Gen 4 más reciente en ciudades y rutas principales. El coche casi no se ve: confiá más en carteles y matrículas.", "sv": {"lat": 50.4501, "lng": 30.5234, "h": 180, "p": -60}}
+  ],
+  "zonas": [
+    {"id": "kiev", "n": "Kiev y el norte", "lat": 50.45, "lng": 30.52, "r": 220, "p": ["Matrículas AA o KA (ciudad de Kiev) y AI (región de Kiev).", "Río Dniéper muy ancho, bloques soviéticos e iglesias con cúpulas doradas.", "Al norte, bosques de pinos sobre suelo arenoso (Polesia)."], "sv": {"lat": 50.4501, "lng": 30.5234, "h": 0, "p": 0}},
+    {"id": "oeste", "n": "Oeste: Leópolis", "lat": 49.84, "lng": 24.03, "r": 220, "p": ["Matrícula BC (Leópolis), BO (Ternópil), AT (Ivano-Frankivsk).", "Arquitectura de estilo centroeuropeo: cascos antiguos con plazas y tranvías.", "Iglesias greco-católicas y más bosque que en el resto del país."], "sv": {"lat": 49.8397, "lng": 24.0297, "h": 0, "p": 0}},
+    {"id": "carpatos", "n": "Cárpatos y Transcarpatia", "lat": 48.4, "lng": 23.8, "r": 160, "p": ["Montañas boscosas con casas de madera e iglesias de madera de techos altos.", "Matrícula AO (Transcarpatia); cartelería ocasional en húngaro cerca de la frontera."], "sv": {"lat": 48.6208, "lng": 22.2879, "h": 0, "p": 0}},
+    {"id": "centro", "n": "Centro agrícola", "lat": 49.4, "lng": 33.0, "r": 250, "p": ["Tierra negra y campos interminables de trigo y girasol, con hileras de árboles cortaviento.", "Casas bajas encaladas o de ladrillo con techos de chapa.", "Matrículas BI (Poltava), CA (Cherkasy), AE (Dnipró)."], "sv": {"lat": 49.5883, "lng": 34.5514, "h": 0, "p": 0}},
+    {"id": "sur", "n": "Sur: Odesa y el mar Negro", "lat": 46.6, "lng": 31.5, "r": 260, "p": ["Estepa muy llana y seca, con álamos a los lados de la ruta.", "Costa del mar Negro y viñedos.", "Matrículas BH (Odesa), BE (Mykoláiv)."], "sv": {"lat": 46.4825, "lng": 30.7233, "h": 0, "p": 0}},
+    {"id": "este", "n": "Este: Járkov", "lat": 49.99, "lng": 36.23, "r": 220, "p": ["Estepa y ciudades industriales; más carteles en ruso en negocios viejos.", "Matrícula AX (Járkov)."], "sv": {"lat": 49.9935, "lng": 36.2304, "h": 0, "p": 0}}
+  ],
+  "confusiones": [
+    {"iso": "ru", "n": "Rusia", "dif": ["Buscá і, ї, є, ґ: son ucranianas. Las letras ы, э y ъ no existen en ucraniano.", "Matrícula ucraniana con banda azul y UA; la rusa no tiene banda y lleva el código de región a la derecha."]},
+    {"iso": "by", "n": "Bielorrusia", "dif": ["El bielorruso también usa і, pero tiene ў y no usa ї ni є.", "Matrícula bielorrusa con la bandera roja y verde."]},
+    {"iso": "pl", "n": "Polonia", "dif": ["Paisaje parecido en el oeste, pero Polonia usa alfabeto latino y matrícula con PL."]}
+  ],
+  "fuentes": [["Plonk It: Ucrania", "https://www.plonkit.net/ukraine"], ["GeoHints: matrículas", "https://geohints.com/meta/licensePlates"]]
+}

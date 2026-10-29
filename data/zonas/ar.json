@@ -1,0 +1,20 @@
+{
+  "resumen": "Argentina: líneas de borde blancas, característica telefónica para ubicar la provincia (011 Buenos Aires, 0351 Córdoba, 0261 Mendoza, 0341 Rosario, 0387 Salta, 0299 Neuquén) y paisajes muy distintos de norte a sur.",
+  "coche": [
+    {"t": "Cobertura Gen 3 y Gen 4 en casi todo el país, con muchas rutas larguísimas. El coche no distingue provincias.", "sv": {"lat": -34.6037, "lng": -58.3816, "h": 180, "p": -60}}
+  ],
+  "zonas": [
+    {"id": "pampa", "n": "Buenos Aires y la Pampa", "lat": -35.5, "lng": -61.0, "r": 450, "p": ["Llanura totalmente plana, campos de soja y trigo, alambrados y molinos.", "Hileras de eucaliptos rodeando las casas de campo."], "sv": {"lat": -34.6037, "lng": -58.3816, "h": 0, "p": 0}},
+    {"id": "cordoba", "n": "Córdoba y el centro", "lat": -31.4, "lng": -64.2, "r": 250, "p": ["Sierras bajas con piedra y monte serrano, pueblos turísticos en los valles."], "sv": {"lat": -31.4201, "lng": -64.1888, "h": 0, "p": 0}},
+    {"id": "noroeste", "n": "Noroeste (Salta, Jujuy, Tucumán)", "lat": -24.5, "lng": -65.5, "r": 330, "p": ["Cerros de colores, cardones (cactus columnares), adobe y altiplano seco.", "Tucumán: más verde, caña de azúcar y yungas."], "sv": {"lat": -24.7821, "lng": -65.4232, "h": 0, "p": 0}},
+    {"id": "cuyo", "n": "Cuyo (Mendoza, San Juan)", "lat": -32.9, "lng": -68.8, "r": 300, "p": ["Viñedos regados por acequias, hileras de álamos y la cordillera de los Andes de fondo.", "Fuera de los oasis, desierto de arbustos."], "sv": {"lat": -32.8895, "lng": -68.8458, "h": 0, "p": 0}},
+    {"id": "noreste", "n": "Noreste (Misiones, Corrientes)", "lat": -27.5, "lng": -55.8, "r": 280, "p": ["Tierra roja intensa, selva y plantaciones de yerba mate y pinos (Misiones).", "Corrientes: esteros y llanura húmeda con palmeras."], "sv": {"lat": -27.3621, "lng": -55.9009, "h": 0, "p": 0}},
+    {"id": "patagonia", "n": "Patagonia", "lat": -45.0, "lng": -68.5, "r": 700, "p": ["Estepa de arbustos bajos amarillentos, viento y nada en el horizonte; rutas de ripio.", "Cordillera: lagos y bosques en Bariloche y El Bolsón."], "sv": {"lat": -41.1335, "lng": -71.3103, "h": 0, "p": 0}}
+  ],
+  "confusiones": [
+    {"iso": "cl", "n": "Chile", "dif": ["Chile tiene bolardos/postes guía negros con una franja blanca y reflectores, y matrículas blancas de 4 letras y 2 números.", "En Chile los Andes casi siempre se ven y el país es angosto: la costa está siempre cerca."]},
+    {"iso": "uy", "n": "Uruguay", "dif": ["Uruguay también es ganadero, pero tiene lomadas suaves en vez de llanura perfecta, y es mucho más chico: el mar o el río siempre están cerca."]},
+    {"iso": "br", "n": "Brasil", "dif": ["Carteles en portugués y DDD de dos dígitos."]}
+  ],
+  "fuentes": [["Plonk It: Argentina", "https://www.plonkit.net/argentina"], ["GeoHints: teléfonos", "https://geohints.com/meta/phoneNumbers"]]
+}

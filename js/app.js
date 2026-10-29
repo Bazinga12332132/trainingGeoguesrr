@@ -12,6 +12,8 @@ function render() {
 
   app.innerHTML = page ? page() : vHome();
   if (route === 'guia' || route === '') window.scrollTo(0, 0);
+  if (route === 'guia' && parts[1]) montarZonas(parts[1]);
+  else ZS = null;
 
   if (route === 'jugar') {
     tick();

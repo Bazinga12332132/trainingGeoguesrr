@@ -1,0 +1,20 @@
+{
+  "resumen": "España: el idioma de los carteles (catalán, gallego, euskera) y el paisaje separan las regiones. Las matrículas actuales no indican la provincia.",
+  "coche": [
+    {"t": "Cobertura Gen 3 y Gen 4 muy completa. El coche no distingue regiones.", "sv": {"lat": 40.4168, "lng": -3.7038, "h": 180, "p": -60}}
+  ],
+  "zonas": [
+    {"id": "galicia", "n": "Galicia y Asturias (noroeste)", "lat": 42.9, "lng": -7.2, "r": 170, "p": ["Verde y lluvioso, eucaliptos, casas de piedra gris y hórreos (graneros elevados).", "Carteles en gallego (rúa, praia, concello)."], "sv": {"lat": 42.8782, "lng": -8.5448, "h": 0, "p": 0}},
+    {"id": "pais-vasco", "n": "País Vasco y Navarra", "lat": 43.0, "lng": -2.2, "r": 110, "p": ["Carteles en euskera con muchas k, tx y z (kalea, etxea, -ko).", "Colinas muy verdes con caseríos grandes de techo a dos aguas."], "sv": {"lat": 43.263, "lng": -2.935, "h": 0, "p": 0}},
+    {"id": "cataluna", "n": "Cataluña", "lat": 41.7, "lng": 1.7, "r": 150, "p": ["Carteles en catalán (carrer, sortida, l'…), banderas estrelladas (esteladas) en balcones.", "Pinares, viñedos y masías de piedra."], "sv": {"lat": 41.3874, "lng": 2.1686, "h": 0, "p": 0}},
+    {"id": "meseta", "n": "Meseta (Castilla y Madrid)", "lat": 40.5, "lng": -4.2, "r": 330, "p": ["Llanura alta y seca de cereal, cielo enorme, pueblos de adobe o piedra con una iglesia grande.", "Madrid: autovías radiales A-1 a A-6."], "sv": {"lat": 40.4168, "lng": -3.7038, "h": 0, "p": 0}},
+    {"id": "levante", "n": "Levante (Valencia, Murcia)", "lat": 38.8, "lng": -0.8, "r": 200, "p": ["Naranjos y huertas, palmeras, costa con edificios altos.", "Carteles en valenciano en parte de la región."], "sv": {"lat": 39.4699, "lng": -0.3763, "h": 0, "p": 0}},
+    {"id": "andalucia", "n": "Andalucía (sur)", "lat": 37.4, "lng": -4.6, "r": 280, "p": ["Pueblos blancos, olivares que cubren colinas enteras y mucho calor.", "Almería: desierto con invernaderos de plástico."], "sv": {"lat": 37.3891, "lng": -5.9845, "h": 0, "p": 0}}
+  ],
+  "fuera": ["Las islas Canarias no están en el mapa: paisaje volcánico, plataneras y bolardos con un rectángulo naranja. Baleares: muros de piedra seca y pinos junto al mar."],
+  "confusiones": [
+    {"iso": "pt", "n": "Portugal", "dif": ["Portugal escribe en portugués (rua, estrada, ã, ç) y su matrícula tiene una franja amarilla a la derecha."]},
+    {"iso": "it", "n": "Italia", "dif": ["Italia tiene matrícula con banda azul en los dos lados (la derecha con el año y la provincia) y carteles de autopista verdes."]}
+  ],
+  "fuentes": [["Plonk It: España", "https://www.plonkit.net/spain"]]
+}

@@ -1,0 +1,20 @@
+{
+  "resumen": "Sudáfrica se maneja por la izquierda y tiene líneas de borde amarillas. Las matrículas terminan con la provincia: GP (Gauteng), ZN (KwaZulu-Natal), EC (Cabo Oriental), CA/CY… (Cabo Occidental), NW, FS, MP, L (Limpopo), NC.",
+  "coche": [
+    {"t": "Tiene cobertura Gen 2, Gen 3 y Gen 4. La Gen 2 (más borrosa, con un círculo difuso arriba y abajo) en un país que maneja por la izquierda con líneas amarillas es casi seguro Sudáfrica.", "sv": {"lat": -26.2041, "lng": 28.0473, "h": 180, "p": -60}}
+  ],
+  "zonas": [
+    {"id": "gauteng", "n": "Gauteng (Johannesburgo, Pretoria)", "lat": -26.0, "lng": 28.1, "r": 90, "p": ["Matrícula terminada en GP.", "Altiplano (highveld) con pasto, montañas de residuos mineros amarillentos y muros con alambre eléctrico."], "sv": {"lat": -26.2041, "lng": 28.0473, "h": 0, "p": 0}},
+    {"id": "cabo-occidental", "n": "Cabo Occidental (Ciudad del Cabo)", "lat": -33.6, "lng": 19.5, "r": 220, "p": ["Matrículas que empiezan con C (CA Ciudad del Cabo, CY, CF…).", "Montañas de piedra, vegetación de fynbos y viñedos con casas blancas de estilo holandés del Cabo."], "sv": {"lat": -33.9249, "lng": 18.4241, "h": 0, "p": 0}},
+    {"id": "kzn", "n": "KwaZulu-Natal (Durban)", "lat": -29.0, "lng": 30.8, "r": 200, "p": ["Matrícula terminada en ZN.", "Colinas muy verdes con caña de azúcar y casas redondas (rondavels) dispersas."], "sv": {"lat": -29.8587, "lng": 31.0218, "h": 0, "p": 0}},
+    {"id": "karoo", "n": "Karoo (interior semiárido)", "lat": -31.8, "lng": 22.5, "r": 330, "p": ["Semidesierto de arbustos bajos, mesetas planas y molinos de agua; pueblos chicos con iglesias blancas."], "sv": {"lat": -32.2968, "lng": 22.5826, "h": 0, "p": 0}},
+    {"id": "noreste", "n": "Limpopo y Mpumalanga", "lat": -24.3, "lng": 30.2, "r": 230, "p": ["Matrículas que terminan en L (Limpopo) o MP (Mpumalanga).", "Bushveld: monte con acacias y espinos, baobabs en el norte; plantaciones de pino en Mpumalanga."], "sv": {"lat": -23.9045, "lng": 29.4689, "h": 0, "p": 0}},
+    {"id": "cabo-oriental", "n": "Cabo Oriental", "lat": -32.5, "lng": 27.0, "r": 220, "p": ["Matrícula terminada en EC.", "Colinas verdes onduladas con pueblos de casas redondas pintadas (Transkei)."], "sv": {"lat": -33.0153, "lng": 27.9116, "h": 0, "p": 0}}
+  ],
+  "confusiones": [
+    {"iso": "bw", "n": "Botsuana", "dif": ["Botsuana se maneja también por la izquierda, pero su matrícula es amarilla atrás y no lleva letras de provincia; paisaje muy llano y seco."]},
+    {"iso": "au", "n": "Australia", "dif": ["Australia no tiene líneas de borde amarillas y sus postes guía son blancos con reflector rojo."]},
+    {"iso": "sz", "n": "Esuatini", "dif": ["Paisaje casi igual al de Mpumalanga (montañas verdes y pinares): fijate en la matrícula, que no termina con letras de provincia sudafricana."]}
+  ],
+  "fuentes": [["Plonk It: Sudáfrica", "https://www.plonkit.net/south-africa"], ["GeoHints: generaciones de cámara", "https://geohints.com/meta/cameraGens"], ["GeoHints: líneas", "https://geohints.com/meta/lines"]]
+}

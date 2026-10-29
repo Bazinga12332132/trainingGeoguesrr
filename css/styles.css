@@ -149,3 +149,29 @@ a.gcard:hover{border-color:var(--ac)}
 .gen{background:var(--card);border:1px solid var(--bd);border-radius:12px;padding:10px 14px;margin:8px 0}
 .gen summary{cursor:pointer;font-weight:700}
 a.ghost{text-decoration:none;display:inline-block;color:inherit}
+
+/* ===== Mapa por zonas ===== */
+.zbadge{display:inline-block;width:max-content;font-size:.75rem;font-weight:700;color:var(--ac);background:var(--okbg);border-radius:999px;padding:2px 9px}
+.zbox{display:grid;grid-template-columns:minmax(0,3fr) minmax(0,2fr);gap:16px;align-items:start;margin:12px 0}
+.zmap{background:var(--card);border:1px solid var(--bd);border-radius:var(--r);padding:8px;box-shadow:var(--sh)}
+.zmapa{width:100%;height:auto;max-height:70vh;display:block}
+.zmapa .pais{fill:var(--bg2);stroke:var(--mut);stroke-width:1.5;stroke-linejoin:round}
+.zona{cursor:pointer}
+.zona circle{fill:var(--ac);fill-opacity:.22;stroke:var(--ac);stroke-width:2.5;transition:fill-opacity .15s}
+.zona:hover circle,.zona:focus circle{fill-opacity:.42}
+.zona.on circle{fill-opacity:.6;stroke-width:4}
+.zona.bien circle{fill:var(--ok);stroke:var(--ok);fill-opacity:.55}
+.zona.mal circle{fill:var(--ko);stroke:var(--ko);fill-opacity:.55}
+.zona:focus{outline:none}
+.zlabel{font:700 24px var(--head);fill:var(--fg);text-anchor:middle;paint-order:stroke;stroke:var(--card);stroke-width:6px;pointer-events:none}
+.znum{font:800 22px var(--head);fill:var(--fg);text-anchor:middle;paint-order:stroke;stroke:var(--card);stroke-width:4px;pointer-events:none}
+.zlist{margin:8px 0 0;padding-left:24px}.zlist li{margin:4px 0}
+.linkbtn{background:none;border:0;padding:2px 0;color:var(--ac);font-weight:600;text-align:left;cursor:pointer;text-decoration:underline;text-underline-offset:3px}
+.zpanel{position:sticky;top:12px}
+.zpanel h4{margin:0 0 6px;font:700 1.1rem var(--head)}
+.zpanel h4.ok{color:var(--ok)}.zpanel h4.ko{color:var(--ko)}
+.sv{margin:8px 0}
+.svbtn{padding:8px 14px;font-size:.92rem}
+.svframe{width:100%;aspect-ratio:16/10;border:0;border-radius:12px;display:block;margin-bottom:4px;background:var(--bg2)}
+.fuentes a{color:var(--ac)}
+@media(max-width:760px){.zbox{grid-template-columns:1fr}.zpanel{position:static}}

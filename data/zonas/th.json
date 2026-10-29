@@ -1,0 +1,20 @@
+{
+  "resumen": "Tailandia se maneja por la IZQUIERDA (Camboya y Laos por la derecha): es lo primero que hay que mirar. La matrícula es blanca, en escritura tailandesa, y abajo dice la provincia.",
+  "coche": [
+    {"t": "Cobertura Gen 3 y Gen 4 en todo el país. El coche no es una pista fuerte acá: conviene mirar el lado de manejo, la escritura y la matrícula.", "sv": {"lat": 13.7563, "lng": 100.5018, "h": 180, "p": -60}}
+  ],
+  "zonas": [
+    {"id": "bangkok", "n": "Bangkok y el centro", "lat": 14.2, "lng": 100.4, "r": 160, "p": ["Matrícula con \"กรุงเทพมหานคร\" (Bangkok) abajo.", "Llanura completamente plana de arrozales y canales; autopistas elevadas en la ciudad."], "sv": {"lat": 13.7563, "lng": 100.5018, "h": 0, "p": 0}},
+    {"id": "norte", "n": "Norte: Chiang Mai y Chiang Rai", "lat": 18.8, "lng": 99.6, "r": 210, "p": ["Montañas boscosas y rutas con curvas; templos de estilo lanna con techos de madera escalonados.", "Clima más fresco: pinos en las alturas y campos de arroz en terrazas en los valles."], "sv": {"lat": 18.7883, "lng": 98.9853, "h": 0, "p": 0}},
+    {"id": "isan", "n": "Noreste (Isan)", "lat": 15.8, "lng": 103.3, "r": 260, "p": ["Meseta llana y más seca, arrozales enormes con árboles sueltos en el medio.", "Tierra rojiza (laterita) a los costados de los caminos y casas de madera sobre pilotes."], "sv": {"lat": 16.4322, "lng": 102.8236, "h": 0, "p": 0}},
+    {"id": "este", "n": "Este: Pattaya y Chanthaburi", "lat": 12.9, "lng": 101.6, "r": 130, "p": ["Plantaciones de frutales (durián, rambután), caucho y costa con playas.", "Zona industrial y de turismo alrededor de Pattaya y Rayong."], "sv": {"lat": 12.9236, "lng": 100.8825, "h": 0, "p": 0}},
+    {"id": "oeste", "n": "Oeste: Kanchanaburi", "lat": 14.6, "lng": 98.9, "r": 140, "p": ["Montañas cubiertas de selva cerca de la frontera con Myanmar, ríos y represas.", "Plantaciones de caña de azúcar y mandioca en la parte baja."], "sv": {"lat": 14.0228, "lng": 99.5328, "h": 0, "p": 0}},
+    {"id": "sur", "n": "Sur", "lat": 8.3, "lng": 99.5, "r": 260, "p": ["Plantaciones de palma aceitera y árboles de caucho alineados (tazas en el tronco).", "Montañas de piedra caliza (karst) verticales cerca de Krabi y Phang Nga.", "En el extremo sur (Pattani, Yala, Narathiwat) mezquitas y carteles con escritura jawi (árabe)."], "sv": {"lat": 8.0863, "lng": 98.9063, "h": 0, "p": 0}}
+  ],
+  "confusiones": [
+    {"iso": "kh", "n": "Camboya", "dif": ["Camboya se maneja por la DERECHA; Tailandia por la izquierda.", "El jemer (camboyano) tiene letras más altas, con \"sombreritos\" y colas que bajan; el tailandés es más chico y con pequeños círculos al principio de las letras."]},
+    {"iso": "la", "n": "Laos", "dif": ["Laos se maneja por la DERECHA.", "El lao se parece al tailandés pero es más redondo y simple (sin los pequeños círculos iniciales de muchas letras tailandesas)."]},
+    {"iso": "my", "n": "Malasia", "dif": ["También por la izquierda, pero Malasia escribe en alfabeto latino (malayo); la matrícula malaya es negra con letras blancas."]}
+  ],
+  "fuentes": [["Plonk It: Tailandia", "https://www.plonkit.net/thailand"], ["GeoHints: lado de manejo", "https://geohints.com/meta/drivingSide"]]
+}

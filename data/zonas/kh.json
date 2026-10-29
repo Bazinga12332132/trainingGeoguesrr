@@ -1,0 +1,20 @@
+{
+  "resumen": "Camboya se maneja por la DERECHA (a diferencia de Tailandia). Escritura jemer, caminos de tierra roja y casas de madera sobre pilotes. La matrícula indica la provincia en jemer y en inglés.",
+  "coche": [
+    {"t": "La cobertura es mayormente Gen 3. Muchos caminos rurales son de tierra roja y polvo: si ves un camino de tierra roja con manejo por la derecha en el sudeste asiático, pensá en Camboya.", "sv": {"lat": 11.5564, "lng": 104.9282, "h": 180, "p": -60}},
+    {"t": "Mojones de kilómetro de piedra con la base blanca y la parte de arriba redondeada y roja."}
+  ],
+  "zonas": [
+    {"id": "phnom-penh", "n": "Phnom Penh", "lat": 11.56, "lng": 104.93, "r": 50, "p": ["Matrícula con \"PHNOM PENH\".", "Ciudad con mucho tránsito de motos y tuk-tuks (remolques tirados por moto), pagodas con techos dorados."], "sv": {"lat": 11.5564, "lng": 104.9282, "h": 0, "p": 0}},
+    {"id": "siem-reap", "n": "Siem Reap y Angkor", "lat": 13.36, "lng": 103.86, "r": 60, "p": ["Templos de piedra antiguos entre la selva, hoteles y turismo.", "Matrícula con \"SIEM REAP\"."], "sv": {"lat": 13.3671, "lng": 103.8448, "h": 0, "p": 0}},
+    {"id": "tonle-sap", "n": "Llanura central y Tonlé Sap", "lat": 12.5, "lng": 104.2, "r": 120, "p": ["Llanura enorme e inundable, arrozales con palmeras de azúcar (palmira) sueltas.", "Casas de madera altas sobre pilotes por las crecidas."], "sv": {"lat": 12.5388, "lng": 104.0213, "h": 0, "p": 0}},
+    {"id": "costa", "n": "Costa sur: Sihanoukville y Kampot", "lat": 10.75, "lng": 103.8, "r": 80, "p": ["Costa del golfo de Tailandia, playas y colinas verdes.", "Edificios y carteles en chino en Sihanoukville."], "sv": {"lat": 10.6253, "lng": 103.5234, "h": 0, "p": 0}},
+    {"id": "noreste", "n": "Noreste: Ratanakiri y Mondulkiri", "lat": 13.3, "lng": 107.0, "r": 110, "p": ["Tierra roja intensa, colinas y plantaciones de caucho y café.", "Poca gente y caminos de tierra."], "sv": {"lat": 13.7394, "lng": 106.9873, "h": 0, "p": 0}}
+  ],
+  "confusiones": [
+    {"iso": "th", "n": "Tailandia", "dif": ["Tailandia se maneja por la IZQUIERDA; Camboya por la derecha.", "El tailandés tiene círculos chiquitos al empezar muchas letras; el jemer es más alto y con colas debajo de la línea."]},
+    {"iso": "la", "n": "Laos", "dif": ["Los dos se manejan por la derecha. Laos es mucho más montañoso; Camboya es casi toda llanura.", "El lao es redondo y simple; el jemer tiene letras más altas y apiladas."]},
+    {"iso": "vn", "n": "Vietnam", "dif": ["Vietnam usa alfabeto latino con muchos acentos (ư, ơ, đ). Además casi no tiene cobertura de Street View."]}
+  ],
+  "fuentes": [["Plonk It: Camboya", "https://www.plonkit.net/cambodia"], ["Flashcards: bolardos y mojones", "https://knowt.com/flashcards/f9704dbf-41f6-4470-96c0-7a5cf106a9cc"]]
+}

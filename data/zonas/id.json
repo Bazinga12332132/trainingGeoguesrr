@@ -1,0 +1,20 @@
+{
+  "resumen": "Indonesia se maneja por la izquierda y la matrícula empieza con 1 o 2 letras que indican la región (B Yakarta, D Bandung, L Surabaya, AB Yogyakarta, DK Bali, BK Medan). Es la pista más rápida.",
+  "coche": [
+    {"t": "Cobertura Gen 3 y Gen 4 muy amplia en Java, Bali y Sumatra. El coche no distingue islas: usá el prefijo de la matrícula.", "sv": {"lat": -6.2088, "lng": 106.8456, "h": 180, "p": -60}}
+  ],
+  "zonas": [
+    {"id": "java-oeste", "n": "Java occidental (Yakarta, Bandung)", "lat": -6.6, "lng": 107.2, "r": 170, "p": ["Matrícula B (Yakarta) o D (Bandung), F (Bogor).", "Megaciudad con miles de motos; al sur, montañas con plantaciones de té y arrozales."], "sv": {"lat": -6.2088, "lng": 106.8456, "h": 0, "p": 0}},
+    {"id": "java-centro-este", "n": "Java central y oriental", "lat": -7.4, "lng": 111.5, "r": 280, "p": ["Matrículas AB (Yogyakarta), H (Semarang), L (Surabaya), N (Malang).", "Arrozales en terrazas con volcanes cónicos detrás; muy densamente poblado."], "sv": {"lat": -7.7956, "lng": 110.3695, "h": 0, "p": 0}},
+    {"id": "bali", "n": "Bali", "lat": -8.4, "lng": 115.2, "r": 70, "p": ["Matrícula DK.", "Templos hindúes con portales partidos en dos (candi bentar), ofrendas en la calle y estatuas con telas a cuadros blancos y negros."], "sv": {"lat": -8.6705, "lng": 115.2126, "h": 0, "p": 0}},
+    {"id": "sumatra", "n": "Sumatra", "lat": -0.5, "lng": 101.5, "r": 550, "p": ["Matrículas BK (Medan), BA (Sumatra Occidental), BM (Riau).", "Plantaciones enormes de palma aceitera; en Sumatra Occidental, casas minangkabau con techos en forma de cuernos."], "sv": {"lat": 3.5952, "lng": 98.6722, "h": 0, "p": 0}},
+    {"id": "kalimantan", "n": "Kalimantan (Borneo)", "lat": 0.5, "lng": 114.0, "r": 500, "p": ["Matrículas KB, KH, KT, DA.", "Selva, ríos anchos y caminos largos entre plantaciones; casas de madera sobre pilotes."], "sv": {"lat": -0.0263, "lng": 109.3425, "h": 0, "p": 0}},
+    {"id": "sulawesi", "n": "Sulawesi", "lat": -2.0, "lng": 120.5, "r": 450, "p": ["Matrícula DD (Makassar), DB (Manado).", "Montañas verdes; en Toraja, casas con techos curvos enormes en forma de barco (tongkonan)."], "sv": {"lat": -5.1477, "lng": 119.4327, "h": 0, "p": 0}}
+  ],
+  "confusiones": [
+    {"iso": "my", "n": "Malasia", "dif": ["Idioma casi igual, pero la matrícula malaya es negra con letras blancas y empieza con la letra del estado (W Kuala Lumpur, J Johor…).", "Malasia tiene rutas más prolijas con líneas de borde amarillas en muchas calles."]},
+    {"iso": "ph", "n": "Filipinas", "dif": ["Filipinas se maneja por la DERECHA y tiene jeepneys decorados."]},
+    {"iso": "th", "n": "Tailandia", "dif": ["Tailandia escribe en alfabeto tailandés; Indonesia en latino."]}
+  ],
+  "fuentes": [["Plonk It: Indonesia", "https://www.plonkit.net/indonesia"], ["GeoHints: matrículas", "https://geohints.com/meta/licensePlates"]]
+}

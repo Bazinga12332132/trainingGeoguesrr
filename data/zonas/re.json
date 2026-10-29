@@ -1,0 +1,20 @@
+{
+  "resumen": "Reunión es Francia en el océano Índico: carteles franceses, matrícula europea con F y 974 a la derecha, pero con caña de azúcar, palmeras y volcanes. El coche de Google es la pista rápida.",
+  "coche": [
+    {"t": "Meta clásico: cinta en una de las barras TRASERAS del portaequipajes, del lado del acompañante. Mirá hacia abajo y hacia atrás.", "sv": {"lat": -20.8823, "lng": 55.4504, "h": 180, "p": -60}},
+    {"t": "La matrícula francesa termina con el número de departamento a la derecha: 974 es Reunión (972 Martinica, 971 Guadalupe)."}
+  ],
+  "zonas": [
+    {"id": "saint-denis", "n": "Norte: Saint-Denis", "lat": -20.89, "lng": 55.46, "r": 9, "p": ["La capital: ciudad densa entre el mar y las montañas, casas criollas con galerías."], "sv": {"lat": -20.8823, "lng": 55.4504, "h": 0, "p": 0}},
+    {"id": "oeste", "n": "Oeste seco: Saint-Paul y Saint-Gilles", "lat": -21.05, "lng": 55.25, "r": 10, "p": ["La costa \"bajo el viento\": más seca, sabana con pasto amarillo y playas con lagunas.", "Rutas que suben en zigzag por las laderas."], "sv": {"lat": -21.0109, "lng": 55.2697, "h": 0, "p": 0}},
+    {"id": "este", "n": "Este húmedo: Saint-Benoît", "lat": -21.03, "lng": 55.71, "r": 10, "p": ["La costa \"sobre el viento\": muy lluviosa, verdísima, ríos y cascadas.", "Campos de caña de azúcar y vainilla."], "sv": {"lat": -21.0349, "lng": 55.7127, "h": 0, "p": 0}},
+    {"id": "sur", "n": "Sur: Saint-Pierre", "lat": -21.32, "lng": 55.48, "r": 10, "p": ["Segunda ciudad, costa con acantilados de lava y caña de azúcar en las lomas."], "sv": {"lat": -21.3393, "lng": 55.4781, "h": 0, "p": 0}},
+    {"id": "altos", "n": "Altos y circos: Cilaos, Salazie, volcán", "lat": -21.15, "lng": 55.5, "r": 12, "p": ["Montañas enormes y empinadas (circos), rutas de cornisa con curvas cerradas.", "Hacia el Piton de la Fournaise, campos de lava negra y paisaje lunar."], "sv": {"lat": -21.1365, "lng": 55.4719, "h": 0, "p": 0}}
+  ],
+  "confusiones": [
+    {"iso": "fr", "n": "Francia continental", "dif": ["Misma matrícula y carteles, pero la matrícula de Reunión termina en 974 y el paisaje es tropical y volcánico."]},
+    {"iso": "mq", "n": "Martinica", "dif": ["También francés y tropical: la matrícula termina en 972. Reunión tiene montañas mucho más altas y escarpadas."]},
+    {"iso": "mu", "n": "Mauricio", "dif": ["La isla vecina usa matrículas negras con letras blancas y se maneja por la izquierda; Reunión, por la derecha."]}
+  ],
+  "fuentes": [["Plonk It: Reunión", "https://www.plonkit.net/reunion"], ["GeoHints: coches de Google", "https://geohints.com/meta/googleVehicles/cars"], ["GeoHints: matrículas", "https://geohints.com/meta/licensePlates"]]
+}

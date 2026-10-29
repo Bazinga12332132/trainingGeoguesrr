@@ -21,7 +21,7 @@ function guiaCards() {
         snip = hit[1];
       }
     }
-    out.push(`<a class="card gcard" href="#/guia/${c.i}"><img class="flag" src="${esc(FLAG(c.i))}" alt="" loading="lazy" onerror="this.remove()"><b>${esc(c.n)}</b><small>${esc(c.c)} · ${ladoTxt(c)}${c.t ? ' · .' + c.t : ''}${c.p ? ' · +' + c.p : ''}</small>${snip ? `<small class="snip">${esc(snip.slice(0, 120))}</small>` : g ? '' : '<small class="mut">Guía básica</small>'}</a>`);
+    out.push(`<a class="card gcard" href="#/guia/${c.i}"><img class="flag" src="${esc(FLAG(c.i))}" alt="" loading="lazy" onerror="this.remove()"><b>${esc(c.n)}</b><small>${esc(c.c)} · ${ladoTxt(c)}${c.t ? ' · .' + c.t : ''}${c.p ? ' · +' + c.p : ''}</small>${ZONAS_ISO.has(c.i) ? '<small class="zbadge">Mapa por zonas</small>' : ''}${snip ? `<small class="snip">${esc(snip.slice(0, 120))}</small>` : g ? '' : '<small class="mut">Guía básica</small>'}</a>`);
   }
   return out.join('') || '<p class="mut">No hay resultados. Probá con otro país o palabra.</p>';
 }
@@ -51,6 +51,7 @@ function vPais(iso) {
   <div class="ghead"><img class="flag big" src="${esc(FLAG(iso))}" alt="Bandera de ${esc(c.n)}" onerror="this.remove()"><div><h2>${esc(c.n)}</h2><p class="mut">${esc(c.c)}</p></div></div>
   <div class="stats"><div class="card"><b>${ladoTxt(c)}</b><small>Conducción</small></div><div class="card"><b>${c.t ? '.' + esc(c.t) : '—'}</b><small>Dominio</small></div><div class="card"><b>${c.p ? '+' + esc(c.p) : '—'}</b><small>Prefijo${c.p ? '' : ' (compartido)'}</small></div></div>
   <div class="acts"><button class="btn" ${nq ? '' : 'disabled'} onclick="start({cats:Object.keys(CATS),iso:'${iso}',reg:'*',diff:1,cd:0,mode:'auto',kind:'practica',n:10,tm:0})">Practicar este país (${nq} preguntas)</button></div>
+  ${ZONAS_ISO.has(iso) ? '<div id="zonas-box"></div>' : ''}
   ${secs || '<p class="mut">Todavía no hay una guía detallada de este país: solo los datos básicos de arriba.</p>'}${regs}
   <div class="acts"><a class="ghost" href="#/guia/${prev.i}">← ${esc(prev.n)}</a><a class="ghost" href="#/guia/${nxt.i}">${esc(nxt.n)} →</a></div>`;
 }

@@ -1,0 +1,19 @@
+{
+  "resumen": "Brasil: portugués, cobertura enorme. Para la región, la mejor pista es la característica telefónica (DDD) en carteles de negocios: el primer dígito indica la región.",
+  "coche": [
+    {"t": "Cobertura Gen 3 y Gen 4 en casi todo el país. El coche no distingue regiones: mirá el DDD y el paisaje.", "sv": {"lat": -23.5505, "lng": -46.6333, "h": 180, "p": -60}},
+    {"t": "DDD (característica): 1x São Paulo, 2x Río de Janeiro y Espírito Santo, 3x Minas Gerais, 4x Paraná y Santa Catarina, 5x Rio Grande do Sul, 6x Centro-Oeste y Tocantins, 7x Bahía y Sergipe, 8x resto del Nordeste, 9x Norte (Amazonia) y Maranhão."}
+  ],
+  "zonas": [
+    {"id": "sudeste", "n": "Sudeste (São Paulo, Río, Minas)", "lat": -21.0, "lng": -45.0, "r": 450, "p": ["DDD que empieza con 1, 2 o 3.", "Sierras verdes, tierra roja, ciudades enormes y favelas en los cerros.", "Minas Gerais: colinas sin fin con pasturas y pueblos coloniales."], "sv": {"lat": -23.5505, "lng": -46.6333, "h": 0, "p": 0}},
+    {"id": "sur", "n": "Sur (Paraná, Santa Catarina, Rio Grande do Sul)", "lat": -27.5, "lng": -51.5, "r": 400, "p": ["DDD que empieza con 4 o 5.", "Araucarias (pino paraná con copa en forma de candelabro) en Paraná y Santa Catarina.", "Pueblos de inmigración alemana e italiana; Rio Grande do Sul: pampa con estancias, como Uruguay."], "sv": {"lat": -25.4284, "lng": -49.2733, "h": 0, "p": 0}},
+    {"id": "centro-oeste", "n": "Centro-Oeste (Goiás, Mato Grosso, Brasilia)", "lat": -15.5, "lng": -53.0, "r": 650, "p": ["DDD que empieza con 6.", "Cerrado: sabana con árboles retorcidos; campos de soja infinitos y rutas rectas de tierra roja."], "sv": {"lat": -15.7975, "lng": -47.8919, "h": 0, "p": 0}},
+    {"id": "nordeste", "n": "Nordeste", "lat": -8.5, "lng": -39.5, "r": 650, "p": ["DDD que empieza con 7 u 8.", "Interior (sertão): caatinga seca y espinosa, cactus y tierra pálida.", "Costa: cocoteros, playas y casas de colores muy vivos."], "sv": {"lat": -8.0476, "lng": -34.877, "h": 0, "p": 0}},
+    {"id": "norte", "n": "Norte (Amazonia)", "lat": -4.0, "lng": -58.0, "r": 800, "p": ["DDD que empieza con 9.", "Selva densa, ríos enormes, caminos de tierra y casas de madera sobre pilotes."], "sv": {"lat": -3.119, "lng": -60.0217, "h": 0, "p": 0}}
+  ],
+  "confusiones": [
+    {"iso": "pt", "n": "Portugal", "dif": ["Portugal tiene matrícula europea (banda azul); Brasil usa la Mercosur (banda azul ARRIBA) o la gris vieja con el nombre de la ciudad."]},
+    {"iso": "ar", "n": "Argentina", "dif": ["Argentina habla español; si los carteles dicen \"Rua\", \"Avenida\" con nombres en portugués o \"Proibido\", es Brasil."]}
+  ],
+  "fuentes": [["Plonk It: Brasil", "https://www.plonkit.net/brazil"], ["GeoHints: teléfonos", "https://geohints.com/meta/phoneNumbers"]]
+}

@@ -1,0 +1,17 @@
+{
+  "resumen": "Laos se maneja por la derecha, es muy montañoso y la escritura lao se parece al tailandés pero es más redonda y simple.",
+  "coche": [
+    {"t": "Cobertura limitada, sobre todo en rutas principales. El paisaje montañoso con manejo por la derecha es la combinación típica.", "sv": {"lat": 17.9757, "lng": 102.6331, "h": 180, "p": -60}}
+  ],
+  "zonas": [
+    {"id": "vientiane", "n": "Vientián", "lat": 17.97, "lng": 102.63, "r": 60, "p": ["La capital, plana, junto al río Mekong y frente a Tailandia.", "Templos con techos dorados y edificios coloniales franceses."], "sv": {"lat": 17.9757, "lng": 102.6331, "h": 0, "p": 0}},
+    {"id": "norte", "n": "Norte: Luang Prabang", "lat": 20.2, "lng": 102.3, "r": 170, "p": ["Montañas muy empinadas cubiertas de selva y rutas de cornisa con curvas.", "Pueblos de casas de madera y bambú a los costados del camino."], "sv": {"lat": 19.8834, "lng": 102.1347, "h": 0, "p": 0}},
+    {"id": "centro", "n": "Centro: Thakhek y Savannakhet", "lat": 16.9, "lng": 105.0, "r": 140, "p": ["Valle del Mekong más llano, arrozales, y montañas de caliza (karst) cerca de Thakhek."], "sv": {"lat": 16.5564, "lng": 104.7522, "h": 0, "p": 0}},
+    {"id": "sur", "n": "Sur: Pakse y meseta de Bolaven", "lat": 15.1, "lng": 106.0, "r": 130, "p": ["Meseta con plantaciones de café, cascadas y tierra roja.", "Al sur, las islas del Mekong cerca de Camboya."], "sv": {"lat": 15.1202, "lng": 105.7988, "h": 0, "p": 0}}
+  ],
+  "confusiones": [
+    {"iso": "th", "n": "Tailandia", "dif": ["Tailandia se maneja por la izquierda; Laos por la derecha.", "El tailandés tiene círculos chiquitos al empezar las letras; el lao casi no los tiene y se ve más redondo."]},
+    {"iso": "kh", "n": "Camboya", "dif": ["Camboya es mayormente llana; Laos, montañoso.", "Jemer: letras altas con colas abajo; lao: redondo y bajo."]}
+  ],
+  "fuentes": [["Plonk It: Laos", "https://www.plonkit.net/laos"]]
+}

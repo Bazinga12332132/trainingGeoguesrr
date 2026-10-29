@@ -1,0 +1,17 @@
+{
+  "resumen": "Bangladés es un delta enorme y muy plano. Todo está en bengalí, incluida la matrícula, que dice la ciudad (por ejemplo \"ঢাকা মেট্রো\", Dhaka Metro). Se maneja por la izquierda.",
+  "coche": [
+    {"t": "La cobertura es limitada y se concentra en Dhaka y algunas rutas. Fijate en el tráfico: rickshaws de pedal muy pintados y autorickshaws verdes a gas (CNG).", "sv": {"lat": 23.8103, "lng": 90.4125, "h": 180, "p": -60}}
+  ],
+  "zonas": [
+    {"id": "dhaka", "n": "Dhaka", "lat": 23.81, "lng": 90.41, "r": 70, "p": ["Matrícula \"ঢাকা মেট্রো\".", "Tráfico muy denso de rickshaws decorados y CNG verdes, edificios de concreto amontonados y cables por todas partes."], "sv": {"lat": 23.8103, "lng": 90.4125, "h": 0, "p": 0}},
+    {"id": "chittagong", "n": "Chittagong y el sureste", "lat": 22.36, "lng": 91.8, "r": 110, "p": ["Matrícula \"চট্ট মেট্রো\" (Chattogram Metro).", "Las únicas colinas del país, puerto y costa del golfo de Bengala."], "sv": {"lat": 22.3569, "lng": 91.7832, "h": 0, "p": 0}},
+    {"id": "sylhet", "n": "Sylhet (noreste)", "lat": 24.9, "lng": 91.87, "r": 90, "p": ["Plantaciones de té en lomas bajas y mucho verde.", "Matrícula \"সিলেট\"."], "sv": {"lat": 24.8949, "lng": 91.8687, "h": 0, "p": 0}},
+    {"id": "delta", "n": "Delta y suroeste (Khulna)", "lat": 22.8, "lng": 89.55, "r": 120, "p": ["Agua por todos lados: ríos, estanques y arrozales inundados.", "Caminos elevados sobre terraplenes y bosques de manglar hacia los Sundarbans."], "sv": {"lat": 22.8456, "lng": 89.5403, "h": 0, "p": 0}}
+  ],
+  "confusiones": [
+    {"iso": "in", "n": "India (Bengala Occidental)", "dif": ["Misma escritura bengalí, pero la matrícula india usa letras latinas (WB…); la de Bangladés está escrita en bengalí.", "India tiene mucha más variedad: si hay montañas, desierto o una escritura que no es bengalí, no es Bangladés."]},
+    {"iso": "lk", "n": "Sri Lanka", "dif": ["Sri Lanka tiene colinas y montañas y mucha menos agua; Bangladés es plano y lleno de agua.", "Sri Lanka escribe en cingalés y tamil, nunca en bengalí."]}
+  ],
+  "fuentes": [["Plonk It: Bangladés", "https://www.plonkit.net/bangladesh"], ["r/geoguessr: ayuda con el sur y sudeste de Asia", "https://www.reddit.com/r/geoguessr/comments/8k7frs/help_with_southeast_asia/"]]
+}

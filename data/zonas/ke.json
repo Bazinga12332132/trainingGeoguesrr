@@ -1,0 +1,21 @@
+{
+  "resumen": "Kenia se maneja por la izquierda y se reconoce por el coche de Google: un snorkel negro sobre el capó. Matrículas blancas adelante y amarillas atrás.",
+  "coche": [
+    {"t": "Meta clásico: snorkel negro (toma de aire elevada) junto al capó, visible al mirar hacia adelante y abajo.", "sv": {"lat": -1.2921, "lng": 36.8219, "h": 0, "p": -50}},
+    {"t": "Cobertura Gen 3 y Gen 4."}
+  ],
+  "zonas": [
+    {"id": "nairobi", "n": "Nairobi", "lat": -1.29, "lng": 36.82, "r": 50, "p": ["Ciudad de altura con matatus (minibuses decorados) y mucho tránsito.", "Tierra roja y eucaliptos en las afueras."], "sv": {"lat": -1.2921, "lng": 36.8219, "h": 0, "p": 0}},
+    {"id": "centro", "n": "Tierras altas centrales (Nyeri, monte Kenia)", "lat": -0.4, "lng": 37.0, "r": 90, "p": ["Colinas verdes con plantaciones de té y café, suelo rojo intenso."], "sv": {"lat": -0.4201, "lng": 36.9476, "h": 0, "p": 0}},
+    {"id": "rift", "n": "Valle del Rift (Nakuru, Naivasha)", "lat": -0.5, "lng": 36.1, "r": 100, "p": ["Valle ancho con lagos, acacias y laderas del valle de fondo.", "Invernaderos de flores cerca de Naivasha."], "sv": {"lat": -0.3031, "lng": 36.08, "h": 0, "p": 0}},
+    {"id": "oeste", "n": "Oeste (Kisumu, lago Victoria)", "lat": -0.1, "lng": 34.75, "r": 100, "p": ["Muy verde y húmedo, campos de caña de azúcar y bananos; muchas motos (boda-boda)."], "sv": {"lat": -0.0917, "lng": 34.768, "h": 0, "p": 0}},
+    {"id": "costa", "n": "Costa (Mombasa)", "lat": -4.05, "lng": 39.67, "r": 100, "p": ["Cocoteros y mangos, casas de estilo suajili y mezquitas; calor húmedo."], "sv": {"lat": -4.0435, "lng": 39.6682, "h": 0, "p": 0}},
+    {"id": "norte", "n": "Norte árido", "lat": 2.5, "lng": 38.0, "r": 300, "p": ["Semidesierto con arbustos espinosos, tierra pálida y muy poca gente."], "sv": {"lat": 2.3284, "lng": 37.9899, "h": 0, "p": 0}}
+  ],
+  "confusiones": [
+    {"iso": "ug", "n": "Uganda", "dif": ["En Uganda se ve el frente del coche de Google con una defensa (bull bar) negra; en Kenia el snorkel."]},
+    {"iso": "tz", "n": "Tanzania", "dif": ["Tanzania tiene muy poca cobertura y matrículas amarillas adelante y atrás."]},
+    {"iso": "gh", "n": "Ghana", "dif": ["Ghana se maneja por la derecha; Kenia por la izquierda."]}
+  ],
+  "fuentes": [["Plonk It: Kenia", "https://www.plonkit.net/kenya"], ["GeoHints: coches de Google", "https://geohints.com/meta/googleVehicles/cars"]]
+}

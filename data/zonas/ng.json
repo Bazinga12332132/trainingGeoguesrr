@@ -1,0 +1,19 @@
+{
+  "resumen": "Nigeria: casi toda la cobertura está en Lagos y algunas ciudades. Se maneja por la derecha y el coche de Google suele ir acompañado.",
+  "coche": [
+    {"t": "Meta clásico: el coche de Google casi siempre va seguido por otro vehículo (un Toyota o un auto de policía) que se ve detrás.", "sv": {"lat": 6.5244, "lng": 3.3792, "h": 180, "p": -20}},
+    {"t": "La matrícula muestra el nombre del estado arriba (por ejemplo LAGOS) y un lema."}
+  ],
+  "zonas": [
+    {"id": "lagos", "n": "Lagos (suroeste)", "lat": 6.52, "lng": 3.38, "r": 60, "p": ["Matrícula LAGOS.", "Megaciudad con lagunas, puentes largos, buses amarillos (danfo) y mucho tránsito."], "sv": {"lat": 6.5244, "lng": 3.3792, "h": 0, "p": 0}},
+    {"id": "suroeste", "n": "Suroeste yoruba (Ibadán)", "lat": 7.4, "lng": 3.9, "r": 120, "p": ["Ciudades con techos de chapa oxidada en el cerro y tierra roja."], "sv": {"lat": 7.3775, "lng": 3.947, "h": 0, "p": 0}},
+    {"id": "abuja", "n": "Abuja (centro)", "lat": 9.06, "lng": 7.49, "r": 80, "p": ["Capital planificada con avenidas anchas y grandes rocas graníticas alrededor."], "sv": {"lat": 9.0765, "lng": 7.3986, "h": 0, "p": 0}},
+    {"id": "norte", "n": "Norte (Kano, Kaduna)", "lat": 11.5, "lng": 8.2, "r": 250, "p": ["Sabana seca, mezquitas y casas de barro; carteles a veces en hausa.", "Más motos, burros y vestimenta islámica."], "sv": {"lat": 12.0022, "lng": 8.592, "h": 0, "p": 0}},
+    {"id": "sureste", "n": "Sureste (Enugu, Port Harcourt)", "lat": 5.8, "lng": 7.3, "r": 150, "p": ["Muy verde y húmedo, palmeras de aceite, muchas iglesias."], "sv": {"lat": 6.4584, "lng": 7.5464, "h": 0, "p": 0}}
+  ],
+  "confusiones": [
+    {"iso": "gh", "n": "Ghana", "dif": ["En Ghana no hay coche de seguimiento: buscá la cinta negra en la barra delantera derecha del portaequipajes."]},
+    {"iso": "ke", "n": "Kenia", "dif": ["Kenia se maneja por la izquierda y su coche tiene snorkel."]}
+  ],
+  "fuentes": [["Plonk It: Nigeria", "https://www.plonkit.net/nigeria"], ["GeoHints: coches que siguen", "https://geohints.com/meta/followCars"]]
+}

@@ -1,0 +1,20 @@
+{
+  "resumen": "Sri Lanka tiene dos escrituras: cingalés (muy redonda) en el centro y el sur, y tamil en el norte y el este. La matrícula empieza con la provincia. Se maneja por la izquierda.",
+  "coche": [
+    {"t": "Mucha cobertura con la cámara montada baja (Low Cam): la imagen se ve desde poca altura, casi a la altura de un auto común. Es de los pocos países con esto (junto con Japón y Suiza).", "sv": {"lat": 6.9271, "lng": 79.8612, "h": 180, "p": -60}},
+    {"t": "Muchísimos tuk-tuks (a menudo rojos o azules) y estatuas de Buda al borde del camino."}
+  ],
+  "zonas": [
+    {"id": "colombo", "n": "Oeste: Colombo", "lat": 6.93, "lng": 79.86, "r": 45, "p": ["Matrícula WP (Provincia Occidental).", "Ciudad densa, cocoteros y costa; carteles en cingalés, tamil e inglés."], "sv": {"lat": 6.9271, "lng": 79.8612, "h": 0, "p": 0}},
+    {"id": "montanas", "n": "Montañas del centro: Kandy y Nuwara Eliya", "lat": 7.1, "lng": 80.7, "r": 55, "p": ["Matrícula CP (Provincia Central).", "Plantaciones de té en terrazas, rutas de montaña con curvas y clima fresco y nublado."], "sv": {"lat": 7.2906, "lng": 80.6337, "h": 0, "p": 0}},
+    {"id": "sur", "n": "Sur: Galle y Matara", "lat": 6.05, "lng": 80.4, "r": 50, "p": ["Matrícula SP (Provincia Sur).", "Costa con playas y palmeras, iglesias y fuertes coloniales en Galle."], "sv": {"lat": 6.0535, "lng": 80.221, "h": 0, "p": 0}},
+    {"id": "norte", "n": "Norte: Jaffna", "lat": 9.66, "lng": 80.02, "r": 60, "p": ["Matrícula NP (Provincia Norte).", "Carteles en tamil primero, templos hindúes de colores.", "Llano y seco, con palmeras palmira (troncos rectos y copa en abanico)."], "sv": {"lat": 9.6615, "lng": 80.0255, "h": 0, "p": 0}},
+    {"id": "este", "n": "Este: Batticaloa y Trincomalee", "lat": 8.0, "lng": 81.55, "r": 70, "p": ["Matrícula EP (Provincia Oriental).", "Mezcla de tamil, cingalés y mezquitas; lagunas y costa."], "sv": {"lat": 7.731, "lng": 81.6747, "h": 0, "p": 0}},
+    {"id": "llanura-norte", "n": "Llanura central del norte: Anuradhapura", "lat": 8.3, "lng": 80.4, "r": 60, "p": ["Matrícula NC (Norte Central).", "Llano seco con reservorios de agua antiguos y estupas blancas enormes."], "sv": {"lat": 8.3114, "lng": 80.4037, "h": 0, "p": 0}}
+  ],
+  "confusiones": [
+    {"iso": "in", "n": "India", "dif": ["El cingalés es redondo y sin línea arriba; el devanagari del norte de India cuelga de una línea horizontal.", "La matrícula de Sri Lanka empieza con la provincia (WP, CP, SP, NP…); la india con el estado (TN, KA, DL…).", "En el norte de Sri Lanka y en Tamil Nadu (India) se usa tamil: ahí mirá la matrícula."]},
+    {"iso": "bd", "n": "Bangladés", "dif": ["Bangladés es plano y lleno de agua; Sri Lanka tiene montañas y mucho menos agua.", "Escritura bengalí en Bangladés; cingalés o tamil en Sri Lanka."]}
+  ],
+  "fuentes": [["Plonk It: Sri Lanka", "https://www.plonkit.net/sri-lanka"], ["GeoHints: generaciones de cámara (Low Cam)", "https://geohints.com/meta/cameraGens"], ["r/geoguessr: ayuda con el sur y sudeste de Asia", "https://www.reddit.com/r/geoguessr/comments/8k7frs/help_with_southeast_asia/"]]
+}

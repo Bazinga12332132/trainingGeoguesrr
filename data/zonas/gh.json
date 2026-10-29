@@ -1,0 +1,20 @@
+{
+  "resumen": "Ghana se reconoce casi siempre por el coche de Google: mirá el portaequipajes. Después, tierra rojiza, inglés en los carteles y matrículas con letras de la región.",
+  "coche": [
+    {"t": "Meta clásico: cinta NEGRA enrollada en la barra delantera del portaequipajes, del lado derecho. Mirá hacia abajo y hacia adelante en el techo.", "sv": {"lat": 5.6037, "lng": -0.187, "h": 0, "p": -60}},
+    {"t": "Cobertura Gen 3 en buena parte del país, con mucho camino de tierra roja."}
+  ],
+  "zonas": [
+    {"id": "accra", "n": "Accra (Gran Accra)", "lat": 5.6, "lng": -0.19, "r": 50, "p": ["Matrícula con GR (Greater Accra) o GW/GT/GN.", "Ciudad costera muy transitada, iglesias, carteles pintados a mano y trotros (minibuses)."], "sv": {"lat": 5.6037, "lng": -0.187, "h": 0, "p": 0}},
+    {"id": "kumasi", "n": "Kumasi y Ashanti", "lat": 6.69, "lng": -1.62, "r": 90, "p": ["Matrícula AS (Ashanti).", "Selva y plantaciones de cacao, colinas verdes y tierra roja."], "sv": {"lat": 6.6885, "lng": -1.6244, "h": 0, "p": 0}},
+    {"id": "costa", "n": "Costa central y oeste (Cape Coast, Takoradi)", "lat": 5.1, "lng": -1.75, "r": 90, "p": ["Matrículas CR (Central) y WR (Western).", "Cocoteros, playas y fuertes coloniales blancos."], "sv": {"lat": 5.1053, "lng": -1.2466, "h": 0, "p": 0}},
+    {"id": "volta", "n": "Este (Volta)", "lat": 6.6, "lng": 0.45, "r": 90, "p": ["Matrícula VR (Volta).", "Lago Volta, colinas boscosas hacia la frontera con Togo."], "sv": {"lat": 6.6007, "lng": 0.4713, "h": 0, "p": 0}},
+    {"id": "norte", "n": "Norte (Tamale)", "lat": 9.4, "lng": -0.85, "r": 180, "p": ["Matrícula NR (Northern).", "Sabana seca con árboles sueltos (karité, baobab) y casas redondas de barro con techo de paja.", "Mezquitas y más motos que autos."], "sv": {"lat": 9.4008, "lng": -0.8393, "h": 0, "p": 0}}
+  ],
+  "confusiones": [
+    {"iso": "ng", "n": "Nigeria", "dif": ["En Nigeria el coche de Google casi siempre va seguido por otro vehículo (un Toyota o la policía); en Ghana mirá la cinta negra del portaequipajes.", "La matrícula nigeriana tiene el nombre del estado arriba (por ejemplo LAGOS)."]},
+    {"iso": "sn", "n": "Senegal", "dif": ["Senegal es francófono (carteles en francés) y su matrícula es azul con letras blancas o blanca con letras negras distintas."]},
+    {"iso": "ke", "n": "Kenia", "dif": ["Kenia se maneja por la IZQUIERDA y el coche tiene un snorkel negro sobre el capó; Ghana se maneja por la derecha."]}
+  ],
+  "fuentes": [["Plonk It: Ghana", "https://www.plonkit.net/ghana"], ["GeoHints: coches de Google", "https://geohints.com/meta/googleVehicles/cars"]]
+}
